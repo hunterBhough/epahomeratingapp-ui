@@ -1,0 +1,99 @@
+<form class="modal modal-large modal-scroll-body">
+  <div class="modal-header flex-row">
+    <div class="flex-item-static">
+        <button
+            class="btn btn-link"
+            type="button"
+            data-ng-if="::!checklistItemMrfEditCtrl.isReview"
+            data-ng-click="checklistItemMrfEditCtrl.cancel()">
+                Cancel
+        </button>
+    </div>
+
+      <span class="modal-title flex-item-grow"><span data-ng-if="::!checklistItemMrfEditCtrl.isReview">Edit</span> {{::checklistItemMrfEditCtrl.title}}</span>
+
+      <div class="flex-item-static">
+          <button
+              class="btn pull-right"
+              data-ng-if="::!checklistItemMrfEditCtrl.isReview"
+              data-ng-click="checklistItemMrfEditCtrl.save()"
+              data-ng-disabled="checklistItemMrfEditCtrl.mrfEditForm.$invalid"
+              type="submit">
+
+              Save
+          </button>
+          <button
+              class="btn pull-right"
+              data-ng-if="::checklistItemMrfEditCtrl.isReview"
+              data-ng-click="checklistItemMrfEditCtrl.cancel()"
+              type="button">
+
+              Close
+          </button>
+      </div>
+  </div>
+  <div class="modal-body-wrapper">
+    <div class="modal-body">
+      <div class="clearfix">
+          <div class="form-group col-xs-6">
+              <mrf-edit-field-locked
+                  field="checklistItemMrfEditCtrl.mrfDigest[0]"
+                  value="checklistItemMrfEditCtrl.PLACEHOLDER.STRING">
+              </mrf-edit-field-locked>
+          </div>
+          <div class="form-group col-xs-6">
+              <mrf-edit-field-locked
+                  field="checklistItemMrfEditCtrl.mrfDigest[1]"
+                  value="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL">
+              </mrf-edit-field-locked>
+          </div>
+          <div class="form-group col-xs-6">
+              <mrf-edit-field-locked
+                  field="checklistItemMrfEditCtrl.mrfDigest[2]"
+                  value="checklistItemMrfEditCtrl.PLACEHOLDER.STRING">
+              </mrf-edit-field-locked>
+          </div>
+          <div class="form-group col-xs-6">
+              <mrf-edit-field-locked
+                  field="checklistItemMrfEditCtrl.mrfDigest[3]"
+                  value="checklistItemMrfEditCtrl.PLACEHOLDER.STRING">
+              </mrf-edit-field-locked>
+          </div>
+        </div>
+        <div class="modal-body-section clearfix">
+          <h3 class="col-xs-12">Leakage To Outside</h3>
+          <div class="clearfix">
+            <div class="form-group col-xs-6">
+              <mrf-edit-field-locked
+                field="checklistItemMrfEditCtrl.mrfDigest[4]"
+                value="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL">
+              </mrf-edit-field-locked>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="form-group form-group-horizontal form-group-mrf-field col-xs-12">
+              <label for="CFM25-outside" class="sr-only">Leakage</label>
+              <input
+                  class="form-control"
+                  data-ng-model="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL"
+                  disabled="disabled"
+                  id="CFM25-outside"
+                  name="CFM25-outside"
+                  type="number" /> <span class="input-unit">CFM25/CFA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body-section clearfix">
+          <div class="clearfix">
+            <div class="form-group col-xs-6">
+              <mrf-edit-field-locked
+                field="checklistItemMrfEditCtrl.mrfDigest[5]"
+                value="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL">
+              </mrf-edit-field-locked>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+</form>
