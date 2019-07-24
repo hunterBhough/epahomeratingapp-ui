@@ -377,7 +377,7 @@ class JobsChecklistPageController {
     }
 
     get canFlagForReview () {
-        return this.userAuthorization.Admin && !this.job.InternalReview && this.job.Status === this.JOB_STATUS.COMPLETED;
+        return !this.job.InternalReview && this.job.Status === this.JOB_STATUS.COMPLETED;
     }
 }
 
