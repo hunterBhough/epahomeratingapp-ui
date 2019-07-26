@@ -13,6 +13,20 @@
         </div>
     </fieldset>
 
+    <fieldset class="row" data-ng-disabled="!jobDetailCtrl.canEditRatingType">
+        <legend class="col-xs-3">House Plan Type</legend>
+        <div class="offset-xs-3 col-xs-9">
+            <button-group
+                class="button-group"
+                buttons="jobDetailCtrl.testingBtnGroup"
+                initial-value="['rem-rate']"
+                allow-multiple="false"
+                allow-none="false"
+                on-set-value="jobDetailCtrl.setHousePlanType(response)">
+            </button-group>
+        </div>
+    </fieldset>
+
     <fieldset class="row" data-ng-disabled="!jobDetailCtrl.canEditSampleSet">
         <legend class="col-xs-3">Sample Set</legend>
         <div class="offset-xs-3 col-xs-9">
