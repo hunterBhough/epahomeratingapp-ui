@@ -251,6 +251,21 @@
     </div>
 </div>
 
+<div class="dialog hidden" dialog="dialog" id="dialog-flag-error">
+    <div class="dialog-header">
+        <h3 class="dialog-title">Flag For Review</h3>
+    </div>
+    <div class="dialog-body">
+        <p>The following <ng-pluralize count="jobsPageCtrl.failedFlags.length" when="{'one' : 'job', 'other' : '{} jobs'}"></ng-pluralize> could not be flagged for review:</p>
+        <ul>
+            <li ng-repeat="job in jobsPageCtrl.failedFlags" ng-bind-html="jobsPageCtrl.jobTitleFilter(job.Primary.AddressInformation, true)"></li>
+        </ul>
+    </div>
+    <div class="dialog-footer text-right">
+        <button class="btn" data-ng-click="dismiss(true)">OK</button>
+    </div>
+</div>
+
 <!-- modal: open job -->
 
 <form

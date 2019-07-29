@@ -46,6 +46,7 @@ class JobsPageController extends JobsPage {
     }
 
     flagForReview () {
+        this.failedFlags = [];
         //TODO consider moving this to the jobs service since this is similar to the flagJobForReview method in job-checklist-state.service
         if(this.userRole.Admin) {
           const markedJobs = this.jobsHandlers.getSelectedJobs();
@@ -53,6 +54,7 @@ class JobsPageController extends JobsPage {
 
           markedJobs.forEach((index) => {
               let job = this.viewJobs[index];
+
               if (job.Status === this.JOB_STATUS.COMPLETED && job.InternalReview === false) {
                   // TODO - Pop error message to user
                   job.InternalReview = true;
@@ -65,15 +67,26 @@ class JobsPageController extends JobsPage {
                       }));
 
                   submitJobs.push(this.JobsService.put(job));
+              } else {
+                this.failedFlags.push(job);
               }
           });
 
-          this
-              .$q
-              .all(submitJobs)
-              .then(() => {
-                  this.$state.transitionTo(this.$state.current, this.$stateParams, {reload : true, inherit : true, notify : true});
-              });
+          if(this.failedFlags.length > 0) {
+            this
+                .DialogService
+                .openDialog('dialog-flag-error')
+                .finally(() => {
+                    this.failedFlags = [];
+
+                    this
+                        .$q
+                        .all(submitJobs)
+                        .then(() => {
+                            this.$state.transitionTo(this.$state.current, this.$stateParams, {reload : true, inherit : true, notify : true});
+                        });
+                });
+          }
         }
     }
 

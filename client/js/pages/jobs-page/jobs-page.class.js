@@ -25,7 +25,8 @@ class JobsPage {
         JobsService,
         UserCompanyService,
         UI_ENUMS,
-        PAGINATION
+        PAGINATION,
+        jobTitleFilter
     ) {
         'ngInject';
 
@@ -42,6 +43,7 @@ class JobsPage {
         this.JobHistoryService     = JobHistoryService;
         this.JobsService           = JobsService;
         this.UserCompanyService    = UserCompanyService;
+        this.jobTitleFilter        = jobTitleFilter;
 
         this.DIALOG               = UI_ENUMS.DIALOG;
         this.JOB_STATUS           = UI_ENUMS.JOB_STATUS;
