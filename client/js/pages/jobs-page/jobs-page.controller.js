@@ -72,21 +72,24 @@ class JobsPageController extends JobsPage {
               }
           });
 
-          if(this.failedFlags.length > 0) {
-            this
-                .DialogService
-                .openDialog('dialog-flag-error')
-                .finally(() => {
-                    this.failedFlags = [];
+          this.$q((res, rej) => {
+            if(this.failedFlags.length > 0) {
+              return this
+                  .DialogService
+                  .openDialog('dialog-flag-error')
+                    .then(() => {
+                      res();
+                    })
+            } else {
+              res();
+            }
+          }).then(() => {
+            return this.$q.all(submitJobs);
 
-                    this
-                        .$q
-                        .all(submitJobs)
-                        .then(() => {
-                            this.$state.transitionTo(this.$state.current, this.$stateParams, {reload : true, inherit : true, notify : true});
-                        });
-                });
-          }
+          }).then(() => {
+            this.$state.transitionTo(this.$state.current, this.$stateParams, {reload : true, inherit : true, notify : true});
+
+          })
         }
     }
 
