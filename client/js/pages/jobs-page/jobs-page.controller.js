@@ -48,49 +48,47 @@ class JobsPageController extends JobsPage {
     flagForReview () {
         this.failedFlags = [];
         //TODO consider moving this to the jobs service since this is similar to the flagJobForReview method in job-checklist-state.service
-        if(this.userRole.Admin) {
-          const markedJobs = this.jobsHandlers.getSelectedJobs();
-          let submitJobs   = [];
+        const markedJobs = this.jobsHandlers.getSelectedJobs();
+        let submitJobs   = [];
 
-          markedJobs.forEach((index) => {
-              let job = this.viewJobs[index];
+        markedJobs.forEach((index) => {
+            let job = this.viewJobs[index];
 
-              if (job.Status === this.JOB_STATUS.COMPLETED && job.InternalReview === false) {
-                  // TODO - Pop error message to user
-                  job.InternalReview = true;
+            if (job.Status === this.JOB_STATUS.COMPLETED && job.InternalReview === false) {
+                // TODO - Pop error message to user
+                job.InternalReview = true;
 
-                  job
-                      .History
-                      .push(this.formatHistoryRecord({
-                          Category    : this.HISTORY.CATEGORIES.STATUS,
-                          Subcategory : this.HISTORY.SUBCATEGORIES.STATUS.INTERNAL_REVIEW
-                      }));
+                job
+                    .History
+                    .push(this.formatHistoryRecord({
+                        Category    : this.HISTORY.CATEGORIES.STATUS,
+                        Subcategory : this.HISTORY.SUBCATEGORIES.STATUS.INTERNAL_REVIEW
+                    }));
 
-                  submitJobs.push(this.JobsService.put(job));
-              } else {
-                this.failedFlags.push(job);
-              }
-          });
-
-          this.$q((res, rej) => {
-            if(this.failedFlags.length > 0) {
-              return this
-                  .DialogService
-                  .openDialog('dialog-flag-error')
-                    .then(() => {
-                      res();
-                    })
+                submitJobs.push(this.JobsService.put(job));
             } else {
-              res();
+              this.failedFlags.push(job);
             }
-          }).then(() => {
-            return this.$q.all(submitJobs);
+        });
 
-          }).then(() => {
-            this.$state.transitionTo(this.$state.current, this.$stateParams, {reload : true, inherit : true, notify : true});
+        this.$q((res, rej) => {
+          if(this.failedFlags.length > 0) {
+            return this
+                .DialogService
+                .openDialog('dialog-flag-error')
+                  .then(() => {
+                    res();
+                  })
+          } else {
+            res();
+          }
+        }).then(() => {
+          return this.$q.all(submitJobs);
 
-          })
-        }
+        }).then(() => {
+          this.$state.transitionTo(this.$state.current, this.$stateParams, {reload : true, inherit : true, notify : true});
+
+        })
     }
 
     archiveDeleteEnabled () {
