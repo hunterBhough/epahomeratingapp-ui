@@ -89,15 +89,48 @@ class JobDetailLocationController {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
                     console.warn('remJSON', remJSON);
 
-                    self.location.Builder                             = _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text;
-                    self.location.AddressInformation.CommunityName    = _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text;
-                    self.location.AddressInformation.Address1         = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyaddress._text) ? '' : remJSON.buildingfile.building.projectinfo.propertyaddress._text;
-                    self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.buildingfile.building.projectinfo.propertycity._text) ? '' : remJSON.buildingfile.building.projectinfo.propertycity._text;
-                    self.location.AddressInformation.StateCode        = _isEmpty(remJSON.buildingfile.building.projectinfo.propertystate._text) ? '' : remJSON.buildingfile.building.projectinfo.propertystate._text;
-                    self.location.AddressInformation.ZipCode          = remJSON.buildingfile.building.projectinfo.propertyzip._text === null ? '' : remJSON.buildingfile.building.projectinfo.propertyzip._text;
+                    let ifEnergyGauge = () => {
+                      return 'ENERGYGAUGE' in remJSON;
+                    }
+
+                    let parseRem = () => {
+                      self.location.Builder                             = _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text;
+                      self.location.AddressInformation.CommunityName    = _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text;
+                      self.location.AddressInformation.Address1         = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyaddress._text) ? '' : remJSON.buildingfile.building.projectinfo.propertyaddress._text;
+                      self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.buildingfile.building.projectinfo.propertycity._text) ? '' : remJSON.buildingfile.building.projectinfo.propertycity._text;
+                      self.location.AddressInformation.StateCode        = _isEmpty(remJSON.buildingfile.building.projectinfo.propertystate._text) ? '' : remJSON.buildingfile.building.projectinfo.propertystate._text;
+                      self.location.AddressInformation.ZipCode          = remJSON.buildingfile.building.projectinfo.propertyzip._text === null ? '' : remJSON.buildingfile.building.projectinfo.propertyzip._text;
+                    }
+
+                    let parseEnergy = () => {
+                      self.location.Builder = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text;
+                      self.location.AddressInformation.CommunityName = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text;
+                      self.location.AddressInformation.Address1 =  _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text;
+                      self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text;
+                      self.location.AddressInformation.StateCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text;
+                      self.location.AddressInformation.ZipCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text;
+                    }
+
+                    switch(self.job.HousePlanVendor.Vendor) {
+                      case 'ENERGYGAUGE':
+                        if(!ifEnergyGauge()) {
+                          //TODO: error
+                        }
+                        parseEnergy();
+                        break;
+                      case 'REMRATE':
+                        if(ifEnergyGauge()) {
+                          //TODO: error
+                        }
+                        parseRem();
+                        break;
+                      default:
+                        //TODO: error?
+                        break;
+                    }
+
                     self.location.HvacDesignReport                    = [];
                     self.location.RaterDesignReviewChecklist          = [];
-
                     self.$scope.$apply();
                 };
             }
