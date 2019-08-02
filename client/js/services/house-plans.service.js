@@ -40,6 +40,7 @@ class HousePlansService {
                 })
                 .then((response) => {
                     if (response.status === 200) {
+                        console.warn('HOUSE PLAN', response.data);
                         resolve(response.data);
                     } else {
                         //TODO: make this less bad

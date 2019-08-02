@@ -1,4 +1,4 @@
-<form class="modal modal-large modal-scroll-body">
+<form class="modal modal-large modal-scroll-body" novalidate name="checklistItemMrfEditCtrl.mrfEditForm">
   <div class="modal-header flex-row">
     <div class="flex-item-static">
         <button
@@ -38,25 +38,36 @@
           <div class="form-group col-xs-6">
               <mrf-edit-field-locked
                   field="checklistItemMrfEditCtrl.mrfDigest[0]"
-                  value="checklistItemMrfEditCtrl.PLACEHOLDER.STRING">
+                  value="checklistItemMrfEditCtrl.editMrfData['HvacID']">
               </mrf-edit-field-locked>
           </div>
+
           <div class="form-group col-xs-6">
               <mrf-edit-field-locked
                   field="checklistItemMrfEditCtrl.mrfDigest[1]"
                   value="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL">
               </mrf-edit-field-locked>
           </div>
+
           <div class="form-group col-xs-6">
-              <mrf-edit-field-locked
+              <mrf-edit-field-string
+                  data-ng-if="::!checklistItemMrfEditCtrl.isReview"
                   field="checklistItemMrfEditCtrl.mrfDigest[2]"
-                  value="checklistItemMrfEditCtrl.PLACEHOLDER.STRING">
+                  ng-model="checklistItemMrfEditCtrl.mrfEditForm['SupplyArea']"
+                  value="checklistItemMrfEditCtrl.editMrfData['SupplyArea']">>
+              </mrf-edit-field-string>
+
+              <mrf-edit-field-locked
+                  data-ng-if="::checklistItemMrfEditCtrl.isReview"
+                  field="checklistItemMrfEditCtrl.mrfDigest[2]"
+                  value="checklistItemMrfEditCtrl.editMrfData['HeatingSystemServed']">
               </mrf-edit-field-locked>
           </div>
+
           <div class="form-group col-xs-6">
               <mrf-edit-field-locked
                   field="checklistItemMrfEditCtrl.mrfDigest[3]"
-                  value="checklistItemMrfEditCtrl.PLACEHOLDER.STRING">
+                  value="checklistItemMrfEditCtrl.editMrfData['CoolingSystemServed']">
               </mrf-edit-field-locked>
           </div>
         </div>

@@ -88,6 +88,8 @@ class JobDetailLocationController {
                 reader.onloadend = function readXMLSuccess () {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
 
+                    console.warn('remJSON', remJSON);
+                    
                     self.location.Builder                             = _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text;
                     self.location.AddressInformation.CommunityName    = _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text;
                     self.location.AddressInformation.Address1         = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyaddress._text) ? '' : remJSON.buildingfile.building.projectinfo.propertyaddress._text;
