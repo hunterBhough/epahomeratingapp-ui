@@ -82,6 +82,21 @@ class Job {
         }
     }
 
+    get JobHousePlanType () {
+        return (
+          function(housePlanType) {
+            switch(housePlanType) {
+              case 'REMRATE':
+                return 'Rem Rate';
+              case 'ENERGYGAUGE':
+                return 'Energy Gauge';
+              default:
+                //TODO: handle unsupported
+            }
+          }
+        )(this.job.HousePlanVendor.Vendor)
+    }
+
     get JobTitle () {
         return this.jobTitleFilter(this.job.Primary.AddressInformation);
     }

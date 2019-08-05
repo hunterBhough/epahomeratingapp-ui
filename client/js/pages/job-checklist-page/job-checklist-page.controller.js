@@ -74,7 +74,33 @@ class JobsChecklistPageController {
 
     $onInit () {
         //TODO: make this better
-        this.RatingTypeLabel = (this.job.RatingType === 'energy-star') ? 'Energy Star' : 'HERS Rating';
+        this.RatingTypeLabel = (
+          function(job) {
+            let rating, housePlan;
+            switch(job.RatingType) {
+              case 'energy-star':
+                rating = 'Energy Star';
+                break;
+              case 'hers':
+                rating = 'HERS Rating'
+                break;
+              default:
+                //TODO: handle unsupported types
+            }
+            switch(job.HousePlanVendor.Vendor) {
+              case 'ENERGYGAUGE':
+                housePlan = 'Energy Gauge';
+                break;
+              case 'REMRATE':
+                housePlan = 'Rem Rate';
+                break;
+              default:
+                //TODO: handle unsupported types
+            }
+
+            return rating + ' | ' + housePlan;
+          }
+        )(this.job);
 
         this.houses              = {
             Primary   : this.job.Primary,
