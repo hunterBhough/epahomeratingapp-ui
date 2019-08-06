@@ -73,32 +73,29 @@ class JobsChecklistPageController {
     }
 
     $onInit () {
-        //TODO: make this better
         this.RatingTypeLabel = (
           function(job) {
-            let rating, housePlan;
             switch(job.RatingType) {
               case 'energy-star':
-                rating = 'Energy Star';
-                break;
+                return 'Energy Star';
               case 'hers':
-                rating = 'HERS Rating'
-                break;
+                return 'HERS Rating'
               default:
                 //TODO: handle unsupported types
             }
+          }
+        )(this.job);
+
+        this.HousePlanTypeLabel = (
+          function(job) {
             switch(job.HousePlanVendor.Vendor) {
               case 'ENERGYGAUGE':
-                housePlan = 'Energy Gauge';
-                break;
+                return 'Energy Gauge';
               case 'REMRATE':
-                housePlan = 'Rem Rate';
-                break;
+                return 'Rem Rate';
               default:
                 //TODO: handle unsupported types
             }
-
-            return rating + ' | ' + housePlan;
           }
         )(this.job);
 

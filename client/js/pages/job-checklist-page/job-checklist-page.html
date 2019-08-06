@@ -108,7 +108,7 @@
                   class="btn btn-job-dropdown-toggle" dropdown-toggle="dropdown-toggle"
                   data-ng-disabled="jobsChecklistPageCtrl.houses.Secondary.length == 0">
                     <span class="label label-rating-type" data-ng-class="jobsChecklistPageCtrl.getRatingTypeClass()">
-                        {{::jobsChecklistPageCtrl.RatingTypeLabel}}
+                        {{::jobsChecklistPageCtrl.RatingTypeLabel + '&nbsp;&nbsp;/&nbsp;&nbsp;' + jobsChecklistPageCtrl.HousePlanTypeLabel}}
                     </span>
 
                     <h2 class="job-checklist-title" data-ng-bind-html="jobsChecklistPageCtrl.getJobTitle(jobsChecklistPageCtrl.$stateParams.houseId)"></h2>
