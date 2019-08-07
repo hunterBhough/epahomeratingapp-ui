@@ -62,6 +62,24 @@ class JobDetailLocationController {
             return o._id === this.location.HousePlan[0]._id;
         });
 
+        //TODO: make this better
+        if('xmlType' in selectedHousePlan) {
+          switch(selectedHousePlan.xmlType) {
+            case 'energy-gauge':
+              if(this.job.HousePlanVendor.Vendor !== 'ENERGYGAUGE') {
+                //TODO: handle error
+              }
+              break;
+            case 'rem-rate':
+              if(this.job.HousePlanVendor.Vendor !== 'REMRATE') {
+                //TODO: handle error
+              }
+              break;
+            default:
+              //TODO: handle unsupported
+          }
+        }
+
         if (selectedHousePlan !== undefined) {
             this.location.Builder                             = _isEmpty(selectedHousePlan.BuilderName) ? '' : selectedHousePlan.BuilderName;
             this.location.AddressInformation.CommunityName    = _isEmpty(selectedHousePlan.CommunityName) ? '' : selectedHousePlan.CommunityName;
