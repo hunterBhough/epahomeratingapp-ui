@@ -62,6 +62,7 @@ class HousePlanNewController {
         this.uploadedHousePlanIDs = [];
     }
 
+    //TODO: add xmlType to energy gauge files
     onSubmit () {
         if (_isEmpty(this.fileInput.files)) {
             this.errorReason  = Object.assign({}, ERROR_INPUT);

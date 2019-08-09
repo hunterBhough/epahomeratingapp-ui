@@ -210,6 +210,15 @@ class HousePlansService {
     }
 
     post (formData, tmpHousePlan) {
+        console.warn('formData', formData);
+        console.warn('tmpHousePlan', tmpHousePlan);
+
+        let shit = formData.entries();
+
+        for(let fuck of shit) {
+          console.warn('fuck', fuck);
+        }
+
         let promise = this.$q((resolve, reject) => {
             this
                 .$http({

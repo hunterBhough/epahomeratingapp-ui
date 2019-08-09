@@ -5,7 +5,7 @@ import _isEmpty from 'lodash/isEmpty';
 import xmlToJSON from 'xmltojson';
 
 class JobDetailLocationController {
-    constructor (UI_ENUMS, $scope, $timeout, S3_CONFIG) {
+    constructor (UI_ENUMS, $scope, $timeout, S3_CONFIG, DialogService, $q) {
         'ngInject';
 
         this.ratingTypeOptions      = UI_ENUMS.RATING_TYPES;
@@ -15,6 +15,8 @@ class JobDetailLocationController {
         this.$scope                 = $scope;
         this.$timeout               = $timeout;
         this.s3Bucket               = `${S3_CONFIG.S3_BUCKET_NAME_PREFIX}-rating-company`;
+        this.DialogService          = DialogService;
+        this.$q                     = $q;
     }
 
     $onInit () {
@@ -52,6 +54,65 @@ class JobDetailLocationController {
         this.housePlansRaterDesignReviewChecklists = raterDesignReviewChecklists;
     }
 
+    checkXmlIsValid () {
+      let self = this;
+
+      return this.$q((resolve, reject) => {
+        this.$timeout(function waitFormRender () {
+          if (self.location.HousePlan[0] instanceof File) {
+              let reader = new FileReader();
+
+              reader.readAsText(self.location.HousePlan[0]);
+
+              reader.onloadend = function readXMLSuccess () {
+                  let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
+
+                  const isXMLValid =((xml, jobType) => {
+                    if('ENERGYGAUGE' in xml) {
+                      return jobType == 'ENERGYGAUGE';
+                    } else {
+                      return jobType == 'REMRATE';
+                    }
+                  })(remJSON, self.job.HousePlanVendor.Vendor);
+
+                  if(isXMLValid) {
+                    resolve()
+                  } else {
+                    reject()
+                  }
+              };
+          }
+        });
+      })
+    }
+
+    checkHousePlanIsValid () {
+      return this.$q((resolve, reject) => {
+        // auto pop builder name
+        if (this.location.HousePlan.length === 0) {
+            return;
+        }
+
+        const selectedHousePlan = _find(this.housePlans.housePlan, (o) => {
+            return o._id === this.location.HousePlan[0]._id;
+        });
+
+        const isHousePlanValid = ((selectedHousePlan, jobType) => {
+          if('xmlType' in selectedHousePlan && selectedHousePlan.xmlType == 'ENERGYGAUGE') {
+            return jobType == 'ENERGYGAUGE';
+          } else {
+            return jobType == 'REMRATE';
+          }
+        })(selectedHousePlan, this.job.HousePlanVendor.Vendor);
+
+        if(isHousePlanValid) {
+          resolve();
+        } else {
+          reject();
+        }
+      })
+    }
+
     libraryHousePlanOnSelect () {
         // auto pop builder name
         if (this.location.HousePlan.length === 0) {
@@ -62,22 +123,19 @@ class JobDetailLocationController {
             return o._id === this.location.HousePlan[0]._id;
         });
 
-        //TODO: make this better
-        if('xmlType' in selectedHousePlan) {
-          switch(selectedHousePlan.xmlType) {
-            case 'energy-gauge':
-              if(this.job.HousePlanVendor.Vendor !== 'ENERGYGAUGE') {
-                //TODO: handle error
-              }
-              break;
-            case 'rem-rate':
-              if(this.job.HousePlanVendor.Vendor !== 'REMRATE') {
-                //TODO: handle error
-              }
-              break;
-            default:
-              //TODO: handle unsupported
+        const isHousePlanValid = ((selectedHousePlan, jobType) => {
+          if('xmlType' in selectedHousePlan && selectedHousePlan.xmlType == 'ENERGYGAUGE') {
+            return jobType == 'ENERGYGAUGE';
+          } else {
+            return jobType == 'REMRATE';
           }
+        })(selectedHousePlan, this.job.HousePlanVendor.Vendor);
+
+        if(!isHousePlanValid) {
+          this.xmlError = 'Please make sure the XML is the same type as the job.';
+          this.DialogService
+            .openDialog('dialog-xml-error');
+          return;
         }
 
         if (selectedHousePlan !== undefined) {
@@ -105,10 +163,18 @@ class JobDetailLocationController {
 
                 reader.onloadend = function readXMLSuccess () {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
-                    console.warn('remJSON', remJSON);
 
-                    let ifEnergyGauge = () => {
-                      return 'ENERGYGAUGE' in remJSON;
+                    const jobType = self.job.HousePlanVendor.Vendor;
+                    const isXMLValid =((xml, jobType) => {
+                      if('ENERGYGAUGE' in xml) {
+                        return jobType == 'ENERGYGAUGE';
+                      } else {
+                        return jobType == 'REMRATE';
+                      }
+                    })(remJSON, jobType)
+
+                    if(!isXMLValid) {
+                      //TODO: handle error
                     }
 
                     let parseRem = () => {
@@ -129,17 +195,11 @@ class JobDetailLocationController {
                       self.location.AddressInformation.ZipCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text;
                     }
 
-                    switch(self.job.HousePlanVendor.Vendor) {
+                    switch(jobType) {
                       case 'ENERGYGAUGE':
-                        if(!ifEnergyGauge()) {
-                          //TODO: error
-                        }
                         parseEnergy();
                         break;
                       case 'REMRATE':
-                        if(ifEnergyGauge()) {
-                          //TODO: error
-                        }
                         parseRem();
                         break;
                       default:

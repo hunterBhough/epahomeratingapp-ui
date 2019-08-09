@@ -13,7 +13,9 @@ let fileManagerComponent = {
         showDetails             : '<',
         library                 : '<',
         librarySelectedCallback : '&',
-        localSelectedCallback   : '&'
+        localSelectedCallback   : '&',
+        checkHousePlanIsValid   : '&',
+        checkXmlIsValid         : '&'
     },
     template,
     controller,
