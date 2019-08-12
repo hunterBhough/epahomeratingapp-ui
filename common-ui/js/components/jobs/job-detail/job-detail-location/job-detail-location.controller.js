@@ -54,65 +54,6 @@ class JobDetailLocationController {
         this.housePlansRaterDesignReviewChecklists = raterDesignReviewChecklists;
     }
 
-    checkXmlIsValid () {
-      let self = this;
-
-      return this.$q((resolve, reject) => {
-        this.$timeout(function waitFormRender () {
-          if (self.location.HousePlan[0] instanceof File) {
-              let reader = new FileReader();
-
-              reader.readAsText(self.location.HousePlan[0]);
-
-              reader.onloadend = function readXMLSuccess () {
-                  let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
-
-                  const isXMLValid =((xml, jobType) => {
-                    if('ENERGYGAUGE' in xml) {
-                      return jobType == 'ENERGYGAUGE';
-                    } else {
-                      return jobType == 'REMRATE';
-                    }
-                  })(remJSON, self.job.HousePlanVendor.Vendor);
-
-                  if(isXMLValid) {
-                    resolve()
-                  } else {
-                    reject()
-                  }
-              };
-          }
-        });
-      })
-    }
-
-    checkHousePlanIsValid () {
-      return this.$q((resolve, reject) => {
-        // auto pop builder name
-        if (this.location.HousePlan.length === 0) {
-            return;
-        }
-
-        const selectedHousePlan = _find(this.housePlans.housePlan, (o) => {
-            return o._id === this.location.HousePlan[0]._id;
-        });
-
-        const isHousePlanValid = ((selectedHousePlan, jobType) => {
-          if('xmlType' in selectedHousePlan && selectedHousePlan.xmlType == 'ENERGYGAUGE') {
-            return jobType == 'ENERGYGAUGE';
-          } else {
-            return jobType == 'REMRATE';
-          }
-        })(selectedHousePlan, this.job.HousePlanVendor.Vendor);
-
-        if(isHousePlanValid) {
-          resolve();
-        } else {
-          reject();
-        }
-      })
-    }
-
     libraryHousePlanOnSelect () {
         // auto pop builder name
         if (this.location.HousePlan.length === 0) {
@@ -122,21 +63,6 @@ class JobDetailLocationController {
         const selectedHousePlan = _find(this.housePlans.housePlan, (o) => {
             return o._id === this.location.HousePlan[0]._id;
         });
-
-        const isHousePlanValid = ((selectedHousePlan, jobType) => {
-          if('xmlType' in selectedHousePlan && selectedHousePlan.xmlType == 'ENERGYGAUGE') {
-            return jobType == 'ENERGYGAUGE';
-          } else {
-            return jobType == 'REMRATE';
-          }
-        })(selectedHousePlan, this.job.HousePlanVendor.Vendor);
-
-        if(!isHousePlanValid) {
-          this.xmlError = 'Please make sure the XML is the same type as the job.';
-          this.DialogService
-            .openDialog('dialog-xml-error');
-          return;
-        }
 
         if (selectedHousePlan !== undefined) {
             this.location.Builder                             = _isEmpty(selectedHousePlan.BuilderName) ? '' : selectedHousePlan.BuilderName;
@@ -164,19 +90,6 @@ class JobDetailLocationController {
                 reader.onloadend = function readXMLSuccess () {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
 
-                    const jobType = self.job.HousePlanVendor.Vendor;
-                    const isXMLValid =((xml, jobType) => {
-                      if('ENERGYGAUGE' in xml) {
-                        return jobType == 'ENERGYGAUGE';
-                      } else {
-                        return jobType == 'REMRATE';
-                      }
-                    })(remJSON, jobType)
-
-                    if(!isXMLValid) {
-                      //TODO: handle error
-                    }
-
                     let parseRem = () => {
                       self.location.Builder                             = _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text;
                       self.location.AddressInformation.CommunityName    = _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text;
@@ -195,15 +108,22 @@ class JobDetailLocationController {
                       self.location.AddressInformation.ZipCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text;
                     }
 
-                    switch(jobType) {
+                    switch(self.job.HousePlanVendor.Vendor) {
                       case 'ENERGYGAUGE':
-                        parseEnergy();
+                        try {
+                          parseEnergy();
+                        } catch (error) {
+                          self.DialogService
+                            .openDialog('dialog-parse-error');
+                        }
                         break;
                       case 'REMRATE':
-                        parseRem();
-                        break;
-                      default:
-                        //TODO: error?
+                        try {
+                          parseRem();
+                        } catch (error) {
+                          self.DialogService
+                            .openDialog('dialog-parse-error');
+                        }
                         break;
                     }
 

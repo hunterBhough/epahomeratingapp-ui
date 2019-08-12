@@ -13,7 +13,7 @@
             library-selected-callback="jobDetailLocationCtrl.libraryHousePlanOnSelect()"
             local-selected-callback="jobDetailLocationCtrl.localHousePlanOnSelect()"
             check-house-plan-is-valid="jobDetailLocationCtrl.checkHousePlanIsValid()"
-            check-xml-is-valid="jobDetailLocationCtrl.checkXmlIsValid()">
+            check-xml-is-valid="jobDetailLocationCtrl.checkXmlIsValid">
         </file-manager>
     </div>
 </fieldset>
@@ -133,15 +133,12 @@
     </div>
 </div>
 
-<div class="dialog hidden" dialog="dialog" id="dialog-xml-error">
+<div class="dialog hidden" dialog="dialog" id="dialog-parse-error">
     <div class="dialog-header">
         <h3 class="dialog-title">Error</h3>
     </div>
     <div class="dialog-body">
-        <p>There was an error trying to upload your xml:</p>
-        <ul>
-          <li>{{jobDetailLocationCtrl.xmlError}}</li>
-        </ul>
+        <p>There was an error parsing your XML.</p>
     </div>
     <div class="dialog-footer text-right">
         <button class="btn" data-ng-click="dismiss(true)">OK</button>

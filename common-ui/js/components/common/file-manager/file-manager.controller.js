@@ -103,18 +103,9 @@ class FileManagerController {
     }
 
     addFile (file) {
-      this.files.push(file);
+        this.files.push(file);
 
-      this.checkXmlIsValid()
-        .then(() => {
-          console.warn('addFile then', this.files);
-          this.localSelectedCallback();
-        })
-        .catch(() => {
-          console.warn('addFile catch', this.files);
-          this.files.pop();
-          this.handleFileTypeError();
-        })
+        this.localSelectedCallback();
     }
 
     addFileFromLibrary (file) {
@@ -124,13 +115,7 @@ class FileManagerController {
                 Name : file.Name
             });
 
-            this.checkHousePlanIsValid()
-              .then(() => {
-                this.librarySelectedCallback();
-              })
-              .catch(() => {
-                this.files.pop();
-              })
+            this.librarySelectedCallback();
         }
     }
 
