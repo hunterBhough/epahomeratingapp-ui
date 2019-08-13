@@ -23,7 +23,7 @@ const HOUSE_PLAN_REQUIRED = {
 
 const HOUSE_PLAN_ERROR = {
     type        : 'error',
-    text        : 'Please make sure your Rating Files are the right type.',
+    text        : 'Please make sure Rating Files are the same type as the House Plan Type.',
     dismissable : false
 };
 
