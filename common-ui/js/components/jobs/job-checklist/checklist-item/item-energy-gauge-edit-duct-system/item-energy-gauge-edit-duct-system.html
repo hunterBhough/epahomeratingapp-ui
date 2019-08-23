@@ -43,22 +43,23 @@
           </div>
 
           <div class="form-group col-xs-6">
+            <mrf-edit-field-decimal
+                data-ng-if="::!checklistItemMrfEditCtrl.isReview"
+                field="checklistItemMrfEditCtrl.mrfDigest[1]"
+                handle-change="checklistItemMrfEditCtrl.calculateLeakages()"
+                ng-model="checklistItemMrfEditCtrl.mrfEditForm['CondFloorArea']"
+                value="checklistItemMrfEditCtrl.editMrfData['CondFloorArea']">
+            </mrf-edit-field-decimal>
+
               <mrf-edit-field-locked
+                  data-ng-if="::checklistItemMrfEditCtrl.isReview"
                   field="checklistItemMrfEditCtrl.mrfDigest[1]"
-                  value="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL">
+                  value="checklistItemMrfEditCtrl.editMrfData['ConCondFloorArea']">
               </mrf-edit-field-locked>
           </div>
 
           <div class="form-group col-xs-6">
-              <mrf-edit-field-string
-                  data-ng-if="::!checklistItemMrfEditCtrl.isReview"
-                  field="checklistItemMrfEditCtrl.mrfDigest[2]"
-                  ng-model="checklistItemMrfEditCtrl.mrfEditForm['SupplyArea']"
-                  value="checklistItemMrfEditCtrl.editMrfData['SupplyArea']">>
-              </mrf-edit-field-string>
-
               <mrf-edit-field-locked
-                  data-ng-if="::checklistItemMrfEditCtrl.isReview"
                   field="checklistItemMrfEditCtrl.mrfDigest[2]"
                   value="checklistItemMrfEditCtrl.editMrfData['HeatingSystemServed']">
               </mrf-edit-field-locked>
@@ -75,9 +76,19 @@
           <h3 class="col-xs-12">Leakage To Outside</h3>
           <div class="clearfix">
             <div class="form-group col-xs-6">
+              <mrf-edit-field-decimal
+                  data-ng-if="::!checklistItemMrfEditCtrl.isReview"
+                  data-ng-model="checklistItemMrfEditCtrl.leakageToOutside.total"
+                  field="checklistItemMrfEditCtrl.mrfDigest[4]"
+                  handle-change="checklistItemMrfEditCtrl.calculateLeakageOutside()"
+                  unit="checklistItemMrfEditCtrl.UNITS.CFM25"
+                  value="checklistItemMrfEditCtrl.leakageToOutside.total">
+              </mrf-edit-field-decimal>
+
               <mrf-edit-field-locked
+                data-ng-if="::checklistItemMrfEditCtrl.isReview"
                 field="checklistItemMrfEditCtrl.mrfDigest[4]"
-                value="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL">
+                value="checklistItemMrfEditCtrl.editMrfData['TestedCFM25Out']">
               </mrf-edit-field-locked>
             </div>
           </div>
@@ -86,7 +97,7 @@
               <label for="CFM25-outside" class="sr-only">Leakage</label>
               <input
                   class="form-control"
-                  data-ng-model="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL"
+                  data-ng-model="checklistItemMrfEditCtrl.leakageToOutside.cfm25ofCFA"
                   disabled="disabled"
                   id="CFM25-outside"
                   name="CFM25-outside"
@@ -96,11 +107,53 @@
         </div>
 
         <div class="modal-body-section clearfix">
+          <h3 class="col-xs-12">Total Leakage</h3>
           <div class="clearfix">
             <div class="form-group col-xs-6">
+              <mrf-edit-field-decimal
+                  data-ng-if="::!checklistItemMrfEditCtrl.isReview"
+                  data-ng-model="checklistItemMrfEditCtrl.leakageTotal.total"
+                  field="checklistItemMrfEditCtrl.mrfDigest[6]"
+                  handle-change="checklistItemMrfEditCtrl.calculateLeakageTotal()"
+                  unit="checklistItemMrfEditCtrl.UNITS.CFM25"
+                  value="checklistItemMrfEditCtrl.leakageTotal.total">
+              </mrf-edit-field-decimal>
+
               <mrf-edit-field-locked
+                data-ng-if="::checklistItemMrfEditCtrl.isReview"
+                field="checklistItemMrfEditCtrl.mrfDigest[6]"
+                value="checklistItemMrfEditCtrl.editMrfData['TestedCFM25Total']">
+              </mrf-edit-field-locked>
+            </div>
+          </div>
+          <div class="clearfix">
+            <div class="form-group form-group-horizontal form-group-mrf-field col-xs-12">
+              <label for="CFM25-outside" class="sr-only">Leakage</label>
+              <input
+                  class="form-control"
+                  data-ng-model="checklistItemMrfEditCtrl.leakageTotal.cfm25ofCFA"
+                  disabled="disabled"
+                  id="CFM25-total"
+                  name="CFM25-total"
+                  type="number" /> <span class="input-unit">CFM25/CFA</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-body-section clearfix">
+          <div class="clearfix">
+            <div class="form-group col-xs-6">
+              <mrf-edit-field-integer
+                  data-ng-if="::!checklistItemMrfEditCtrl.isReview"
+                  field="checklistItemMrfEditCtrl.mrfDigest[5]"
+                  ng-model="checklistItemMrfEditCtrl.mrfEditForm['NumberOfReturns']"
+                  value="checklistItemMrfEditCtrl.editMrfData['NumberOfReturns']">
+              </mrf-edit-field-integer>
+
+              <mrf-edit-field-locked
+                data-ng-if="::checklistItemMrfEditCtrl.isReview"
                 field="checklistItemMrfEditCtrl.mrfDigest[5]"
-                value="checklistItemMrfEditCtrl.PLACEHOLDER.DECIMAL">
+                value="checklistItemMrfEditCtrl.editMrfData['NumberOfReturns']">
               </mrf-edit-field-locked>
             </div>
           </div>

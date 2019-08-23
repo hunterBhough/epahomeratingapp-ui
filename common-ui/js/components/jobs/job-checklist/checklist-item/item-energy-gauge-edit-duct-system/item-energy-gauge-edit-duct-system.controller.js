@@ -10,6 +10,16 @@ class MrfEditController {
           BOOLEAN : true,
           DECIMAL : 1.2,
         }
+        this.UNITS         = {
+            CFM25 : {
+                Abbr  : 'CFM25',
+                Title : 'cubic feet per minute needed to create a 25 Pascal pressure change'
+            }
+        };
+        this.PRECISION = {
+            CFM25     : 100,
+            CFM25_CFA : 10000
+        };
     }
 
     $onInit () {
@@ -20,6 +30,7 @@ class MrfEditController {
         { Name: 'Clg. System Served'},
         { Name: 'Tested CFM25 Out'},
         { Name: '# Return Grilles'},
+        { Name: 'Tested CFM25 Total'},
       ];
       this.editMrfData = {
         "HvacID": "1",
@@ -38,8 +49,66 @@ class MrfEditController {
 				"SupplyDuctLocation": "2nd Floor",
 				"ReturnDuctLocation": "2nd Floor",
 				"Comment": "null",
-				"CombinedHVACSystem": "False"
+				"CombinedHVACSystem": "False",
+        "CondFloorArea": "8"
       }
+
+      this.leakageToOutside    = this.initLeakageToOutside();
+      this.leakageTotal        = this.initLeakageTotal();
+
+      this.calculateLeakageOutside();
+      this.calculateLeakageTotal();
+    }
+
+    initLeakageToOutside () {
+        let ductLeakTotal = parseFloat(this.editMrfData.TestedCFM25Out);
+
+        let total         = this.calculateInitialLeakageTotal(ductLeakTotal, this.PRECISION.CFM25);
+        let cfm25ofCFA    = this.calculateLeakageCfm25ofCFA(ductLeakTotal, this.PRECISION.CFM25_CFA);
+
+        return {
+            total,
+            cfm25ofCFA
+        };
+    }
+
+    initLeakageTotal () {
+        let ductLeakRealTotal = parseFloat(this.editMrfData.TestedCFM25Total);
+
+        let total             = this.calculateInitialLeakageTotal(ductLeakRealTotal, this.PRECISION.CFM25);
+        let cfm25ofCFA        = this.calculateLeakageCfm25ofCFA(ductLeakRealTotal, this.PRECISION.CFM25_CFA);
+
+        return {
+            total,
+            cfm25ofCFA
+        };
+    }
+
+    calculateInitialLeakageTotal (cfm25ofCFA, PRECISION_MULTIPLIER) {
+        let total = cfm25ofCFA * this.editMrfData.CondFloorArea;
+
+        return Math.round(total * PRECISION_MULTIPLIER) / PRECISION_MULTIPLIER;
+    }
+
+    calculateLeakageCfm25ofCFA (total, PRECISION_MULTIPLIER) {
+        let cfm25ofCFA = total / this.editMrfData.CondFloorArea;
+
+        return Math.round(cfm25ofCFA * PRECISION_MULTIPLIER) / PRECISION_MULTIPLIER;
+    }
+
+    calculateLeakageOutside () {
+        console.warn('alkdjflajkdf');
+
+        this.leakageToOutside.cfm25ofCFA = this.calculateLeakageCfm25ofCFA(this.leakageToOutside.total, this.PRECISION.CFM25_CFA);
+    }
+
+    calculateLeakageTotal () {
+        this.leakageTotal.cfm25ofCFA = this.calculateLeakageCfm25ofCFA(this.leakageTotal.total, this.PRECISION.CFM25_CFA);
+    }
+
+    calculateLeakages () {
+        this.calculateLeakageOutside();
+        this.calculateLeakageTotal();
     }
 }
 
