@@ -201,7 +201,8 @@ class PDFService {
           this.pdfInputs.rater.name               = `${user.firstName} ${user.lastName}`;
           this.pdfInputs.rater.email              = user.email;
           this.pdfInputs.builder.name             = house.Builder;
-          this.pdfInputs.house.model              = _isEmpty(house.HousePlan.Name) ? '' : house.HousePlan.Name;
+          //TODO: make sure not needed
+          // this.pdfInputs.house.model              = _isEmpty(house.HousePlan.Name) ? '' : house.HousePlan.Name;
           this.pdfInputs.address                  = {
             street: address,
             city: city,
@@ -215,15 +216,17 @@ class PDFService {
           this.pdfInputs.address.communityName = ai.CommunityName;
           this.pdfInputs.general.inspectionDate   = moment(job.History[job.History.length - 1].DateTime).format('MMM Do YYYY h:mm a');
           this.pdfInputs.general.createdDate      = `${moment().format('MM/DD/YYYY')}`;
-          this.pdfInputs.house.type               = (_isEmpty(hpd.ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType))
-              ? ''
-              : hpd.ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType;
-          this.pdfInputs.house.foundation = (_isEmpty(hpd.ChecklistItems['BE 2'].Foundation[0].FoundationType))
-              ? ''
-              : hpd.ChecklistItems['BE 2'].Foundation[0].FoundationType;
-          this.pdfInputs.house.sqFootage = (_isEmpty(hpd.ChecklistItems['BE 1'].BuildingSummary.ConditionedFloorArea))
-              ? ''
-              : hpd.ChecklistItems['BE 1'].BuildingSummary[0].ConditionedFloorArea;
+
+          //TODO: make sure not needed
+          // this.pdfInputs.house.type               = (_isEmpty(hpd.ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType))
+          //     ? ''
+          //     : hpd.ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType;
+          // this.pdfInputs.house.foundation = (_isEmpty(hpd.ChecklistItems['BE 2'].Foundation[0].FoundationType))
+          //     ? ''
+          //     : hpd.ChecklistItems['BE 2'].Foundation[0].FoundationType;
+          // this.pdfInputs.house.sqFootage = (_isEmpty(hpd.ChecklistItems['BE 1'].BuildingSummary.ConditionedFloorArea))
+          //     ? ''
+          //     : hpd.ChecklistItems['BE 1'].BuildingSummary[0].ConditionedFloorArea;
 
           this.pdfInputs.address.merged  =  _isEmpty(this.pdfInputs.address.streetAddress) ? '' : this.pdfInputs.address.streetAddress + '\n';
           this.pdfInputs.address.merged +=  _isEmpty(this.pdfInputs.address.communityName) ? '' : this.pdfInputs.address.communityName + (!_isEmpty(this.pdfInputs.address.lotNo ? ', ' : ''));
