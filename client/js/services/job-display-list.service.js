@@ -15,8 +15,7 @@ class JobDisplayListService {
             return UI_ENUMS.CATEGORY_PROGRESS[key].Key;
         });
 
-        console.warn('shit fuck', this);
-        this.displayOrderPromise = DisplayLogicDigestService.getOrder();
+        this.DisplayLogicDigestService = DisplayLogicDigestService;
     }
 
     getById (housePlanIds, ratingCompanyID) {
@@ -52,6 +51,8 @@ class JobDisplayListService {
     }
 
     mergeDisplayList (houseDisplayLists) {
+        this.displayOrderPromise = this.DisplayLogicDigestService.getOrder();
+
         const jobDisplayList = {
             'Walls' : {
                 'Final'      : [],

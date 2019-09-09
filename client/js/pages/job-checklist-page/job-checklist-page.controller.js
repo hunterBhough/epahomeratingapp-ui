@@ -19,34 +19,36 @@ class JobsChecklistPageController {
         ScrollService,
         UI_ENUMS,
         jobTitleFilter,
-        PDFService
+        PDFService,
+        DisplayLogicDigestService
     ) {
         'ngInject';
 
-        this.$rootScope               = $rootScope;
-        this.$scope                   = $scope;
-        this.$stateParams             = $stateParams;
-        this.$window                  = $window;
-        this.$log                     = $log;
+        this.$rootScope                = $rootScope;
+        this.$scope                    = $scope;
+        this.$stateParams              = $stateParams;
+        this.$window                   = $window;
+        this.$log                      = $log;
 
-        this.AnalyticsService         = AnalyticsService;
-        this.AuthorizationService     = AuthorizationService;
-        this.DialogService            = DialogService;
-        this.DropdownService          = DropdownService;
-        this.JobChecklistStateService = JobChecklistStateService;
-        this.JobsService              = JobsService;
-        this.JobDataResponseService   = JobDataResponseService;
-        this.ModalService             = ModalService;
-        this.ScrollService            = ScrollService;
-        this.UserCompanyService       = UserCompanyService;
-        this.MESSAGING                = UI_ENUMS.MESSAGING;
-        this.JOB_STATUS               = UI_ENUMS.JOB_STATUS;
-        this.CATEGORY_PROGRESS        = UI_ENUMS.CATEGORY_PROGRESS;
-        this.RESPONSES                = UI_ENUMS.RESPONSES;
-        this.USER_TYPE                = UI_ENUMS.USER_TYPE;
-        this.DIALOG                   = UI_ENUMS.DIALOG;
-        this.MODAL                    = UI_ENUMS.MODAL;
-        this.pdfService               = PDFService;
+        this.AnalyticsService          = AnalyticsService;
+        this.AuthorizationService      = AuthorizationService;
+        this.DialogService             = DialogService;
+        this.DropdownService           = DropdownService;
+        this.JobChecklistStateService  = JobChecklistStateService;
+        this.JobsService               = JobsService;
+        this.JobDataResponseService    = JobDataResponseService;
+        this.ModalService              = ModalService;
+        this.ScrollService             = ScrollService;
+        this.UserCompanyService        = UserCompanyService;
+        this.MESSAGING                 = UI_ENUMS.MESSAGING;
+        this.JOB_STATUS                = UI_ENUMS.JOB_STATUS;
+        this.CATEGORY_PROGRESS         = UI_ENUMS.CATEGORY_PROGRESS;
+        this.RESPONSES                 = UI_ENUMS.RESPONSES;
+        this.USER_TYPE                 = UI_ENUMS.USER_TYPE;
+        this.DIALOG                    = UI_ENUMS.DIALOG;
+        this.MODAL                     = UI_ENUMS.MODAL;
+        this.pdfService                = PDFService;
+        this.DisplayLogicDigestService = DisplayLogicDigestService;
 
         this.jobTitleFilter           = jobTitleFilter;
 
@@ -97,6 +99,10 @@ class JobsChecklistPageController {
 
         this.role              = this.$stateParams.role;
         this.userAuthorization = this.AuthorizationService.getUserRole();
+
+        this.
+            DisplayLogicDigestService
+            .setDigest(this.job.HousePlanVendor.Vendor);
 
         this
             .JobChecklistStateService
