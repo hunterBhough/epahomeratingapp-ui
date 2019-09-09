@@ -15,6 +15,7 @@ class JobDisplayListService {
             return UI_ENUMS.CATEGORY_PROGRESS[key].Key;
         });
 
+        console.warn('shit fuck', this);
         this.displayOrderPromise = DisplayLogicDigestService.getOrder();
     }
 
