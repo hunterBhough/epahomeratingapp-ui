@@ -7,6 +7,7 @@
     </label>
 
     <input
+        data-ng-if="::!fieldStringCtrl.date"
         class="form-control"
         data-ng-model="fieldStringCtrl.value"
         data-ng-blur="fieldStringCtrl.sanitize()"
@@ -15,6 +16,18 @@
         name="{{::fieldStringCtrl.field.Key}}"
         maxlength="{{::fieldStringCtrl.stringType.maxLength}}"
         type="text" />
+
+    <input
+        data-ng-if="::fieldStringCtrl.date"
+        class="form-control"
+        data-ng-model="fieldStringCtrl.dateTime"
+        data-ng-blur="fieldStringCtrl.sanitize()"
+        data-ng-change="fieldStringCtrl.onDateChange(fieldStringCtrl.dateTime)"
+        id="{{::fieldStringCtrl.field.Key}}"
+        name="{{::fieldStringCtrl.field.Key}}"
+        type="date"
+        value="{{fieldStringCtrl.dateTime}}"
+     />
 
 
     <p class="form-control-error" role="alert" data-ng-class="{'has-error' : fieldStringCtrl.invalid}">

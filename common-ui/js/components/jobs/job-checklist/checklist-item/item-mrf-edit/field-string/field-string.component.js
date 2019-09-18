@@ -5,7 +5,8 @@ let mrfEditFieldStringComponent = {
     bindings : {
         field        : '<',
         value        : '=',
-        handleChange : '&'
+        handleChange : '&',
+        date         : '<'
     },
     template,
     controller,

@@ -38,6 +38,9 @@ import checklistItemSelectThermalStrategyComponent from './checklist-item/item-s
 import checklistItemTotalDuctLeakageTestStrategyComponent from './checklist-item/item-total-duct-leakage-test-strategy/item-total-duct-leakage-test-strategy.component';
 import subItemDefaultComponent from './checklist-item/sub-item-default/sub-item-default.component';
 
+import energyGaugeEditDuctSystem from './checklist-item/item-energy-gauge-edit-duct-system/item-energy-gauge-edit-duct-system.component';
+import energyGaugeEditInfiltration from './checklist-item/item-energy-gauge-edit-infiltration/item-energy-gauge-edit-infiltration.component';
+
 let jobsModule
     = angular
         .module('epahomeratingapp.components.jobs.checklist', [])
@@ -75,6 +78,8 @@ let jobsModule
         .component('checklistItemAirInletLocations', checklistItemAirInletLocationsComponent)
         .component('checklistItemSelectThermalStrategy', checklistItemSelectThermalStrategyComponent)
         .component('checklistItemTotalDuctLeakageTestStrategy', checklistItemTotalDuctLeakageTestStrategyComponent)
-        .component('subItemDefault', subItemDefaultComponent);
+        .component('subItemDefault', subItemDefaultComponent)
+        .component('energyGaugeEditInfiltration', energyGaugeEditInfiltration)
+        .component('energyGaugeEditDuctSystem', energyGaugeEditDuctSystem);
 
 export default jobsModule;
