@@ -1,5 +1,8 @@
 /* global File */
 
+import xmlToJSON from 'xmltojson';
+
+
 const ERROR_SERVER = {
     type        : 'error',
     text        : 'There was an error processing your request. Please try again.',
@@ -18,13 +21,20 @@ const HOUSE_PLAN_REQUIRED = {
     dismissable : false
 };
 
+const HOUSE_PLAN_ERROR = {
+    type        : 'error',
+    text        : 'Please make sure Rating Files are the same type as the House Plan Type.',
+    dismissable : false
+};
+
 class JobsNewPageController {
-    constructor ($q, $log, $state, AnalyticsService, FileUtilityService, JobsService, HousePlansService, S3Service, S3_CONFIG) {
+    constructor ($q, $log, $state, AnalyticsService, FileUtilityService, JobsService, HousePlansService, S3Service, S3_CONFIG, $timeout) {
         'ngInject';
 
         this.$q                = $q;
         this.$log              = $log;
         this.$state            = $state;
+        this.$timeout          = $timeout;
 
         this.AnalyticsService   = AnalyticsService;
         this.FileUtilityService = FileUtilityService;
@@ -44,21 +54,60 @@ class JobsNewPageController {
      * @param {object} job job blob
      */
     housePlansAreValid (job) {
-        let housePlansValid = true;
+      return this.$q((resolve, reject) => {
+        const jobVendor = this.job.HousePlanVendor.Vendor;
 
-        if (job.Primary.HousePlan.length < 1) {
-            housePlansValid = false;
+        const checkHousePlanIsValid = (housePlan) => {
+          if('xmlType' in housePlan) {
+            return jobVendor == 'ENERGYGAUGE';
+          } else {
+            return jobVendor == 'REMRATE';
+          }
+        }
+        const checkJsonIsValid = (json) => {
+          if('ENERGYGAUGE' in json) {
+            return jobVendor == 'ENERGYGAUGE';
+          } else {
+            return jobVendor == 'REMRATE';
+          }
         }
 
-        job
-            .Secondary
-            .forEach((location) => {
-                if (location.HousePlan.length < 1) {
-                    housePlansValid = false;
-                }
-            });
+        const iterator = (housePlans) => {
+          if(housePlans.length < 1) {
+            reject();
+          }
 
-        return housePlansValid;
+          housePlans.forEach((housePlan) => {
+            if('_id' in housePlan) {
+              if (!checkHousePlanIsValid(_find(this.housePlans.housePlan, (o) => {
+                  return o._id === this.housePlan._id;
+              }))) {
+                reject();
+              }
+            } else {
+              let self = this;
+
+              this.$timeout(() => {
+                if(housePlan instanceof File) {
+                  let reader = new FileReader();
+                  reader.readAsText(housePlan);
+                  reader.onloadend = () => {
+                    if(!checkJsonIsValid(xmlToJSON.parseString(reader.result, {childrenAsArray : false}))) {
+                      reject()
+                    }
+                  }
+                }
+              })
+            }
+          })
+        }
+
+        iterator(job.Primary.HousePlan);
+        job.Secondary.forEach((location) => {
+          iterator(location);
+        })
+      })
+
     }
 
     //TODO This only works properly if not a sample set.
@@ -69,7 +118,8 @@ class JobsNewPageController {
             return;
         }
 
-        if (this.housePlansAreValid(job)) {
+        this.housePlansAreValid(job)
+          .then(() => {
             this.isBusy = true;
 
             if (job.Primary.HousePlan[0] instanceof File) {
@@ -86,9 +136,10 @@ class JobsNewPageController {
                     Label    : '',
                     Value    : ''
                 });
-        } else {
-            this.message = Object.assign({}, HOUSE_PLAN_REQUIRED);
-        }
+          })
+          .catch(() => {
+            this.message = Object.assign({}, HOUSE_PLAN_ERROR);
+          })
     }
 
     /**

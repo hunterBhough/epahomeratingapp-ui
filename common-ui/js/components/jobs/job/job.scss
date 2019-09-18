@@ -179,3 +179,27 @@ $job-photo-height-small:  85px;
         float: left;
     }
 }
+
+.job-house-plan-type {
+  flex-grow: 1;
+  text-align: right;
+  color: $text-color;
+
+  .triangle-left {
+    width: 0;
+    height: 0;
+    border-bottom: 20px solid $brand-auxillary;
+    border-left: 10px solid transparent;
+    margin-right: -4px;
+    margin-bottom: -5px;
+    display: inline-block;
+  }
+  .label {
+    background: $brand-auxillary;
+    display: inline-block;
+    padding: 3px 8px;
+    font-size: $font-size-small;
+    color: $brand-secondary;
+    text-transform: uppercase;
+  }
+}

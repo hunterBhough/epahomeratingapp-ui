@@ -5,7 +5,8 @@ let jobDetailLocationComponent = {
     bindings : {
         location               : '<',
         housePlans             : '<',
-        selectHousePlanEnabled : '<'
+        selectHousePlanEnabled : '<',
+        job                    : '<'
     },
     template,
     controller,

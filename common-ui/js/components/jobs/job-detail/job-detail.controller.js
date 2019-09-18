@@ -25,6 +25,17 @@ class JobDetailController {
         this.canEditSampleSet  = !ratingStarted;
         this.canEditRatingType = !ratingStarted;
         this.canEditHouesPlans = !ratingStarted;
+
+        this.testingBtnGroup = {
+          EnergyGauge: {
+            Key: 'energy-gauge',
+            Name: 'Energy Gauge'
+          },
+          RemRate: {
+            Key: 'rem-rate',
+            Name: 'REM Rate'
+          }
+        }
     }
 
     ratingStarted (job) {
@@ -68,6 +79,25 @@ class JobDetailController {
 
     setRatingType (ratingType) {
         this.job.RatingType = ratingType[0];
+    }
+
+    setHousePlanType (housePlanType) {
+        this.job.HousePlanVendor = (
+          function(housePlanType) {
+            switch(housePlanType) {
+              case 'rem-rate':
+                return {
+                  Vendor: 'REMRATE',
+                  Version: '15.7'
+                }
+              case 'energy-gauge':
+                return {
+                  Vendor: 'ENERGYGAUGE',
+                  Version: '15.7'
+                }
+            }
+          }
+        )(housePlanType[0]);
     }
 
     addSample () {

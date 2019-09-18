@@ -22,6 +22,12 @@
             <div class="flex-row">
                 <span class="job-builder ellipsis">{{::jobAdminCtrl.job.Primary.Builder}}</span>
                 <span class="job-status" data-ng-if="jobAdminCtrl.hideJobStatus()">{{::jobAdminCtrl.job.Status}}</span>
+                <span class="job-house-plan-type">
+                  <span class="label-container">
+                    <span class="triangle-left"></span>
+                    <span class="label">{{::jobAdminCtrl.JobHousePlanType}}</span>
+                  </span>
+                </span>
             </div>
 
         </div>

@@ -130,6 +130,7 @@ class JobChecklistState {
                 .then((jobDataResponse) => {
                     this.jobDataResponse = jobDataResponse;
 
+                    //TODO: get the right logic digest
                     return this.DisplayLogicDigestService.getPromise();
                 })
                 .then((digest) => {
@@ -165,6 +166,7 @@ class JobChecklistState {
                 this.JobDataHomePerformanceService
                     .getById(jobId, HouseId, ratingCompanyID)
                     .then((jobDataHomePerformance) => {
+                        console.warn('PERFORMANCE', jobDataHomePerformance);
                         this.itemStatusQuery = {};
                         this.jobDataHomePerformance[HouseId] = jobDataHomePerformance;
                         resolve(this.jobDataHomePerformance[HouseId]);
@@ -201,64 +203,87 @@ class JobChecklistState {
         checklist: [],
         history: [],
       };
+      let jobType = this.job.HousePlanVendor.Vendor == 'REMRATE' ? 'rem' : 'energy-gauge';
 
-      data.home.type = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType;
-      data.home.sqfoot = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ConditionedFloorArea;
-      data.home.model = this.currentHouse.HousePlan[0].Name;
-      data.home.export = this.currentHouse.ExportFilename;
-      data.home.foundation = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 2'].Foundation[0].FoundationType;
-      data.home.export = this.currentHouse.ExportFilename;
-      data.utility.fuel = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 27'].UtilityInformation.map((utility) => {
-        return {
-          meterNumber: utility.MeterNumber,
-          fuelType: utility.UtilityServiceTypeProvided,
-          meterId: utility.UtilityName
-        }
-      })
-      data.utility.waterHeater = (() => {
-        let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['BE 14'];
-        if ('ItemData' in item) {
-          if ('Equipment' in item.ItemData) {
-            return item.ItemData.Equipment;
-          }
-        }
-        return '';
-      })();
-      data.utility.hvac = (() => {
-        let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.1-A'];
-        if ('ItemData' in item) {
-          if ('Equipment' in item.ItemData) {
-            return item.ItemData.Equipment;
-          }
-        }
-        return '';
-      })();
+      //TODO: get the right checklist items
+      console.warn('this shit', this.jobDataHomePerformance);
 
-      data.history = this.JobHistoryService.parseHistory(this.job.History);
-      data.utility.externalStatic.return = (() => {
-        let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
-        if('ItemData' in item) {
-          if('ReturnSideExternalStaticPressure' in item.ItemData) {
-            return item.ItemData.ReturnSideExternalStaticPressure;
+      if(jobType == 'rem') {
+        data.home.type = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType;
+        data.home.sqfoot = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ConditionedFloorArea;
+        data.home.model = this.currentHouse.HousePlan[0].Name;
+        data.home.export = this.currentHouse.ExportFilename;
+        data.home.foundation = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 2'].Foundation[0].FoundationType;
+        data.home.export = this.currentHouse.ExportFilename;
+        data.utility.fuel = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 27'].UtilityInformation.map((utility) => {
+          return {
+            meterNumber: utility.MeterNumber,
+            fuelType: utility.UtilityServiceTypeProvided,
+            meterId: utility.UtilityName
           }
-        }
-      })();
-      data.utility.externalStatic.supply = (() => {
-        let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
-        if('ItemData' in item) {
-          if('SupplySideExternalStaticPressure' in item.ItemData) {
-            return item.ItemData.SupplySideExternalStaticPressure;
+        })
+        data.utility.waterHeater = (() => {
+          let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['BE 14'];
+          if ('ItemData' in item) {
+            if ('Equipment' in item.ItemData) {
+              return item.ItemData.Equipment;
+            }
           }
-        }
-      })();
-      data.utility.commissionPhoto = (() => {
-        let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.3-A'];
-        if('ItemData' in item) {
-          if('Photo' in item.ItemData) {
-            return item.ItemData.Photo;
+          return '';
+        })();
+        data.utility.hvac = (() => {
+          let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.1-A'];
+          if ('ItemData' in item) {
+            if ('Equipment' in item.ItemData) {
+              return item.ItemData.Equipment;
+            }
           }
-        }
-      })();
+          return '';
+        })();
+
+        data.history = this.JobHistoryService.parseHistory(this.job.History);
+        data.utility.externalStatic.return = (() => {
+          let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
+          if('ItemData' in item) {
+            if('ReturnSideExternalStaticPressure' in item.ItemData) {
+              return item.ItemData.ReturnSideExternalStaticPressure;
+            }
+          }
+        })();
+        data.utility.externalStatic.supply = (() => {
+          let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
+          if('ItemData' in item) {
+            if('SupplySideExternalStaticPressure' in item.ItemData) {
+              return item.ItemData.SupplySideExternalStaticPressure;
+            }
+          }
+        })();
+        data.utility.commissionPhoto = (() => {
+          let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.3-A'];
+          if('ItemData' in item) {
+            if('Photo' in item.ItemData) {
+              return item.ItemData.Photo;
+            }
+          }
+        })();
+      } else {
+        data.home.type = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['occupancy'];
+        data.home.sqfoot = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['floorArea'];
+        data.home.model = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['estarOccupancy'];
+        data.home.export = this.currentHouse.ExportFilename;
+        data.home.foundation = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 2'].ChecklistItems['FloorType'];
+
+        //TODO: response the same?
+        // data.utility.fuel =
+        // data.utility.waterHeater =
+        // data.utility.hvac =
+        // data.history =
+        // data.utility.externalStatic.return =
+        // data.utility.externalStatic.supply =
+        // data.utility.commissionPhoto =
+      }
+
+
 
       const checklistPrePromise = [];
       const ids = (() => {

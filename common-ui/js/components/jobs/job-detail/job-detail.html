@@ -13,6 +13,20 @@
         </div>
     </fieldset>
 
+    <fieldset class="row" data-ng-disabled="!jobDetailCtrl.canEditRatingType">
+        <legend class="col-xs-3">House Plan Type</legend>
+        <div class="offset-xs-3 col-xs-9">
+            <button-group
+                class="button-group"
+                buttons="jobDetailCtrl.testingBtnGroup"
+                initial-value="['rem-rate']"
+                allow-multiple="false"
+                allow-none="false"
+                on-set-value="jobDetailCtrl.setHousePlanType(response)">
+            </button-group>
+        </div>
+    </fieldset>
+
     <fieldset class="row" data-ng-disabled="!jobDetailCtrl.canEditSampleSet">
         <legend class="col-xs-3">Sample Set</legend>
         <div class="offset-xs-3 col-xs-9">
@@ -73,7 +87,8 @@
             id="tabpanel-location-{{jobDetailCtrl.job.Primary.HouseId}}"
             house-plans="jobDetailCtrl.housePlans"
             location="jobDetailCtrl.job.Primary"
-            select-house-plan-enabled="jobDetailCtrl.canEditHouesPlans">
+            select-house-plan-enabled="jobDetailCtrl.canEditHouesPlans"
+            job="jobDetailCtrl.job">
         </job-detail-location>
 
         <job-detail-location
@@ -86,7 +101,8 @@
             id="tabpanel-location-{{secondary.HouseId}}"
             house-plans="jobDetailCtrl.housePlans"
             location="secondary"
-            select-house-plan-enabled="jobDetailCtrl.canEditHouesPlans">
+            select-house-plan-enabled="jobDetailCtrl.canEditHouesPlans"
+            job="jobDetailCtrl.job">
         </job-detail-location>
     </div>
 
