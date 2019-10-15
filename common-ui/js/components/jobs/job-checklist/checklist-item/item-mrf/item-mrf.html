@@ -111,12 +111,23 @@
         library-type-name-key="{{row.LibraryTypeNameKey}}">
     </mrf-edit-infiltration>
 
-    <!-- <energy-gauge-edit-duct-system
-      title="Duct System"
-      >
-    </energy-gauge-edit-duct-system> -->
-    <!-- <energy-gauge-edit-infiltration
-      title="Infiltration"
-      >
-    </energy-gauge-edit-infiltration> -->
+    <mrf-edit-energy-duct-system
+        data-ng-repeat="row in checklistItemCtrl.editEnergyDuctSystemRow track by $index"
+        on-save-mrf-row="checklistItemCtrl.onSaveDuctSystemMrfRow(mrfRowEditData)"
+        on-cancel-mrf-row="checklistItemCtrl.onCancelDuctSystemMrfRow()"
+        title="{{::row.title}}"
+        mrf-digest="row.mrfDigest"
+        mrf-data="row.mrfData"
+        library-type-name-key="{{row.LibraryTypeNameKey}}">
+    </mrf-edit-energy-duct-system>
+
+    <mrf-edit-energy-infiltration
+        data-ng-repeat="row in checklistItemCtrl.editEnergyInfiltrationRow track by $index"
+        on-save-mrf-row="checklistItemCtrl.onSaveEnergyInfiltrationMrfRow(mrfRowEditData)"
+        on-cancel-mrf-row="checklistItemCtrl.onEnergyCancelInfiltrationMrfRow()"
+        title="{{::row.title}}"
+        mrf-digest="row.mrfDigest"
+        mrf-data="row.mrfData"
+        library-type-name-key="{{row.LibraryTypeNameKey}}">
+    </mrf-edit-energy-infiltration>
 </div> <!-- .checklist-item -->

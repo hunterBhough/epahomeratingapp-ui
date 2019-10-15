@@ -37,9 +37,8 @@ import checklistItemAirInletLocationsComponent from './checklist-item/item-air-i
 import checklistItemSelectThermalStrategyComponent from './checklist-item/item-select-thermal-strategy/item-select-thermal-strategy.component';
 import checklistItemTotalDuctLeakageTestStrategyComponent from './checklist-item/item-total-duct-leakage-test-strategy/item-total-duct-leakage-test-strategy.component';
 import subItemDefaultComponent from './checklist-item/sub-item-default/sub-item-default.component';
-
-import energyGaugeEditDuctSystem from './checklist-item/item-energy-gauge-edit-duct-system/item-energy-gauge-edit-duct-system.component';
-import energyGaugeEditInfiltration from './checklist-item/item-energy-gauge-edit-infiltration/item-energy-gauge-edit-infiltration.component';
+import checklistItemMrfEditEnergyDuctSystemComponent from './checklist-item/item-mrf-edit-energy-duct-system/item-mrf-edit-energy-duct-system.component';
+import checklistItemMrfEditEnergyInfiltrationComponent from './checklist-item/item-mrf-edit-energy-infiltration/item-mrf-edit-energy-infiltration.component';
 
 let jobsModule
     = angular
@@ -79,7 +78,7 @@ let jobsModule
         .component('checklistItemSelectThermalStrategy', checklistItemSelectThermalStrategyComponent)
         .component('checklistItemTotalDuctLeakageTestStrategy', checklistItemTotalDuctLeakageTestStrategyComponent)
         .component('subItemDefault', subItemDefaultComponent)
-        .component('energyGaugeEditInfiltration', energyGaugeEditInfiltration)
-        .component('energyGaugeEditDuctSystem', energyGaugeEditDuctSystem);
+        .component('mrfEditEnergyInfiltration', checklistItemMrfEditEnergyInfiltrationComponent)
+        .component('mrfEditEnergyDuctSystem', checklistItemMrfEditEnergyDuctSystemComponent);
 
 export default jobsModule;

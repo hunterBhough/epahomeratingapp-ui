@@ -1,7 +1,7 @@
-import template from './item-energy-gauge-edit-duct-system.html';
-import controller from './item-energy-gauge-edit-duct-system.controller';
+import template from './item-mrf-edit-energy-duct-system.html';
+import controller from './item-mrf-edit-energy-duct-system.controller';
 
-let checklistItemEnergyGaugeEditDuctSystemComponent = {
+let checklistItemMrfEditEnergyDuctSystemComponent = {
     bindings : {
         mrfDigest          : '<',
         mrfData            : '<',
@@ -15,4 +15,4 @@ let checklistItemEnergyGaugeEditDuctSystemComponent = {
     controllerAs : 'checklistItemMrfEditCtrl'
 };
 
-export default checklistItemEnergyGaugeEditDuctSystemComponent;
+export default checklistItemMrfEditEnergyDuctSystemComponent;

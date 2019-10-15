@@ -28,6 +28,8 @@ class ChecklistItemMrfController extends ChecklistItemClass {
         this.editRow = [];
         this.editDuctSystemRow = [];
         this.editInfiltrationRow = [];
+        this.editEnergyDuctSystemRow = [];
+        this.editEnergyInfiltrationRow = [];
 
     }
 
@@ -46,6 +48,28 @@ class ChecklistItemMrfController extends ChecklistItemClass {
             break;
         case 'Infiltration' :
             this.editInfiltrationRow.push({
+                ItemId             : this.itemId,
+                key                : key,
+                index              : index,
+                title              : title || 'Edit',
+                mrfDigest          : digest,
+                mrfData            : data
+            });
+
+            break;
+        case 'TempDuctRecords' : 
+            this.editEnergyDuctSystemRow.push({
+                ItemId             : this.itemId,
+                key                : key,
+                index              : index,
+                title              : title || 'Edit',
+                mrfDigest          : digest,
+                mrfData            : data
+            });
+
+            break;
+        case 'TempNaturalINFLRecords' : 
+            this.editEnergyInfiltrationRow.push({
                 ItemId             : this.itemId,
                 key                : key,
                 index              : index,
@@ -81,9 +105,21 @@ class ChecklistItemMrfController extends ChecklistItemClass {
             .pop();
     }
 
+    onCancelEnergyDuctSystemMrfRow () {
+        this
+            .editEnergyDuctSystemRow
+            .pop();
+    }
+
     onCancelInfiltrationMrfRow () {
         this
             .editInfiltrationRow
+            .pop();
+    }
+
+    onCancelEnergyInfiltrationMrfRow () {
+        this
+            .editEnergyInfiltrationRow
             .pop();
     }
 
@@ -171,6 +207,48 @@ class ChecklistItemMrfController extends ChecklistItemClass {
             .pop();
     }
 
+    onSaveEnergyDuctSystemMrfRow (mrfRowData) {
+        this.editEnergyDuctSystemRow[0].mrfData = mrfRowData;
+
+        let editMeta = this.getEditMeta(this.editEnergyDuctSystemRow[0]);
+
+        if (editMeta.editedMetaIds.length) {
+            if (editMeta.libraryAttributeEdited) {
+                let libraryTypeNameKey     = this.display.Sections[editMeta.sectionIndex].LibraryTypeNameKey;
+                let currentLibraryTypeName = this.editEnergyDuctSystemRow[0].mrfData[libraryTypeNameKey];
+
+                let newLibraryTypeName     = this.getLibraryTypeName({
+                    sectionIndex : editMeta.sectionIndex,
+                    editRowIndex : this.editEnergyDuctSystemRow[0].index
+                });
+
+                if (currentLibraryTypeName !== newLibraryTypeName) {
+                    this.editEnergyDuctSystemRow[0].mrfData[libraryTypeNameKey] = newLibraryTypeName;
+                    editMeta.editedMetaIds.push([this.editEnergyDuctSystemRow[0].key, this.editEnergyDuctSystemRow[0].index, libraryTypeNameKey].join(':'));
+                }
+            }
+
+            this.updateItemData(editMeta.editedMetaIds);
+
+            this
+                .$rootScope
+                .$emit(this.MESSAGING.UPDATE_MRF_DATA, this.editEnergyDuctSystemRow[0]);
+
+            this
+                .$rootScope
+                .$emit(this.MESSAGING.UPDATE_CHECKLIST_ITEM_DATA, {
+                    'ItemId'           : this.itemId,
+                    'Category'         : this.itemCategory,
+                    'CategoryProgress' : this.itemCategoryProgress,
+                    'ItemData'         : this.itemData
+                });
+        }
+
+        this
+            .editEnergyDuctSystemRow
+            .pop();
+    }
+
     onSaveInfiltrationMrfRow (mrfRowData) {
         this.editInfiltrationRow[0].mrfData = mrfRowData;
 
@@ -210,6 +288,48 @@ class ChecklistItemMrfController extends ChecklistItemClass {
 
         this
             .editInfiltrationRow
+            .pop();
+    }
+
+    onSaveEnergyInfiltrationMrfRow (mrfRowData) {
+        this.editEnergyInfiltrationRow[0].mrfData = mrfRowData;
+
+        let editMeta = this.getEditMeta(this.editEnergyInfiltrationRow[0]);
+
+        if (editMeta.editedMetaIds.length) {
+            if (editMeta.libraryAttributeEdited) {
+                let libraryTypeNameKey     = this.display.Sections[editMeta.sectionIndex].LibraryTypeNameKey;
+                let currentLibraryTypeName = this.editEnergyInfiltrationRow[0].mrfData[libraryTypeNameKey];
+
+                let newLibraryTypeName     = this.getLibraryTypeName({
+                    sectionIndex : editMeta.sectionIndex,
+                    editRowIndex : this.editEnergyInfiltrationRow[0].index
+                });
+
+                if (currentLibraryTypeName !== newLibraryTypeName) {
+                    this.editEnergyInfiltrationRow[0].mrfData[libraryTypeNameKey] = newLibraryTypeName;
+                    editMeta.editedMetaIds.push([this.editEnergyInfiltrationRow[0].key, this.editEnergyInfiltrationRow[0].index, libraryTypeNameKey].join(':'));
+                }
+            }
+
+            this.updateItemData(editMeta.editedMetaIds);
+
+            this
+                .$rootScope
+                .$emit(this.MESSAGING.UPDATE_MRF_DATA, this.editEnergyInfiltrationRow[0]);
+
+            this
+                .$rootScope
+                .$emit(this.MESSAGING.UPDATE_CHECKLIST_ITEM_DATA, {
+                    'ItemId'           : this.itemId,
+                    'Category'         : this.itemCategory,
+                    'CategoryProgress' : this.itemCategoryProgress,
+                    'ItemData'         : this.itemData
+                });
+        }
+
+        this
+            .editEnergyInfiltrationRow
             .pop();
     }
 

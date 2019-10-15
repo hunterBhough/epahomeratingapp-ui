@@ -36,34 +36,38 @@ class MrfEditController {
     $onInit () {
       const ACHITECTURAL_CHARACTERISTICS_ID = 'BE 1';
 
-      this.mrfDigest = [
-        { Name: 'Single Point Flow (CFM)' },
-        { Name: 'Shelter Class' },
-        { Name: 'Test Date'},
-        { Name: 'Single Point Pressure (pa)'},
-        { Name: 'Site Ambient Temp (F)'},
-        { Name: 'Indoor Temp (F)'},
-        { Name: 'Site Elevation (ft)'},
-        { Name: 'Base Pressure (pa)'},
-        { Name: 'Pressure/Depressure'},
-        { Name: 'Building Pressure'},
-        { Name: 'Altitude and Temp adjustment made by:'},
-        { Name: '10% single-point penalty was added by:'},
-      ]
+      this.editMrfData       = _assign({}, this.mrfData);
 
-      this.editMrfData = {
-        "TestDate": "1/3/2018",
-				"SinglePointFlow": "774",
-				"SinglePointPressure": "50",
-				"SiteAmbientTemp": "null",
-				"IndoorTemp": "null",
-				"SiteElevation": "null",
-				"BasePressure": "null",
-				"PressureDepressure": "null",
-				"BuildingPressure": "774",
-				"AltitudeTempAdjustment": "null",
-				"TenPercentSinglePointPenalty": "null"
-      }
+      this.showMrfEditModal  = false;
+
+      // this.mrfDigest = [
+      //   { Name: 'Single Point Flow (CFM)' },
+      //   { Name: 'Shelter Class' },
+      //   { Name: 'Test Date'},
+      //   { Name: 'Single Point Pressure (pa)'},
+      //   { Name: 'Site Ambient Temp (F)'},
+      //   { Name: 'Indoor Temp (F)'},
+      //   { Name: 'Site Elevation (ft)'},
+      //   { Name: 'Base Pressure (pa)'},
+      //   { Name: 'Pressure/Depressure'},
+      //   { Name: 'Building Pressure'},
+      //   { Name: 'Altitude and Temp adjustment made by:'},
+      //   { Name: '10% single-point penalty was added by:'},
+      // ]
+
+      // this.editMrfData = {
+      //   "TestDate": "1/3/2018",
+			// 	"SinglePointFlow": "774",
+			// 	"SinglePointPressure": "50",
+			// 	"SiteAmbientTemp": "null",
+			// 	"IndoorTemp": "null",
+			// 	"SiteElevation": "null",
+			// 	"BasePressure": "null",
+			// 	"PressureDepressure": "null",
+			// 	"BuildingPressure": "774",
+			// 	"AltitudeTempAdjustment": "null",
+			// 	"TenPercentSinglePointPenalty": "null"
+      // }
 
       //TODO: get this from JobChecklistStateService
       this.BuildingVolume = "33206";
@@ -86,6 +90,44 @@ class MrfEditController {
         this.editMrfData.HeatingSeasonValue = this.infiltrationValue;
         this.editMrfData.CoolingSeasonValue = this.infiltrationValue;
         this.editMrfData.AnnualValue        = this.infiltrationValue;
+    }
+
+    //????
+    $postLink () {
+      this.showMrfEditModal = true;
+
+      //TODO: put this somewhere better;
+      angular
+          .element(document)
+          .find('body')
+          .addClass('overlay-open');
+    }
+
+    cancel () {
+      this.showMrfEditModal = false;
+      this.onCancelMrfRow();
+
+      //TODO: put this somewhere better;
+      angular
+          .element(document)
+          .find('body')
+          .removeClass('overlay-open');
+    }
+
+    save () {
+      if (!this.mrfEditForm.$invalid) {
+          this.showMrfEditModal = false;
+
+          this.onSaveMrfRow({
+              mrfRowEditData : this.editMrfData
+          });
+
+          //TODO: put this somewhere better;
+          angular
+              .element(document)
+              .find('body')
+              .removeClass('overlay-open');
+      }
     }
 }
 

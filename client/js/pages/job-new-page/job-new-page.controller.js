@@ -1,6 +1,7 @@
 /* global File */
 
 import xmlToJSON from 'xmltojson';
+import _find from 'lodash/find';
 
 
 const ERROR_SERVER = {
@@ -80,7 +81,7 @@ class JobsNewPageController {
           housePlans.forEach((housePlan) => {
             if('_id' in housePlan) {
               if (!checkHousePlanIsValid(_find(this.housePlans.housePlan, (o) => {
-                  return o._id === this.housePlan._id;
+                  return o._id === housePlan._id;
               }))) {
                 reject();
               }
@@ -106,6 +107,7 @@ class JobsNewPageController {
         job.Secondary.forEach((location) => {
           iterator(location);
         })
+        resolve();
       })
 
     }
@@ -120,11 +122,13 @@ class JobsNewPageController {
 
         this.housePlansAreValid(job)
           .then(() => {
+            console.warn('[JobNewPageController] house plans are valid');
             this.isBusy = true;
 
             if (job.Primary.HousePlan[0] instanceof File) {
                 this.sumbitJobWithLocalHousePlan(job);
             } else {
+                console.warn('[JobNewPageController] submit library job');
                 this.submitJobWithLibrarayHousePlan(job);
             }
 

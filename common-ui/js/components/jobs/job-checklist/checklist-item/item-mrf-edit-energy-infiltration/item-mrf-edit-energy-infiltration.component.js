@@ -1,7 +1,7 @@
-import template from './item-energy-gauge-edit-infiltration.html';
-import controller from './item-energy-gauge-edit-infiltration.controller';
+import template from './item-mrf-edit-energy-infiltration.html';
+import controller from './item-mrf-edit-energy-infiltration.controller';
 
-let checklistItemEnergyGaugeEditInfiltrationComponent = {
+let checklistItemMrfEditEnergyInfiltrationComponent = {
     bindings : {
         mrfDigest          : '<',
         mrfData            : '<',
@@ -15,4 +15,4 @@ let checklistItemEnergyGaugeEditInfiltrationComponent = {
     controllerAs : 'checklistItemMrfEditCtrl'
 };
 
-export default checklistItemEnergyGaugeEditInfiltrationComponent;
+export default checklistItemMrfEditEnergyInfiltrationComponent;
