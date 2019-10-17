@@ -113,8 +113,8 @@
 
     <mrf-edit-energy-duct-system
         data-ng-repeat="row in checklistItemCtrl.editEnergyDuctSystemRow track by $index"
-        on-save-mrf-row="checklistItemCtrl.onSaveDuctSystemMrfRow(mrfRowEditData)"
-        on-cancel-mrf-row="checklistItemCtrl.onCancelDuctSystemMrfRow()"
+        on-save-mrf-row="checklistItemCtrl.onSaveEnergyDuctSystemMrfRow(mrfRowEditData)"
+        on-cancel-mrf-row="checklistItemCtrl.onCancelEnergyDuctSystemMrfRow()"
         title="{{::row.title}}"
         mrf-digest="row.mrfDigest"
         mrf-data="row.mrfData"
@@ -124,7 +124,7 @@
     <mrf-edit-energy-infiltration
         data-ng-repeat="row in checklistItemCtrl.editEnergyInfiltrationRow track by $index"
         on-save-mrf-row="checklistItemCtrl.onSaveEnergyInfiltrationMrfRow(mrfRowEditData)"
-        on-cancel-mrf-row="checklistItemCtrl.onEnergyCancelInfiltrationMrfRow()"
+        on-cancel-mrf-row="checklistItemCtrl.onCancelEnergyInfiltrationMrfRow()"
         title="{{::row.title}}"
         mrf-digest="row.mrfDigest"
         mrf-data="row.mrfData"

@@ -4,6 +4,8 @@ class MrfEditController {
     constructor (DialogService, JobChecklistStateService, UI_ENUMS) {
         'ngInject';
 
+        this.DialogService = DialogService;
+
         this.isReview      = JobChecklistStateService.isReview;
         this.UNITS         = {
             CFM25 : {
@@ -77,6 +79,7 @@ class MrfEditController {
         let total             = this.calculateInitialLeakageTotal(ductLeakRealTotal, this.PRECISION.CFM25);
         let cfm25ofCFA        = this.calculateLeakageCfm25ofCFA(ductLeakRealTotal, this.PRECISION.CFM25_CFA);
 
+            console.warn('initLeakageTotal', this.editMrfData, total, cfm25ofCFA);
         return {
             total,
             cfm25ofCFA
@@ -84,13 +87,14 @@ class MrfEditController {
     }
 
     calculateInitialLeakageTotal (cfm25ofCFA, PRECISION_MULTIPLIER) {
-        let total = cfm25ofCFA * this.editMrfData.CondFloorArea;
+        let total = cfm25ofCFA * this.editMrfData.FloorAreaServed;
 
         return Math.round(total * PRECISION_MULTIPLIER) / PRECISION_MULTIPLIER;
     }
 
     calculateLeakageCfm25ofCFA (total, PRECISION_MULTIPLIER) {
-        let cfm25ofCFA = total / this.editMrfData.CondFloorArea;
+        console.warn('lskjfdsd',this.editMrfData.FloorAreaServed);
+        let cfm25ofCFA = total / this.editMrfData.FloorAreaServed;
 
         return Math.round(cfm25ofCFA * PRECISION_MULTIPLIER) / PRECISION_MULTIPLIER;
     }
@@ -104,9 +108,10 @@ class MrfEditController {
     }
 
     calculateLeakages () {
+        console.warn('fklajdsfajslllllllll');
         this.calculateLeakageOutside();
         this.calculateLeakageTotal();
-    }
+    }                                       
 
     cancel () {
         this.showMrfEditModal = false;
