@@ -1,4 +1,4 @@
-import '../../common-ui/scss/epahomeratingapp.scss';
+import 'epahomeratingapp-ui/common-ui/scss/epahomeratingapp.scss';
 import '../scss/admin.scss';
 
 import template from './epahomeratingapp.html';

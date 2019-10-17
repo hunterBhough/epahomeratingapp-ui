@@ -13,7 +13,10 @@ module.exports = {
     },
     devtool  : 'sourcemap',
     resolve  : {
-        extensions : ['.js']
+        extensions : ['.js'],
+        alias : {
+            'epahomeratingapp-ui': path.resolve(__dirname)
+        }
     },
     module   : {
         rules : [
