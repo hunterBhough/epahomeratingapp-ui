@@ -18,7 +18,9 @@
   "contributors": [
     "Greg Gruse <Greg.Gruse@icfi.com>",
     "Jeff Heinrichs <jeff.heinrichs@icfi.com>",
-    "Yuantong Lu <Yuantong.Lu@icfi.com>"
+    "Yuantong Lu <Yuantong.Lu@icfi.com>",
+    "Hunter Hough <Hunter.Hough@icf.com>",
+    "Nik Gunawan <Nik.Gunawan@icf.com>"
   ],
   "license": "ISC",
   "dependencies": {
