@@ -77,7 +77,6 @@ class JobsNewPageController {
           if(housePlans.length < 1) {
             reject();
           }
-
           housePlans.forEach((housePlan) => {
             if('_id' in housePlan) {
               if (!checkHousePlanIsValid(_find(this.housePlans.housePlan, (o) => {
@@ -105,7 +104,7 @@ class JobsNewPageController {
 
         iterator(job.Primary.HousePlan);
         job.Secondary.forEach((location) => {
-          iterator(location);
+          iterator(location.HousePlan);
         })
         resolve();
       })
