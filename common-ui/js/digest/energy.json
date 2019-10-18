@@ -756,6 +756,7 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
+                                    "Type": "Integer",
                                     "Name": ""
                                 },
                                 "Key": "numStories"
@@ -766,7 +767,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "floorArea"
                             },
@@ -776,7 +778,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "occupancy"
                             },
@@ -786,6 +789,7 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
+                                    "Type": "Integer",
                                     "Name": ""
                                 },
                                 "Key": "estarOccupancy"
@@ -796,6 +800,7 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
+                                    "Type": "Integer",
                                     "Name": ""
                                 },
                                 "Key": "aboveGradeCondArea"
@@ -806,7 +811,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "belowGradeCondArea"
                             },
@@ -816,6 +822,7 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
+                                    "Type": "Integer",
                                     "Name": ""
                                 },
                                 "Key": "condVolume"
@@ -826,8 +833,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Type": "YYYY",
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "bedrooms"
                             },
@@ -837,8 +844,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Type": "MM/DD/YYYY",
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "constructYear"
                             }
@@ -855,7 +862,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "MyLength"
                             },
@@ -865,7 +873,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "MyWidth"
                             },
@@ -875,7 +884,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "MyWallPerimeter"
                             },
@@ -885,7 +895,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "MyAvgWallHeight"
                             },
@@ -895,7 +906,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "MyExpWallInsulation"
                             },
@@ -905,7 +917,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "MyGarage"
                             },
@@ -915,7 +928,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "TheirLength"
                             },
@@ -925,7 +939,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TheirWidth"
                             },
@@ -935,7 +950,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TheirWallPerimeter"
                             },
@@ -945,7 +961,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TheirAvgWallHeight"
                             },
@@ -955,7 +972,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TheirExpWallInsulation"
                             },
@@ -965,7 +983,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPGARAGE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TheirGarage"
                             }
@@ -982,7 +1001,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "BlockId"
                             },
@@ -992,7 +1012,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Name"
                             },
@@ -1002,7 +1023,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "Volume"
                             },
@@ -1012,7 +1034,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "Area"
                             },
@@ -1022,7 +1045,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Cooled"
                             },
@@ -1032,7 +1056,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Heated"
                             },
@@ -1042,7 +1067,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "HeatedBlockArea"
                             },
@@ -1052,7 +1078,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "CooledBlockArea"
                             },
@@ -1062,7 +1089,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "HeatedBlockVolume"
                             },
@@ -1072,7 +1100,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPBLOCK",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "CooledBlockVolume"
                             }
@@ -1089,7 +1118,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -1099,7 +1129,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "BlockName"
                             },
@@ -1109,7 +1140,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comments"
                             },
@@ -1119,7 +1151,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "NumOccupants"
                             },
@@ -1129,7 +1162,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "KitchenZone"
                             },
@@ -1139,7 +1173,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "BasementRoom"
                             },
@@ -1149,7 +1184,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Conditioned"
                             },
@@ -1159,7 +1195,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Finished"
                             },
@@ -1169,7 +1206,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "RoomArea"
                             },
@@ -1179,7 +1217,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "AveWallHeight"
                             },
@@ -1189,7 +1228,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPROOM",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "NumBedrooms"
                             }
@@ -1219,8 +1259,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
-                                    "Type": "DD/MM/YYYY",
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "TestDate"
                             },
@@ -1230,7 +1270,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "SinglePointFlow"
                             },
@@ -1240,7 +1281,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "SinglePointPressure"
                             },
@@ -1250,6 +1292,7 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
+                                    "Type": "Decimal",
                                     "Name": ""
                                 },
                                 "Key": "SiteAmbientTemp"
@@ -1260,6 +1303,7 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
+                                    "Type": "Decimal",
                                     "Name": ""
                                 },
                                 "Key": "IndoorTemp"
@@ -1270,7 +1314,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "SiteElevation"
                             },
@@ -1280,7 +1325,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "BasePressure"
                             },
@@ -1290,7 +1336,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "PressureDepressure"
                             },
@@ -1320,7 +1367,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPNATURALINFL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "TenPercentSinglePointPenalty"
                             }
@@ -1350,7 +1398,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "HvacID"
                             },
@@ -1360,7 +1409,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CoolingSystemServed"
                             },
@@ -1370,7 +1420,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "HeatingSystemServed"
                             },
@@ -1380,7 +1431,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FloorAreaServed"
                             },
@@ -1390,7 +1442,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TestedCFM25Out"
                             },
@@ -1400,7 +1453,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TestedCFM25Total"
                             },
@@ -1410,7 +1464,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AHUInstalledAtTest"
                             },
@@ -1420,7 +1475,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "NumberOfReturns"
                             },
@@ -1430,7 +1486,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FactorySealedAHU"
                             },
@@ -1440,7 +1497,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AirHandlerLocation"
                             },
@@ -1450,7 +1508,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "SupplyDuctRValue"
                             },
@@ -1460,7 +1519,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "ReturnDuctRValue"
                             },
@@ -1470,7 +1530,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "SupplyDuctArea"
                             },
@@ -1480,7 +1541,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "ReturnDuctArea"
                             },
@@ -1490,7 +1552,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SupplyDuctLocation"
                             },
@@ -1500,7 +1563,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "ReturnDuctLocation"
                             },
@@ -1510,7 +1574,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             },
@@ -1520,7 +1585,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CombinedHVACSystem"
                             }
@@ -1550,7 +1616,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "HvacID"
                             },
@@ -1560,7 +1627,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Type"
                             },
@@ -1570,7 +1638,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SubType"
                             },
@@ -1580,7 +1649,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FuelType"
                             },
@@ -1590,7 +1660,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "Capacity"
                             },
@@ -1600,7 +1671,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Efficiency"
                             },
@@ -1610,7 +1682,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Ductless"
                             },
@@ -1620,7 +1693,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AHRI"
                             },
@@ -1630,7 +1704,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Manufacturer"
                             },
@@ -1640,7 +1715,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "OutdoorModelNumber"
                             },
@@ -1650,7 +1726,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "IndoorModelNumber"
                             },
@@ -1660,7 +1737,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             },
@@ -1670,7 +1748,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "BlockServed"
                             },
@@ -1680,7 +1759,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CombinedHVACSystem"
                             }
@@ -1697,7 +1777,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "HvacID"
                             },
@@ -1707,7 +1788,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Type"
                             },
@@ -1717,7 +1799,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SubType"
                             },
@@ -1727,7 +1810,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Capacity"
                             },
@@ -1737,7 +1821,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_100"
                                 },
                                 "Key": "Efficiency"
                             },
@@ -1747,7 +1832,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "SHR"
                             },
@@ -1757,7 +1843,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Ductless"
                             },
@@ -1767,8 +1854,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Type": "This should only allow digits in this field.",
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AHRI"
                             },
@@ -1778,7 +1865,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Manufacturer"
                             },
@@ -1788,7 +1876,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "OutdoorModelNumber"
                             },
@@ -1798,7 +1887,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "IndoorModelNumber"
                             },
@@ -1808,7 +1898,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             },
@@ -1818,7 +1909,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "BlockServed"
                             },
@@ -1828,7 +1920,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPCOOL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CombinedHVACSystem"
                             }
@@ -1858,7 +1951,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Type"
                             },
@@ -1868,7 +1962,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SubType"
                             },
@@ -1878,7 +1973,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "Capacity"
                             },
@@ -1888,7 +1984,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "UseEForUEF"
                             },
@@ -1898,7 +1995,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "EF"
                             },
@@ -1908,7 +2006,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "UEF"
                             },
@@ -1918,7 +2017,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Manufacturer"
                             },
@@ -1928,7 +2028,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "ModelNumber"
                             },
@@ -1938,7 +2039,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Location"
                             },
@@ -1948,7 +2050,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -1978,7 +2081,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_20_50"
                                 },
                                 "Key": "PipeLength"
                             },
@@ -1988,7 +2092,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "PipeInsulation"
                             },
@@ -1998,7 +2103,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FixtureFlow"
                             },
@@ -2008,7 +2114,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "HeatTrapInsulation"
                             }
@@ -2060,7 +2167,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "TotalQualifyingLocations"
                             },
@@ -2070,7 +2178,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "TierIQualifyingFixtures"
                             },
@@ -2080,7 +2189,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "TierIIQualifyingFixtures"
                             },
@@ -2090,7 +2200,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2140,7 +2251,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLREFRIGERATORS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2150,7 +2262,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLREFRIGERATORS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2160,7 +2273,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLREFRIGERATORS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2202,7 +2316,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FloorType"
                             },
@@ -2212,7 +2327,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Area"
                             },
@@ -2222,7 +2338,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "R_Value"
                             },
@@ -2232,7 +2349,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RfInsGrade"
                             },
@@ -2242,7 +2360,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99"
                                 },
                                 "Key": "RfFramingFraction"
                             },
@@ -2252,7 +2371,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "WallDepthBelowGrade"
                             },
@@ -2262,7 +2382,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Perimeter"
                             },
@@ -2272,7 +2393,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SubType"
                             },
@@ -2282,7 +2404,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "CrawlInsulation"
                             },
@@ -2292,7 +2415,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CsWallInsGrade"
                             },
@@ -2302,7 +2426,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CrawlVented"
                             },
@@ -2312,7 +2437,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "fogInsGrade"
                             },
@@ -2322,7 +2448,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "foosInsGrade"
                             },
@@ -2332,7 +2459,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "TileFrac"
                             },
@@ -2342,7 +2470,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "HardwoodFrac"
                             },
@@ -2352,7 +2481,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "CarpetFrac"
                             },
@@ -2362,7 +2492,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -2372,7 +2503,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomUnderFloor"
                             }
@@ -2412,7 +2544,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Location"
                             },
@@ -2422,7 +2555,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2432,7 +2566,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2442,7 +2577,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2492,7 +2628,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESWASHERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2502,7 +2639,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESWASHERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2512,7 +2650,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESWASHERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2562,7 +2701,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESDRYERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2572,7 +2712,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESDRYERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2582,7 +2723,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESDRYERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2622,7 +2764,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Location"
                             },
@@ -2632,7 +2775,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2642,7 +2786,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2652,7 +2797,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2682,7 +2828,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "MechventID"
                             },
@@ -2692,7 +2839,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "BlockServed"
                             },
@@ -2702,7 +2850,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "MechanicalVentilationType"
                             },
@@ -2712,7 +2861,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "CoolingSystemServed"
                             },
@@ -2722,7 +2872,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "HeatingSystemServed"
                             },
@@ -2732,7 +2883,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "Comment"
                             },
@@ -2742,7 +2894,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 }
                             }
                         ]
@@ -2783,7 +2936,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "PercentESLigting"
                             },
@@ -2793,7 +2947,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESRefridgerators"
                             },
@@ -2803,7 +2958,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESDishwashers"
                             },
@@ -2813,7 +2969,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESCeilingFans"
                             },
@@ -2823,7 +2980,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESExhaustFans"
                             }
@@ -2853,7 +3011,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "WallId"
                             },
@@ -2863,7 +3022,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Orientation"
                             },
@@ -2873,7 +3033,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "WallType"
                             },
@@ -2883,7 +3044,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "R_Value"
                             },
@@ -2893,7 +3055,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Exterior_R_Value"
                             },
@@ -2903,7 +3066,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "InsGrade"
                             },
@@ -2913,7 +3077,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FilledCore"
                             },
@@ -2923,7 +3088,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Area"
                             },
@@ -2933,7 +3099,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "WidthFt"
                             },
@@ -2943,7 +3110,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "WidthIn"
                             },
@@ -2953,7 +3121,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "HeightFt"
                             },
@@ -2963,7 +3132,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "HeightIn"
                             },
@@ -2973,7 +3143,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "BelowGradePCT"
                             },
@@ -2983,7 +3154,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AdjacentTo"
                             },
@@ -2993,7 +3165,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "FramingFraction"
                             },
@@ -3003,7 +3176,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_9.9000"
                                 },
                                 "Key": "SolarAbsorptance"
                             },
@@ -3013,7 +3187,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -3023,7 +3198,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AdjacentRoomName"
                             },
@@ -3033,7 +3209,8 @@
                                 "Order": 19,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Description"
                             }
@@ -3063,7 +3240,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoofConfig"
                             },
@@ -3073,7 +3251,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AtticDescription"
                             },
@@ -3083,7 +3262,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RadiantBarrier"
                             },
@@ -3093,7 +3273,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "RoofDeckInsulation"
                             },
@@ -3103,7 +3284,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoofDeckInsGrade"
                             },
@@ -3113,7 +3295,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoofMaterial"
                             },
@@ -3123,7 +3306,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoofColor"
                             },
@@ -3133,7 +3317,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "SolarAbsorptance"
                             },
@@ -3143,7 +3328,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Emmitance"
                             },
@@ -3153,7 +3339,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "FramingFraction"
                             },
@@ -3163,7 +3350,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "AtticFloorArea"
                             },
@@ -3173,7 +3361,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "RoofPitch"
                             },
@@ -3183,7 +3372,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "IRRC"
                             },
@@ -3193,7 +3383,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AtticVented"
                             }
@@ -3210,7 +3401,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Type"
                             },
@@ -3220,7 +3412,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "Area"
                             },
@@ -3230,7 +3423,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "Width"
                             },
@@ -3240,7 +3434,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "Length"
                             },
@@ -3250,7 +3445,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "R_Value"
                             },
@@ -3260,7 +3456,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "InsGrade"
                             },
@@ -3270,7 +3467,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "InsType"
                             },
@@ -3280,7 +3478,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CavityFilled"
                             },
@@ -3290,7 +3489,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "TrussType"
                             },
@@ -3300,7 +3500,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "FramingFraction"
                             },
@@ -3310,7 +3511,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -3320,7 +3522,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPCEIL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Description"
                             }
@@ -3350,7 +3553,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "DoorId"
                             },
@@ -3360,7 +3564,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Type"
                             },
@@ -3370,7 +3575,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "Winter_U_Value"
                             },
@@ -3380,7 +3586,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "StormDoorType"
                             },
@@ -3390,7 +3597,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "WidthFt"
                             },
@@ -3400,7 +3608,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "WidthIn"
                             },
@@ -3410,7 +3619,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "HeightFt"
                             },
@@ -3420,7 +3630,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "HeightIn"
                             },
@@ -3430,7 +3641,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Orientation"
                             },
@@ -3440,7 +3652,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -3450,7 +3663,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Description"
                             }
@@ -3480,7 +3694,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "WindowId"
                             },
@@ -3490,7 +3705,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "GlassType"
                             },
@@ -3500,7 +3716,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_9.9000"
                                 },
                                 "Key": "ShdCoeff"
                             },
@@ -3510,7 +3727,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_9.9000"
                                 },
                                 "Key": "U_Value"
                             },
@@ -3520,7 +3738,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "WallId"
                             },
@@ -3530,7 +3749,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Orientation"
                             },
@@ -3540,7 +3760,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_100"
                                 },
                                 "Key": "NumUnits"
                             },
@@ -3550,7 +3771,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "Area"
                             },
@@ -3560,7 +3782,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "WidthFt"
                             },
@@ -3570,7 +3793,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "WidthIn"
                             },
@@ -3580,7 +3804,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "HeightFt"
                             },
@@ -3590,7 +3815,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_0.98"
                                 },
                                 "Key": "HeightIn"
                             },
@@ -3600,7 +3826,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhSepFt"
                             },
@@ -3610,7 +3837,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhSepIn"
                             },
@@ -3620,7 +3848,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhDepthFt"
                             },
@@ -3630,7 +3859,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhDepthIn"
                             },
@@ -3640,7 +3870,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FrameType"
                             },
@@ -3650,7 +3881,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Storm"
                             },
@@ -3660,7 +3892,8 @@
                                 "Order": 19,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "ImpactResistant"
                             },
@@ -3670,7 +3903,8 @@
                                 "Order": 20,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "IntShd"
                             },
@@ -3680,7 +3914,8 @@
                                 "Order": 21,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string30"
                                 },
                                 "Key": "RoomName"
                             },
@@ -3690,6 +3925,7 @@
                                 "Order": 22,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
+                                    "Type": "String",
                                     "Name": ""
                                 },
                                 "Key": "Description"
