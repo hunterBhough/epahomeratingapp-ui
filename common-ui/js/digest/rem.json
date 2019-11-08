@@ -3423,7 +3423,7 @@
                               "IsLibraryAttribute": false
                           },
                           {
-                              "Name": "Total Leakage to Outside",
+                              "Name": "Leakage to Outside",
                               "DisplayLogic": "Display if <leakageInputType> = \"Total Leakage\"",
                               "Order": "9",
                               "ConnectedAttribute": true,
