@@ -348,6 +348,21 @@
                     "RaterVerified": true,
                     "NotApplicable": true
                 },
+                "Options": [
+                    {
+                        "Text": "Final Test",
+                        "Show": [
+                            "6.4.2-A"
+                        ]
+                    },
+                    {
+                        "Text": "Rough-in Test",
+                        "Show": [
+                            "6.4.1a-A",
+                            "6.4.1b-A"
+                        ]
+                    }
+                ],
                 "Sections": []
             },
             "6.5": {
@@ -444,6 +459,20 @@
                     "RaterVerified": true,
                     "NotApplicable": true
                 },
+                "Options": [
+                    {
+                        "Text": "Yes",
+                        "Show": [
+                            "7.7.1-A",
+                            "7.7.2-A",
+                            "7.7.3-A"
+                        ]
+                    },
+                    {
+                        "Text": "No",
+                        "Show": []
+                    }
+                ],
                 "Sections": []
             },
             "9.1": {
@@ -564,6 +593,32 @@
                     "RaterVerified": true,
                     "NotApplicable": true
                 },
+                "Options": [
+                    {
+                        "Text": "Advanced Framing",
+                        "Show": [
+                            "3.4.3a-A",
+                            "3.4.3b-A",
+                            "3.4.3c-A",
+                            "3.4.3d-A",
+                            "3.4.3e-A",
+                            "3.4.3e-B"
+                        ]
+                    },
+                    {
+                        "Text": "Continuous Insulation",
+                        "Show": [
+                            "3.4.1-A",
+                            "3.4.1-B"
+                        ]
+                    },
+                    {
+                        "Text": "Advanced Assembly",
+                        "Show": [
+                            "3.4.2-A"
+                        ]
+                    }
+                ],
                 "Sections": []
             },
             "3.4.3b": {
@@ -734,7 +789,7 @@
                 },
                 "Sections": []
             },
-            "BE 1": {
+            "BE 1a": {
                 "Type": "MRF",
                 "RatingType": "hers",
                 "Shorthand": "Architectural characteristics match proposed design",
@@ -756,7 +811,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99"
                                 },
                                 "Key": "numStories"
                             },
@@ -766,7 +822,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "floorArea"
                             },
@@ -776,7 +833,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "occupancy"
                                 },
                                 "Key": "occupancy"
                             },
@@ -786,7 +844,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99"
                                 },
                                 "Key": "estarOccupancy"
                             },
@@ -796,7 +855,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99"
                                 },
                                 "Key": "aboveGradeCondArea"
                             },
@@ -806,7 +866,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "belowGradeCondArea"
                             },
@@ -816,7 +877,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99"
                                 },
                                 "Key": "condVolume"
                             },
@@ -826,8 +888,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Type": "YYYY",
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "bedrooms"
                             },
@@ -837,361 +899,10 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPPROJ",
                                 "DataType": {
-                                    "Type": "MM/DD/YYYY",
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "constructYear"
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Garage",
-                        "EmptyTableText": "No garage modeled",
-                        "Key": "Garages",
-                        "Columns": [
-                            {
-                                "Name": "Garage Length (ft)",
-                                "DisplayLogic": "Display",
-                                "Order": 1,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "MyLength"
-                            },
-                            {
-                                "Name": "Garage Width (ft)",
-                                "DisplayLogic": "Display",
-                                "Order": 2,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "MyWidth"
-                            },
-                            {
-                                "Name": "Exposed Wall Perimeter (ft)",
-                                "DisplayLogic": "Display",
-                                "Order": 3,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "MyWallPerimeter"
-                            },
-                            {
-                                "Name": "Avg. Wall Height (ft)",
-                                "DisplayLogic": "Display",
-                                "Order": 4,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "MyAvgWallHeight"
-                            },
-                            {
-                                "Name": "Exposed Wall R-value",
-                                "DisplayLogic": "Display",
-                                "Order": 5,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "MyExpWallInsulation"
-                            },
-                            {
-                                "Name": "Garage Belongs to This Unit",
-                                "DisplayLogic": "Display",
-                                "Order": 6,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "MyGarage"
-                            },
-                            {
-                                "Name": "Neighbor's Garage is adjacent",
-                                "DisplayLogic": "Display",
-                                "Order": 7,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TheirLength"
-                            },
-                            {
-                                "Name": "Garage Length (ft) (Neighbor or Common)",
-                                "DisplayLogic": "Display",
-                                "Order": 8,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TheirWidth"
-                            },
-                            {
-                                "Name": "Garage Width (ft) (Neighbor or Common)",
-                                "DisplayLogic": "Display",
-                                "Order": 9,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TheirWallPerimeter"
-                            },
-                            {
-                                "Name": "Exposed Wall Perimeter (ft) (Neighbor or Common)",
-                                "DisplayLogic": "Display",
-                                "Order": 10,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TheirAvgWallHeight"
-                            },
-                            {
-                                "Name": "Avg. Wall Height (ft) (Neighbor or Common)",
-                                "DisplayLogic": "Display",
-                                "Order": 11,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TheirExpWallInsulation"
-                            },
-                            {
-                                "Name": "Exposed Wall R-value (Neighbor or Common)",
-                                "DisplayLogic": "Display",
-                                "Order": 12,
-                                "ConnectedAttribute": "TEMPGARAGE",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TheirGarage"
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "HVAC Blocks",
-                        "EmptyTableText": "No HVAC blocks modeled",
-                        "Key": "HvacBlocks",
-                        "Columns": [
-                            {
-                                "Name": "Block ID",
-                                "DisplayLogic": "Display",
-                                "Order": 1,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "BlockId"
-                            },
-                            {
-                                "Name": "Block Name",
-                                "DisplayLogic": "Display",
-                                "Order": 2,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Name"
-                            },
-                            {
-                                "Name": "Block Volume",
-                                "DisplayLogic": "Display",
-                                "Order": 3,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Volume"
-                            },
-                            {
-                                "Name": "Block Area",
-                                "DisplayLogic": "Display",
-                                "Order": 4,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Area"
-                            },
-                            {
-                                "Name": "Cooled",
-                                "DisplayLogic": "Display",
-                                "Order": 5,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Cooled"
-                            },
-                            {
-                                "Name": "Heated",
-                                "DisplayLogic": "Display",
-                                "Order": 6,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Heated"
-                            },
-                            {
-                                "Name": "Heated Block Area",
-                                "DisplayLogic": "Display",
-                                "Order": 7,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "HeatedBlockArea"
-                            },
-                            {
-                                "Name": "Cooled Block Area",
-                                "DisplayLogic": "Display",
-                                "Order": 8,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "CooledBlockArea"
-                            },
-                            {
-                                "Name": "Heated Block Volume",
-                                "DisplayLogic": "Display",
-                                "Order": 9,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "HeatedBlockVolume"
-                            },
-                            {
-                                "Name": "Cooled Block Volume",
-                                "DisplayLogic": "Display",
-                                "Order": 10,
-                                "ConnectedAttribute": "TEMPBLOCK",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "CooledBlockVolume"
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Rooms",
-                        "EmptyTableText": "No rooms modeled",
-                        "Key": "Rooms",
-                        "Columns": [
-                            {
-                                "Name": "Room Name",
-                                "DisplayLogic": "Display",
-                                "Order": 1,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "RoomName"
-                            },
-                            {
-                                "Name": "Block",
-                                "DisplayLogic": "Display",
-                                "Order": 2,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "BlockName"
-                            },
-                            {
-                                "Name": "Comments",
-                                "DisplayLogic": "Display",
-                                "Order": 3,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Comments"
-                            },
-                            {
-                                "Name": "Occupants",
-                                "DisplayLogic": "Display",
-                                "Order": 4,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "NumOccupants"
-                            },
-                            {
-                                "Name": "Kitchen",
-                                "DisplayLogic": "Display",
-                                "Order": 5,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "KitchenZone"
-                            },
-                            {
-                                "Name": "Basement",
-                                "DisplayLogic": "Display",
-                                "Order": 6,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "BasementRoom"
-                            },
-                            {
-                                "Name": "Conditioned",
-                                "DisplayLogic": "Display",
-                                "Order": 7,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Conditioned"
-                            },
-                            {
-                                "Name": "Finished",
-                                "DisplayLogic": "Display",
-                                "Order": 8,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Finished"
-                            },
-                            {
-                                "Name": "Floor Area",
-                                "DisplayLogic": "Display",
-                                "Order": 9,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "RoomArea"
-                            },
-                            {
-                                "Name": "Average Wall Height",
-                                "DisplayLogic": "Display",
-                                "Order": 10,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "AveWallHeight"
-                            },
-                            {
-                                "Name": "Bedrooms",
-                                "DisplayLogic": "Display",
-                                "Order": 11,
-                                "ConnectedAttribute": "TEMPROOM",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "NumBedrooms"
                             }
                         ]
                     }
@@ -1207,126 +918,7 @@
                     "RaterVerified": true,
                     "NotApplicable": true
                 },
-                "Sections": [
-                    {
-                        "Name": "Infiltration",
-                        "EmptyTableText": "No infiltration modeled",
-                        "Key": "TempNaturalINFLRecords",
-                        "Columns": [
-                            {
-                                "Name": "Test Date",
-                                "DisplayLogic": "Display",
-                                "Order": 1,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Type": "DD/MM/YYYY",
-                                    "Name": ""
-                                },
-                                "Key": "TestDate"
-                            },
-                            {
-                                "Name": "Single-Point Flow (cfm)",
-                                "DisplayLogic": "Display",
-                                "Order": 2,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "SinglePointFlow"
-                            },
-                            {
-                                "Name": "Single-Point Pressure (pa)",
-                                "DisplayLogic": "Display",
-                                "Order": 3,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "SinglePointPressure"
-                            },
-                            {
-                                "Name": "Site Ambient Temp (F)",
-                                "DisplayLogic": "Display",
-                                "Order": 4,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "SiteAmbientTemp"
-                            },
-                            {
-                                "Name": "Indoor Temp (F)",
-                                "DisplayLogic": "Display",
-                                "Order": 5,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "IndoorTemp"
-                            },
-                            {
-                                "Name": "Site Elevation (ft)",
-                                "DisplayLogic": "Display",
-                                "Order": 6,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "SiteElevation"
-                            },
-                            {
-                                "Name": "Base Pressure (Pa)",
-                                "DisplayLogic": "Display",
-                                "Order": 7,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "BasePressure"
-                            },
-                            {
-                                "Name": "Pressure/Depressure",
-                                "DisplayLogic": "Display",
-                                "Order": 8,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "PressureDepressure"
-                            },
-                            {
-                                "Name": "Building Pressure",
-                                "DisplayLogic": "Display",
-                                "Order": 9,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "BuildingPressure"
-                            },
-                            {
-                                "Name": "Altitude and temp. adjustment made by:",
-                                "DisplayLogic": "Display",
-                                "Order": 10,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "AltitudeTempAdjustment"
-                            },
-                            {
-                                "Name": "10% Single-Point penalty was added by:",
-                                "DisplayLogic": "Display",
-                                "Order": 11,
-                                "ConnectedAttribute": "TEMPNATURALINFL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TenPercentSinglePointPenalty"
-                            }
-                        ]
-                    }
-                ]
+                "Sections": []
             },
             "BE 12": {
                 "Type": "MRF",
@@ -1350,7 +942,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "HvacID"
                             },
@@ -1360,7 +953,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CoolingSystemServed"
                             },
@@ -1370,7 +964,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "HeatingSystemServed"
                             },
@@ -1380,7 +975,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FloorAreaServed"
                             },
@@ -1390,7 +986,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "cfm25"
                                 },
                                 "Key": "TestedCFM25Out"
                             },
@@ -1400,7 +997,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_99999.9"
                                 },
                                 "Key": "TestedCFM25Total"
                             },
@@ -1410,7 +1008,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AHUInstalledAtTest"
                             },
@@ -1420,7 +1019,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "NumberOfReturns"
                             },
@@ -1430,7 +1030,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "FactorySealedAHU"
                                 },
                                 "Key": "FactorySealedAHU"
                             },
@@ -1440,7 +1041,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AirHandlerLocation"
                             },
@@ -1450,7 +1052,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "SupplyDuctRValue"
                             },
@@ -1460,7 +1063,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "ReturnDuctRValue"
                             },
@@ -1470,7 +1074,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "cfm25"
                                 },
                                 "Key": "SupplyDuctArea"
                             },
@@ -1480,7 +1085,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "cfm25"
                                 },
                                 "Key": "ReturnDuctArea"
                             },
@@ -1490,7 +1096,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SupplyDuctLocation"
                             },
@@ -1500,7 +1107,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "ReturnDuctLocation"
                             },
@@ -1510,7 +1118,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             },
@@ -1520,7 +1129,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPDUCT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CombinedHVACSystem"
                             }
@@ -1528,10 +1138,10 @@
                     }
                 ]
             },
-            "BE 13": {
+            "BE 13a": {
                 "Type": "MRF",
                 "RatingType": "hers",
-                "Shorthand": "Heating and cooling equipment matches proposed design",
+                "Shorthand": "Heating equipment matches proposed design",
                 "ResponseOptions": {
                     "MustCorrect": true,
                     "BuilderVerified": false,
@@ -1550,7 +1160,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "HvacID"
                             },
@@ -1560,7 +1171,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Type"
                             },
@@ -1570,7 +1182,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SubType"
                             },
@@ -1580,7 +1193,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "FuelType"
                             },
@@ -1590,7 +1204,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "Capacity"
                             },
@@ -1600,7 +1215,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "Efficiency"
                             },
@@ -1610,7 +1226,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Ductless"
                             },
@@ -1620,7 +1237,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AHRI"
                             },
@@ -1630,7 +1248,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Manufacturer"
                             },
@@ -1640,7 +1259,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "OutdoorModelNumber"
                             },
@@ -1650,7 +1270,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "IndoorModelNumber"
                             },
@@ -1660,7 +1281,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             },
@@ -1670,7 +1292,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "BlockServed"
                             },
@@ -1680,155 +1303,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPHEAT",
                                 "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "CombinedHVACSystem"
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Cooling Equipment",
-                        "EmptyTableText": "No cooling equipment modeled",
-                        "Key": "TempCoolRecords",
-                        "Columns": [
-                            {
-                                "Name": "HVAC ID",
-                                "DisplayLogic": "Display",
-                                "Order": 1,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "HvacID"
-                            },
-                            {
-                                "Name": "Type",
-                                "DisplayLogic": "Display",
-                                "Order": 2,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Type"
-                            },
-                            {
-                                "Name": "SubType",
-                                "DisplayLogic": "Display",
-                                "Order": 3,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "SubType"
-                            },
-                            {
-                                "Name": "Capacity",
-                                "DisplayLogic": "Display",
-                                "Order": 4,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Capacity"
-                            },
-                            {
-                                "Name": "Efficiency",
-                                "DisplayLogic": "Display",
-                                "Order": 5,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Efficiency"
-                            },
-                            {
-                                "Name": "SHR",
-                                "DisplayLogic": "Display",
-                                "Order": 6,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "SHR"
-                            },
-                            {
-                                "Name": "Ductless",
-                                "DisplayLogic": "Display",
-                                "Order": 7,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Ductless"
-                            },
-                            {
-                                "Name": "AHRI",
-                                "DisplayLogic": "Display",
-                                "Order": 8,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Type": "This should only allow digits in this field.",
-                                    "Name": ""
-                                },
-                                "Key": "AHRI"
-                            },
-                            {
-                                "Name": "Manufacturer",
-                                "DisplayLogic": "Display",
-                                "Order": 9,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Manufacturer"
-                            },
-                            {
-                                "Name": "Outdoor Model Number",
-                                "DisplayLogic": "Display",
-                                "Order": 10,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "OutdoorModelNumber"
-                            },
-                            {
-                                "Name": "Indoor Model Number",
-                                "DisplayLogic": "Display",
-                                "Order": 11,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "IndoorModelNumber"
-                            },
-                            {
-                                "Name": "Comment",
-                                "DisplayLogic": "Display",
-                                "Order": 12,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Comment"
-                            },
-                            {
-                                "Name": "Block Served",
-                                "DisplayLogic": "Display",
-                                "Order": 13,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "BlockServed"
-                            },
-                            {
-                                "Name": "Combined HVAC system",
-                                "DisplayLogic": "Display",
-                                "Order": 14,
-                                "ConnectedAttribute": "TEMPCOOL",
-                                "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "CombinedHVACSystem"
                             }
@@ -1858,7 +1334,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Type"
                             },
@@ -1868,7 +1345,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "SubType"
                             },
@@ -1878,7 +1356,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "Capacity"
                             },
@@ -1888,7 +1367,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "UseEForUEF"
                                 },
                                 "Key": "UseEForUEF"
                             },
@@ -1898,7 +1378,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "EF"
                             },
@@ -1908,7 +1389,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "UEF"
                             },
@@ -1918,7 +1400,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Manufacturer"
                             },
@@ -1928,7 +1411,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "ModelNumber"
                             },
@@ -1938,7 +1422,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Location"
                             },
@@ -1948,7 +1433,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -1978,7 +1464,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_99999.9"
                                 },
                                 "Key": "PipeLength"
                             },
@@ -1988,7 +1475,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "PipeInsulation"
                                 },
                                 "Key": "PipeInsulation"
                             },
@@ -1998,7 +1486,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "FixtureFlow"
                                 },
                                 "Key": "FixtureFlow"
                             },
@@ -2008,7 +1497,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPH2O",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "HeatTrapInsulation"
                             }
@@ -2026,7 +1516,26 @@
                     "RaterVerified": true,
                     "NotApplicable": true
                 },
-                "Sections": []
+                "Sections": [
+                    {
+                        "Name": "Thermostats",
+                        "EmptyTableText": "No thermostats modeled",
+                        "Key": "Thermostats",
+                        "Columns": [
+                            {
+                                "Name": "Programmable?",
+                                "DisplayLogic": "DIsplay",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPTEMP",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "Programmable"
+                                },
+                                "Key": "Programmable"
+                            }
+                        ]
+                    }
+                ]
             },
             "BE 17": {
                 "Type": "MRF",
@@ -2060,7 +1569,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "TotalQualifyingLocations"
                             },
@@ -2070,7 +1580,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "TierIQualifyingFixtures"
                             },
@@ -2080,7 +1591,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "TierIIQualifyingFixtures"
                             },
@@ -2090,7 +1602,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLHARDWIREDLIGHTING",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2140,7 +1653,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLREFRIGERATORS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2150,7 +1664,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLREFRIGERATORS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2160,7 +1675,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLREFRIGERATORS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2178,7 +1694,69 @@
                     "RaterVerified": true,
                     "NotApplicable": true
                 },
-                "Sections": []
+                "Sections": [
+                    {
+                        "Name": "Dishwasher",
+                        "EmptyTableText": "No dishwasher modeled",
+                        "Key": "Dishwashers",
+                        "Columns": [
+                            {
+                                "Name": "Dishwasher ID",
+                                "DisplayLogic": "Display",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPTBLDISHWASHERS",
+                                "DataType": {
+                                    "Name": ""
+                                },
+                                "Key": "IDDishWasher"
+                            },
+                            {
+                                "Name": "Location",
+                                "DisplayLogic": "Display",
+                                "Order": 2,
+                                "ConnectedAttribute": "TEMPTBLDISHWASHERS",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Make"
+                            },
+                            {
+                                "Name": "Make",
+                                "DisplayLogic": "Display",
+                                "Order": 3,
+                                "ConnectedAttribute": "TEMPTBLDISHWASHERS",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Model"
+                            },
+                            {
+                                "Name": "Model",
+                                "DisplayLogic": "Display",
+                                "Order": 4,
+                                "ConnectedAttribute": "TEMPTBLDISHWASHERS",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "LocationAcronym"
+                            },
+                            {
+                                "Name": "Comment",
+                                "DisplayLogic": "Display",
+                                "Order": 5,
+                                "ConnectedAttribute": "TEMPTBLDISHWASHERS",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Comment"
+                            }
+                        ]
+                    }
+                ]
             },
             "BE 2": {
                 "Type": "MRF",
@@ -2202,7 +1780,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "FloorType"
                                 },
                                 "Key": "FloorType"
                             },
@@ -2212,7 +1791,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_99999.9"
                                 },
                                 "Key": "Area"
                             },
@@ -2222,7 +1802,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "R_Value"
                             },
@@ -2232,7 +1813,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "RfInsGrade"
                                 },
                                 "Key": "RfInsGrade"
                             },
@@ -2242,7 +1824,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99"
                                 },
                                 "Key": "RfFramingFraction"
                             },
@@ -2252,7 +1835,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "WallDepthBelowGrade"
                             },
@@ -2262,7 +1846,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_99999.9"
                                 },
                                 "Key": "Perimeter"
                             },
@@ -2272,7 +1857,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "SubType"
                                 },
                                 "Key": "SubType"
                             },
@@ -2282,7 +1868,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "CrawlInsulation"
                             },
@@ -2292,7 +1879,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "CsWallInsGrade"
                                 },
                                 "Key": "CsWallInsGrade"
                             },
@@ -2302,7 +1890,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "CrawlVented"
                                 },
                                 "Key": "CrawlVented"
                             },
@@ -2312,7 +1901,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "fogInsGrade"
                                 },
                                 "Key": "fogInsGrade"
                             },
@@ -2322,7 +1912,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "foosInsGrade"
                                 },
                                 "Key": "foosInsGrade"
                             },
@@ -2332,7 +1923,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "TileFrac"
                             },
@@ -2342,7 +1934,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "HardwoodFrac"
                             },
@@ -2352,7 +1945,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "CarpetFrac"
                             },
@@ -2362,7 +1956,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -2372,7 +1967,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPFLOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomUnderFloor"
                             }
@@ -2412,7 +2008,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Location"
                             },
@@ -2422,7 +2019,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2432,7 +2030,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2442,7 +2041,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLRANGEOVENS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2492,7 +2092,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESWASHERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2502,7 +2103,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESWASHERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2512,7 +2114,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESWASHERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2562,7 +2165,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESDRYERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2572,7 +2176,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESDRYERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2582,7 +2187,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLCLOTHESDRYERS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2622,7 +2228,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Location"
                             },
@@ -2632,7 +2239,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Make"
                             },
@@ -2642,7 +2250,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Model"
                             },
@@ -2652,7 +2261,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPTBLCEILINGFANS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Comment"
                             }
@@ -2660,7 +2270,7 @@
                     }
                 ]
             },
-            "BE 24": {
+            "BE 24a": {
                 "Type": "MRF",
                 "RatingType": "hers",
                 "Shorthand": "Whole-house mechanical ventilation systems match proposed design",
@@ -2682,9 +2292,10 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
-                                "Key": "MechventID"
+                                "Key": "SupplyRate"
                             },
                             {
                                 "Name": "Exhaust  Rate (cfm)",
@@ -2692,9 +2303,10 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
-                                "Key": "BlockServed"
+                                "Key": "ExhaustRate"
                             },
                             {
                                 "Name": "Sensible Efficiency (%)",
@@ -2702,9 +2314,10 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
-                                "Key": "MechanicalVentilationType"
+                                "Key": "SensibleEfficiency"
                             },
                             {
                                 "Name": "Latent Heat Recovery (%)",
@@ -2712,9 +2325,10 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
-                                "Key": "CoolingSystemServed"
+                                "Key": "LatentHeatRecovery"
                             },
                             {
                                 "Name": "Power (Watts)",
@@ -2722,9 +2336,10 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
-                                "Key": "HeatingSystemServed"
+                                "Key": "PowerWatts"
                             },
                             {
                                 "Name": "Runtime Fraction (%)",
@@ -2732,9 +2347,10 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
-                                "Key": "Comment"
+                                "Key": "RuntimeFraction"
                             },
                             {
                                 "Name": "Comment",
@@ -2742,8 +2358,10 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPMECHVENT",
                                 "DataType": {
-                                    "Name": ""
-                                }
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Comment"
                             }
                         ]
                     }
@@ -2783,7 +2401,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "PercentESLigting"
                             },
@@ -2793,7 +2412,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESRefridgerators"
                             },
@@ -2803,7 +2423,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESDishwashers"
                             },
@@ -2813,7 +2434,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESCeilingFans"
                             },
@@ -2823,7 +2445,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPRATE",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "NumberESExhaustFans"
                             }
@@ -2853,7 +2476,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "WallId"
                             },
@@ -2863,7 +2487,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "Orientation"
                                 },
                                 "Key": "Orientation"
                             },
@@ -2873,7 +2498,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "WallType"
                                 },
                                 "Key": "WallType"
                             },
@@ -2883,7 +2509,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "R_Value"
                             },
@@ -2893,7 +2520,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "Exterior_R_Value"
                             },
@@ -2903,7 +2531,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "InsGrade"
                                 },
                                 "Key": "InsGrade"
                             },
@@ -2913,7 +2542,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "FilledCore"
                                 },
                                 "Key": "FilledCore"
                             },
@@ -2923,7 +2553,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "cfm25"
                                 },
                                 "Key": "Area"
                             },
@@ -2933,7 +2564,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "WidthFt"
                             },
@@ -2943,7 +2575,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "WidthIn"
                             },
@@ -2953,7 +2586,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "HeightFt"
                             },
@@ -2963,7 +2597,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "HeightIn"
                             },
@@ -2973,7 +2608,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_100.0"
                                 },
                                 "Key": "BelowGradePCT"
                             },
@@ -2983,7 +2619,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "AdjacentTo"
                                 },
                                 "Key": "AdjacentTo"
                             },
@@ -2993,7 +2630,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "FramingFraction"
                             },
@@ -3003,7 +2641,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "SolarAbsorptance"
                             },
@@ -3013,7 +2652,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -3023,7 +2663,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AdjacentRoomName"
                             },
@@ -3033,7 +2674,8 @@
                                 "Order": 19,
                                 "ConnectedAttribute": "TEMPWALL",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Description"
                             }
@@ -3041,10 +2683,10 @@
                     }
                 ]
             },
-            "BE 4": {
+            "BE 4a": {
                 "Type": "MRF",
                 "RatingType": "hers",
-                "Shorthand": "Roof / ceiling assemblies match proposed design",
+                "Shorthand": "Roof assemblies match proposed design",
                 "ResponseOptions": {
                     "MustCorrect": true,
                     "BuilderVerified": false,
@@ -3063,7 +2705,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoofConfig"
                             },
@@ -3073,7 +2716,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AtticDescription"
                             },
@@ -3083,7 +2727,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "RadiantBarrier"
                                 },
                                 "Key": "RadiantBarrier"
                             },
@@ -3093,7 +2738,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "RoofDeckInsulation"
                             },
@@ -3103,7 +2749,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "RoofDeckInsGrade"
                                 },
                                 "Key": "RoofDeckInsGrade"
                             },
@@ -3113,7 +2760,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoofMaterial"
                             },
@@ -3123,7 +2771,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "RoofColor"
                                 },
                                 "Key": "RoofColor"
                             },
@@ -3133,7 +2782,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "SolarAbsorptance"
                             },
@@ -3143,7 +2793,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "Emmitance"
                             },
@@ -3153,7 +2804,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "FramingFraction"
                             },
@@ -3163,7 +2815,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "AtticFloorArea"
                             },
@@ -3173,7 +2826,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "RoofPitch"
                             },
@@ -3183,7 +2837,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "IRRC"
                             },
@@ -3193,136 +2848,10 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPROOF",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "AtticVented"
-                            }
-                        ]
-                    },
-                    {
-                        "Name": "Ceiling",
-                        "EmptyTableText": "No ceilings modeled",
-                        "Key": "Ceilings",
-                        "Columns": [
-                            {
-                                "Name": "Type",
-                                "DisplayLogic": "Display",
-                                "Order": 1,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Type"
-                            },
-                            {
-                                "Name": "Net Area",
-                                "DisplayLogic": "Display",
-                                "Order": 2,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Area"
-                            },
-                            {
-                                "Name": "Width",
-                                "DisplayLogic": "Display",
-                                "Order": 3,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Width"
-                            },
-                            {
-                                "Name": "Length",
-                                "DisplayLogic": "Display",
-                                "Order": 4,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Length"
-                            },
-                            {
-                                "Name": "R-Value",
-                                "DisplayLogic": "Display",
-                                "Order": 5,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "R_Value"
-                            },
-                            {
-                                "Name": "Insulation Grade",
-                                "DisplayLogic": "Display",
-                                "Order": 6,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "InsGrade"
-                            },
-                            {
-                                "Name": "Insulation Type",
-                                "DisplayLogic": "Display",
-                                "Order": 7,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "InsType"
-                            },
-                            {
-                                "Name": "Insulation Over Top Plate",
-                                "DisplayLogic": "Display",
-                                "Order": 8,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "CavityFilled"
-                            },
-                            {
-                                "Name": "Trusses",
-                                "DisplayLogic": "Display",
-                                "Order": 9,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "TrussType"
-                            },
-                            {
-                                "Name": "Framing Fraction",
-                                "DisplayLogic": "Display",
-                                "Order": 10,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "FramingFraction"
-                            },
-                            {
-                                "Name": "Space Name",
-                                "DisplayLogic": "Display",
-                                "Order": 11,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "RoomName"
-                            },
-                            {
-                                "Name": "Comment",
-                                "DisplayLogic": "Display",
-                                "Order": 12,
-                                "ConnectedAttribute": "TEMPCEIL",
-                                "DataType": {
-                                    "Name": ""
-                                },
-                                "Key": "Description"
                             }
                         ]
                     }
@@ -3350,7 +2879,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
                                 },
                                 "Key": "DoorId"
                             },
@@ -3360,7 +2890,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "Type"
                                 },
                                 "Key": "Type"
                             },
@@ -3370,7 +2901,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
                                 },
                                 "Key": "Winter_U_Value"
                             },
@@ -3380,7 +2912,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "StormDoorType"
                                 },
                                 "Key": "StormDoorType"
                             },
@@ -3390,7 +2923,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "WidthFt"
                             },
@@ -3400,7 +2934,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "WidthIn"
                             },
@@ -3410,7 +2945,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "HeightFt"
                             },
@@ -3420,7 +2956,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "HeightIn"
                             },
@@ -3430,7 +2967,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Orientation"
                             },
@@ -3440,7 +2978,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "RoomName"
                             },
@@ -3450,7 +2989,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPDOOR",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "Description"
                             }
@@ -3480,7 +3020,8 @@
                                 "Order": 1,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string20"
                                 },
                                 "Key": "WindowId"
                             },
@@ -3490,7 +3031,8 @@
                                 "Order": 2,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "GlassType"
                                 },
                                 "Key": "GlassType"
                             },
@@ -3500,7 +3042,8 @@
                                 "Order": 3,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_9.990"
                                 },
                                 "Key": "ShdCoeff"
                             },
@@ -3510,7 +3053,8 @@
                                 "Order": 4,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_9.990"
                                 },
                                 "Key": "U_Value"
                             },
@@ -3520,7 +3064,8 @@
                                 "Order": 5,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "WallId"
                             },
@@ -3530,7 +3075,8 @@
                                 "Order": 6,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "Orientation"
                                 },
                                 "Key": "Orientation"
                             },
@@ -3540,7 +3086,8 @@
                                 "Order": 7,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_100"
                                 },
                                 "Key": "NumUnits"
                             },
@@ -3550,7 +3097,8 @@
                                 "Order": 8,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "Area"
                             },
@@ -3560,7 +3108,8 @@
                                 "Order": 9,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "WidthFt"
                             },
@@ -3570,7 +3119,8 @@
                                 "Order": 10,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "WidthIn"
                             },
@@ -3580,7 +3130,8 @@
                                 "Order": 11,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "HeightFt"
                             },
@@ -3590,7 +3141,8 @@
                                 "Order": 12,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
                                 },
                                 "Key": "HeightIn"
                             },
@@ -3600,7 +3152,8 @@
                                 "Order": 13,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhSepFt"
                             },
@@ -3610,7 +3163,8 @@
                                 "Order": 14,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhSepIn"
                             },
@@ -3620,7 +3174,8 @@
                                 "Order": 15,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhDepthFt"
                             },
@@ -3630,7 +3185,8 @@
                                 "Order": 16,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "Integer",
+                                    "Name": "int_999"
                                 },
                                 "Key": "OhDepthIn"
                             },
@@ -3640,7 +3196,8 @@
                                 "Order": 17,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "FrameType"
                                 },
                                 "Key": "FrameType"
                             },
@@ -3650,7 +3207,8 @@
                                 "Order": 18,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "Storm"
                                 },
                                 "Key": "Storm"
                             },
@@ -3660,7 +3218,8 @@
                                 "Order": 19,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "ImpactResistant"
                                 },
                                 "Key": "ImpactResistant"
                             },
@@ -3670,7 +3229,8 @@
                                 "Order": 20,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "ENUM",
+                                    "Name": "IntShd"
                                 },
                                 "Key": "IntShd"
                             },
@@ -3680,7 +3240,8 @@
                                 "Order": 21,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
-                                    "Name": ""
+                                    "Type": "String",
+                                    "Name": "string30"
                                 },
                                 "Key": "RoomName"
                             },
@@ -3690,6 +3251,7 @@
                                 "Order": 22,
                                 "ConnectedAttribute": "TEMPWINS",
                                 "DataType": {
+                                    "Type": "String",
                                     "Name": ""
                                 },
                                 "Key": "Description"
@@ -3781,6 +3343,841 @@
                     "NotApplicable": false
                 },
                 "Sections": []
+            },
+            "BE 1b": {
+                "Type": "MRF",
+                "RatingType": "hers",
+                "Shorthand": "Garages match proposed design",
+                "ResponseOptions": {
+                    "MustCorrect": true,
+                    "BuilderVerified": false,
+                    "RaterVerified": true,
+                    "NotApplicable": false
+                },
+                "Sections": [
+                    {
+                        "Name": "Garage",
+                        "EmptyTableText": "No garage modeled",
+                        "Key": "Garages",
+                        "Columns": [
+                            {
+                                "Name": "Garage Length (ft)",
+                                "DisplayLogic": "Display",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "MyLength"
+                            },
+                            {
+                                "Name": "Garage Width (ft)",
+                                "DisplayLogic": "Display",
+                                "Order": 2,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "MyWidth"
+                            },
+                            {
+                                "Name": "Exposed Wall Perimeter (ft)",
+                                "DisplayLogic": "Display",
+                                "Order": 3,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "MyWallPerimeter"
+                            },
+                            {
+                                "Name": "Avg. Wall Height (ft)",
+                                "DisplayLogic": "Display",
+                                "Order": 4,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "MyAvgWallHeight"
+                            },
+                            {
+                                "Name": "Exposed Wall R-value",
+                                "DisplayLogic": "Display",
+                                "Order": 5,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "MyExpWallInsulation"
+                            },
+                            {
+                                "Name": "Garage Belongs to This Unit",
+                                "DisplayLogic": "Display",
+                                "Order": 6,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "MyGarage"
+                                },
+                                "Key": "MyGarage"
+                            },
+                            {
+                                "Name": "Neighbor's Garage is adjacent",
+                                "DisplayLogic": "Display",
+                                "Order": 7,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "TheirLength"
+                                },
+                                "Key": "TheirLength"
+                            },
+                            {
+                                "Name": "Garage Length (ft) (Neighbor or Common)",
+                                "DisplayLogic": "Display",
+                                "Order": 8,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "TheirWidth"
+                            },
+                            {
+                                "Name": "Garage Width (ft) (Neighbor or Common)",
+                                "DisplayLogic": "Display",
+                                "Order": 9,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "TheirWallPerimeter"
+                            },
+                            {
+                                "Name": "Exposed Wall Perimeter (ft) (Neighbor or Common)",
+                                "DisplayLogic": "Display",
+                                "Order": 10,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "TheirAvgWallHeight"
+                            },
+                            {
+                                "Name": "Avg. Wall Height (ft) (Neighbor or Common)",
+                                "DisplayLogic": "Display",
+                                "Order": 11,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "TheirExpWallInsulation"
+                            },
+                            {
+                                "Name": "Exposed Wall R-value (Neighbor or Common)",
+                                "DisplayLogic": "Display",
+                                "Order": 12,
+                                "ConnectedAttribute": "TEMPGARAGE",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "TheirGarage"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "BE 1c": {
+                "Type": "MRF",
+                "RatingType": "hers",
+                "Shorthand": "HVAC Blocks match proposed design",
+                "ResponseOptions": {
+                    "MustCorrect": true,
+                    "BuilderVerified": false,
+                    "RaterVerified": true,
+                    "NotApplicable": false
+                },
+                "Sections": [
+                    {
+                        "Name": "HVAC Blocks",
+                        "EmptyTableText": "No HVAC blocks modeled",
+                        "Key": "HvacBlocks",
+                        "Columns": [
+                            {
+                                "Name": "Block ID",
+                                "DisplayLogic": "Display",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "BlockId"
+                            },
+                            {
+                                "Name": "Block Name",
+                                "DisplayLogic": "Display",
+                                "Order": 2,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Name"
+                            },
+                            {
+                                "Name": "Block Volume",
+                                "DisplayLogic": "Display",
+                                "Order": 3,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "Volume"
+                            },
+                            {
+                                "Name": "Block Area",
+                                "DisplayLogic": "Display",
+                                "Order": 4,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "Area"
+                            },
+                            {
+                                "Name": "Cooled",
+                                "DisplayLogic": "Display",
+                                "Order": 5,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Cooled"
+                            },
+                            {
+                                "Name": "Heated",
+                                "DisplayLogic": "Display",
+                                "Order": 6,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Heated"
+                            },
+                            {
+                                "Name": "Heated Block Area",
+                                "DisplayLogic": "Display",
+                                "Order": 7,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "HeatedBlockArea"
+                            },
+                            {
+                                "Name": "Cooled Block Area",
+                                "DisplayLogic": "Display",
+                                "Order": 8,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "CooledBlockArea"
+                            },
+                            {
+                                "Name": "Heated Block Volume",
+                                "DisplayLogic": "Display",
+                                "Order": 9,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "HeatedBlockVolume"
+                            },
+                            {
+                                "Name": "Cooled Block Volume",
+                                "DisplayLogic": "Display",
+                                "Order": 10,
+                                "ConnectedAttribute": "TEMPBLOCK",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "CooledBlockVolume"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "BE 1d": {
+                "Type": "MRF",
+                "RatingType": "hers",
+                "Shorthand": "Rooms match proposed design",
+                "ResponseOptions": {
+                    "MustCorrect": true,
+                    "BuilderVerified": false,
+                    "RaterVerified": true,
+                    "NotApplicable": false
+                },
+                "Sections": [
+                    {
+                        "Name": "Rooms",
+                        "EmptyTableText": "No rooms modeled",
+                        "Key": "Rooms",
+                        "Columns": [
+                            {
+                                "Name": "Room Name",
+                                "DisplayLogic": "Display",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "RoomName"
+                            },
+                            {
+                                "Name": "Block",
+                                "DisplayLogic": "Display",
+                                "Order": 2,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "BlockName"
+                            },
+                            {
+                                "Name": "Comments",
+                                "DisplayLogic": "Display",
+                                "Order": 3,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Comments"
+                            },
+                            {
+                                "Name": "Occupants",
+                                "DisplayLogic": "Display",
+                                "Order": 4,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "NumOccupants"
+                            },
+                            {
+                                "Name": "Kitchen",
+                                "DisplayLogic": "Display",
+                                "Order": 5,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "KitchenZone"
+                                },
+                                "Key": "KitchenZone"
+                            },
+                            {
+                                "Name": "Basement",
+                                "DisplayLogic": "Display",
+                                "Order": 6,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "BasementRoom"
+                            },
+                            {
+                                "Name": "Conditioned",
+                                "DisplayLogic": "Display",
+                                "Order": 7,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "Conditioned"
+                                },
+                                "Key": "Conditioned"
+                            },
+                            {
+                                "Name": "Finished",
+                                "DisplayLogic": "Display",
+                                "Order": 8,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Finished"
+                            },
+                            {
+                                "Name": "Floor Area",
+                                "DisplayLogic": "Display",
+                                "Order": 9,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "RoomArea"
+                            },
+                            {
+                                "Name": "Average Wall Height",
+                                "DisplayLogic": "Display",
+                                "Order": 10,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "AveWallHeight"
+                            },
+                            {
+                                "Name": "Bedrooms",
+                                "DisplayLogic": "Display",
+                                "Order": 11,
+                                "ConnectedAttribute": "TEMPROOM",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "NumBedrooms"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "BE 13b": {
+                "Type": "MRF",
+                "RatingType": "hers",
+                "Shorthand": "Cooling equipment matches proposed design",
+                "ResponseOptions": {
+                    "MustCorrect": true,
+                    "BuilderVerified": false,
+                    "RaterVerified": true,
+                    "NotApplicable": true
+                },
+                "Sections": [
+                    {
+                        "Name": "Cooling Equipment",
+                        "EmptyTableText": "No cooling equipment modeled",
+                        "Key": "TempCoolRecords",
+                        "Columns": [
+                            {
+                                "Name": "HVAC ID",
+                                "DisplayLogic": "Display",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "HvacID"
+                            },
+                            {
+                                "Name": "Type",
+                                "DisplayLogic": "Display",
+                                "Order": 2,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Type"
+                            },
+                            {
+                                "Name": "SubType",
+                                "DisplayLogic": "Display",
+                                "Order": 3,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "SubType"
+                            },
+                            {
+                                "Name": "Capacity",
+                                "DisplayLogic": "Display",
+                                "Order": 4,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "Capacity"
+                            },
+                            {
+                                "Name": "Efficiency",
+                                "DisplayLogic": "Display",
+                                "Order": 5,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_100"
+                                },
+                                "Key": "Efficiency"
+                            },
+                            {
+                                "Name": "SHR",
+                                "DisplayLogic": "Display",
+                                "Order": 6,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
+                                },
+                                "Key": "SHR"
+                            },
+                            {
+                                "Name": "Ductless",
+                                "DisplayLogic": "Display",
+                                "Order": 7,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Ductless"
+                            },
+                            {
+                                "Name": "AHRI",
+                                "DisplayLogic": "Display",
+                                "Order": 8,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "AHRI"
+                            },
+                            {
+                                "Name": "Manufacturer",
+                                "DisplayLogic": "Display",
+                                "Order": 9,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Manufacturer"
+                            },
+                            {
+                                "Name": "Outdoor Model Number",
+                                "DisplayLogic": "Display",
+                                "Order": 10,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "OutdoorModelNumber"
+                            },
+                            {
+                                "Name": "Indoor Model Number",
+                                "DisplayLogic": "Display",
+                                "Order": 11,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "IndoorModelNumber"
+                            },
+                            {
+                                "Name": "Comment",
+                                "DisplayLogic": "Display",
+                                "Order": 12,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Comment"
+                            },
+                            {
+                                "Name": "Block Served",
+                                "DisplayLogic": "Display",
+                                "Order": 13,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "BlockServed"
+                            },
+                            {
+                                "Name": "Combined HVAC system",
+                                "DisplayLogic": "Display",
+                                "Order": 14,
+                                "ConnectedAttribute": "TEMPCOOL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "CombinedHVACSystem"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "BE 4b": {
+                "Type": "MRF",
+                "RatingType": "hers",
+                "Shorthand": "Ceiling assemblies match proposed design",
+                "ResponseOptions": {
+                    "MustCorrect": true,
+                    "BuilderVerified": false,
+                    "RaterVerified": true,
+                    "NotApplicable": true
+                },
+                "Sections": [
+                    {
+                        "Name": "Ceiling",
+                        "EmptyTableText": "No ceilings modeled",
+                        "Key": "Ceilings",
+                        "Columns": [
+                            {
+                                "Name": "Type",
+                                "DisplayLogic": "Display",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Type"
+                            },
+                            {
+                                "Name": "Net Area",
+                                "DisplayLogic": "Display",
+                                "Order": 2,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "Area"
+                            },
+                            {
+                                "Name": "Width",
+                                "DisplayLogic": "Display",
+                                "Order": 3,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "Width"
+                            },
+                            {
+                                "Name": "Length",
+                                "DisplayLogic": "Display",
+                                "Order": 4,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_99999"
+                                },
+                                "Key": "Length"
+                            },
+                            {
+                                "Name": "R-Value",
+                                "DisplayLogic": "Display",
+                                "Order": 5,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_327.67"
+                                },
+                                "Key": "R_Value"
+                            },
+                            {
+                                "Name": "Insulation Grade",
+                                "DisplayLogic": "Display",
+                                "Order": 6,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "InsGrade"
+                                },
+                                "Key": "InsGrade"
+                            },
+                            {
+                                "Name": "Insulation Type",
+                                "DisplayLogic": "Display",
+                                "Order": 7,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "InsType"
+                                },
+                                "Key": "InsType"
+                            },
+                            {
+                                "Name": "Insulation Over Top Plate",
+                                "DisplayLogic": "Display",
+                                "Order": 8,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "CavityFilled"
+                            },
+                            {
+                                "Name": "Trusses",
+                                "DisplayLogic": "Display",
+                                "Order": 9,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "ENUM",
+                                    "Name": "TrussType"
+                                },
+                                "Key": "TrussType"
+                            },
+                            {
+                                "Name": "Framing Fraction",
+                                "DisplayLogic": "Display",
+                                "Order": 10,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "Decimal",
+                                    "Name": "decimal_1.00"
+                                },
+                                "Key": "FramingFraction"
+                            },
+                            {
+                                "Name": "Space Name",
+                                "DisplayLogic": "Display",
+                                "Order": 11,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "RoomName"
+                            },
+                            {
+                                "Name": "Comment",
+                                "DisplayLogic": "Display",
+                                "Order": 12,
+                                "ConnectedAttribute": "TEMPCEIL",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Description"
+                            }
+                        ]
+                    }
+                ]
+            },
+            "BE 24b": {
+                "Type": "MRF",
+                "RatingType": "hers",
+                "Shorthand": "Whole-house mechanical ventilation systems match proposed design",
+                "ResponseOptions": {
+                    "MustCorrect": true,
+                    "BuilderVerified": false,
+                    "RaterVerified": true,
+                    "NotApplicable": true
+                },
+                "Sections": [
+                    {
+                        "Name": "Air-Handler-Connected System",
+                        "EmptyTableText": "No whole-house mechanical ventilation system modeled",
+                        "Key": "WholeHouseMechanicalVentilationSystems",
+                        "Columns": [
+                            {
+                                "Name": "Supply  Rate (cfm)",
+                                "DisplayLogic": "Display",
+                                "Order": 1,
+                                "ConnectedAttribute": "TEMPMECHVENT",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "SupplyRate"
+                            },
+                            {
+                                "Name": "Minimum Runtime (minutes/hr)",
+                                "DisplayLogic": "Display",
+                                "Order": 2,
+                                "ConnectedAttribute": "TEMPMECHVENT",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "MinimumRuntime"
+                            },
+                            {
+                                "Name": "Maximum Runtime (minutes/hr)",
+                                "DisplayLogic": "Display",
+                                "Order": 3,
+                                "ConnectedAttribute": "TEMPMECHVENT",
+                                "DataType": {
+                                    "Type": "Integer",
+                                    "Name": "int_999"
+                                },
+                                "Key": "MaximumRuntime"
+                            },
+                            {
+                                "Name": "Cooling System Served",
+                                "DisplayLogic": "Display",
+                                "Order": 4,
+                                "ConnectedAttribute": "TEMPMECHVENT",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "CoolingSystemServed"
+                            },
+                            {
+                                "Name": "Heating System Served",
+                                "DisplayLogic": "Display",
+                                "Order": 5,
+                                "ConnectedAttribute": "TEMPMECHVENT",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "HeatingSystemServed"
+                            },
+                            {
+                                "Name": "Comment",
+                                "DisplayLogic": "Display",
+                                "Order": 6,
+                                "ConnectedAttribute": "TEMPMECHVENT",
+                                "DataType": {
+                                    "Type": "String",
+                                    "Name": "string20"
+                                },
+                                "Key": "Comment"
+                            }
+                        ]
+                    }
+                ]
             }
         },
         "Decimals": {
@@ -3978,9 +4375,210 @@
                 "minInclusive": 0,
                 "maxInclusive": 327.67,
                 "fractionDigits": 3
+            },
+            "testElevation": {
+                "minInclusive": -150,
+                "maxInclusive": 30000,
+                "fractionDigits": 0
+            },
+            "cfm25": {
+                "minInclusive": 0,
+                "maxInclusive": 65535,
+                "fractionDigits": 2
             }
         },
-        "Enums": {},
+        "Enums": {
+            "occupancy": {
+                "SINGLE-FAMILY_DETACHED": "Single-family detached",
+                "DUPLEX": "Duplex",
+                "TRIPLEX": "Triplex",
+                "QUADPLEX": "Quadplex",
+                "TOWNHOME": "Townhome",
+                "ROW_HOME": "Row home",
+                "CONDO/APT_IN_MULTI-FAMILY_BUILDING": "Condo/Apt in multi-family building"
+            },
+            "FactorySealedAHU": {
+                "Y": "Y",
+                "N": "N"
+            },
+            "UseEForUEF": {
+                "EF": "EF",
+                "UEF": "UEF"
+            },
+            "PipeInsulation": {
+                "NONE": "None",
+                "=>R-3": "=>R-3"
+            },
+            "FixtureFlow": {
+                "STANDARD": "Standard",
+                "LOW": "Low"
+            },
+            "Programmable": {
+                "Y": "Y",
+                "N": "N"
+            },
+            "FloorType": {
+                "SLAB-ON-GRADE_EDGE_INSULATION": "Slab-On-Grade Edge Insulation",
+                "SLAB-BELOW-GRADE": "Slab-Below-Grade",
+                "CRAWLSPACE": "Crawlspace",
+                "RAISED_FLOOR": "Raised Floor",
+                "FLOOR_OVER_GARAGE": "Floor over Garage",
+                "FLOOR_OVER_OTHER_SPACE": "Floor Over Other Space"
+            },
+            "RfInsGrade": {
+                "I": "I",
+                "II": "II",
+                "III": "III"
+            },
+            "SubType": {
+                "EXTERIOR_INSULATION": "Exterior insulation",
+                "INTERIOR_INSULATION": "Interior insulation",
+                "2_FT_PERIMETER_INSULATION": "2 ft perimeter insulation",
+                "EXT._INS._+_R5_2FT_HORIZONTAL": "Ext. ins. + R5 2ft horizontal",
+                "EXT._INS._+_R5_4FT_HORIZONTAL": "Ext. ins. + R5 4ft horizontal"
+            },
+            "CsWallInsGrade": {
+                "I": "I",
+                "II": "II",
+                "III": "III"
+            },
+            "CrawlVented": {
+                "Y": "Y",
+                "N": "N"
+            },
+            "fogInsGrade": {
+                "I": "I",
+                "II": "II",
+                "III": "III"
+            },
+            "foosInsGrade": {
+                "I": "I",
+                "II": "II",
+                "III": "III"
+            },
+            "Orientation": {
+                "N": "N",
+                "NE": "NE",
+                "E": "E",
+                "SE": "SE",
+                "S": "S",
+                "SW": "SW",
+                "W": "W",
+                "NW": "NW"
+            },
+            "WallType": {
+                "FRAME_-_WOOD": "Frame - Wood",
+                "FRAME_-_STEEL": "Frame - Steel",
+                "CONCRETE_BLOCK_-_INT_INSUL": "Concrete Block - Int Insul",
+                "CONCRETE_BLOCK_-_EXT_INSUL": "Concrete Block - Ext Insul",
+                "FACE_BRICK_-_WOOD": "Face Brick - Wood",
+                "FACE_BRICK_-_BLOCK": "Face Brick - Block",
+                "LOG_-_6_INCH": "Log - 6 inch",
+                "LOG_-_8_INCH": "Log - 8 inch",
+                "AUTOCLAVED_CONCRETE_BLOCK_-_INT_INSUL": "Autoclaved Concrete Block - Int Insul",
+                "AUTOCLAVED_CONCRETE_BLOCK_-_EXT_INSUL": "Autoclaved Concrete Block - Ext Insul",
+                "CONCRETE_BLOCK_-_POLYSTYRENE_BEAD_AGGREGATE": "Concrete Block - Polystyrene Bead Aggregate",
+                "INSULATED_CONCRETE_FORM": "Insulated Concrete Form",
+                "FACE_BRICK_-_STEEL": "Face Brick - Steel",
+                "CONCRETE_-_6_INCH": "Concrete - 6 inch"
+            },
+            "InsGrade": {
+                "I": "I",
+                "II": "II",
+                "III": "III"
+            },
+            "FilledCore": {
+                "Y": "Y",
+                "N": "N"
+            },
+            "AdjacentTo": {
+                "EXTERIOR": "Exterior",
+                "GARAGE": "Garage",
+                "NEIGHBOR": "Neighbor",
+                "INTERIOR": "Interior"
+            },
+            "RadiantBarrier": {
+                "Y": "Y",
+                "N": "N"
+            },
+            "RoofDeckInsGrade": {
+                "I": "I",
+                "II": "II",
+                "III": "III"
+            },
+            "RoofColor": {
+                "WHITE": "White",
+                "LIGHT": "Light",
+                "MEDIUM": "Medium",
+                "DARK": "Dark"
+            },
+            "Type": {
+                "WOOD": "Wood",
+                "INSULATED": "Insulated"
+            },
+            "StormDoorType": {
+                "NONE": "None",
+                "WOOD": "Wood",
+                "METAL": "Metal"
+            },
+            "GlassType": {
+                "SINGLE_(CLEAR)": "Single (Clear)",
+                "SINGLE_(TINTED)": "Single (Tinted)",
+                "DOUBLE_(CLEAR)": "Double (Clear)",
+                "DOUBLE_(TINTED)": "Double (Tinted)",
+                "TRIPLE_(CLEAR)": "Triple (Clear)",
+                "TRIPLE_(TINTED)": "Triple (Tinted)",
+                "LOW-E_SINGLE": "Low-E Single",
+                "LOW-E_DOUBLE": "Low-E Double",
+                "GLAZED_BLOCK": "Glazed Block"
+            },
+            "FrameType": {
+                "METAL": "Metal",
+                "TIM": "TIM",
+                "VINYL": "Vinyl",
+                "WOOD": "Wood",
+                "NONE": "None"
+            },
+            "Storm": {
+                "Y": "Y",
+                "N": "N"
+            },
+            "ImpactResistant": {
+                "Y": "Y",
+                "N": "N"
+            },
+            "IntShd": {
+                "NONE": "None",
+                "DRAPES/BLINDS": "Drapes/blinds",
+                "ROLLER_SHADE": "Roller shade",
+                "HERS_1999": "HERS 1999"
+            },
+            "MyGarage": {
+                "YES": "Yes",
+                "NO": "No"
+            },
+            "TheirLength": {
+                "YES": "Yes",
+                "NO": "No"
+            },
+            "KitchenZone": {
+                "YES": "Yes",
+                "NO": "No"
+            },
+            "Conditioned": {
+                "YES": "Yes",
+                "NO": "No"
+            },
+            "InsType": {
+                "BATT": "Batt",
+                "DOUBLE_BATT": "Double Batt",
+                "BLOWN": "Blown"
+            },
+            "TrussType": {
+                "WOOD": "Wood",
+                "METAL": "Metal"
+            }
+        },
         "Integers": {
             "int_99": {
                 "minInclusive": 0,
@@ -4057,157 +4655,173 @@
                 ],
                 "PreDrywall": [
                     {
-                        "checklistItemRef": "BE 1",
+                        "checklistItemRef": "BE 1a",
                         "order": 1
                     },
                     {
-                        "checklistItemRef": "BE 3",
+                        "checklistItemRef": "BE 1b",
                         "order": 2
                     },
                     {
-                        "checklistItemRef": "1.2",
+                        "checklistItemRef": "BE 1c",
                         "order": 3
                     },
                     {
-                        "checklistItemRef": "1.3",
+                        "checklistItemRef": "BE 1d",
                         "order": 4
                     },
                     {
-                        "checklistItemRef": "BE 7",
+                        "checklistItemRef": "BE 3",
                         "order": 5
                     },
                     {
-                        "checklistItemRef": "1.1",
+                        "checklistItemRef": "1.2",
                         "order": 6
                     },
                     {
-                        "checklistItemRef": "4.6",
+                        "checklistItemRef": "1.3",
                         "order": 7
                     },
                     {
-                        "checklistItemRef": "BE 6",
+                        "checklistItemRef": "BE 7",
                         "order": 8
                     },
                     {
-                        "checklistItemRef": "4.1",
+                        "checklistItemRef": "1.1",
                         "order": 9
                     },
                     {
-                        "checklistItemRef": "4.3",
+                        "checklistItemRef": "4.6",
                         "order": 10
                     },
                     {
-                        "checklistItemRef": "4.7",
+                        "checklistItemRef": "BE 6",
                         "order": 11
                     },
                     {
-                        "checklistItemRef": "4.8",
+                        "checklistItemRef": "4.1",
                         "order": 12
                     },
                     {
-                        "checklistItemRef": "2.2",
+                        "checklistItemRef": "4.3",
                         "order": 13
                     },
                     {
-                        "checklistItemRef": "2.4",
+                        "checklistItemRef": "4.7",
                         "order": 14
                     },
                     {
-                        "checklistItemRef": "2.5",
+                        "checklistItemRef": "4.8",
                         "order": 15
                     },
                     {
-                        "checklistItemRef": "3.4.3",
+                        "checklistItemRef": "2.2",
                         "order": 16
                     },
                     {
-                        "checklistItemRef": "3.4.3",
+                        "checklistItemRef": "2.4",
                         "order": 17
                     },
                     {
-                        "checklistItemRef": "3.4.3",
+                        "checklistItemRef": "2.5",
                         "order": 18
                     },
                     {
-                        "checklistItemRef": "3.4.3a",
+                        "checklistItemRef": "3.4.3",
                         "order": 19
                     },
                     {
-                        "checklistItemRef": "3.4.3b",
+                        "checklistItemRef": "3.4.3",
                         "order": 20
+                    },
+                    {
+                        "checklistItemRef": "3.4.3",
+                        "order": 21
                     },
                     {
                         "checklistItemRef": "3.4.3c",
                         "order": 21
                     },
                     {
-                        "checklistItemRef": "3.4.3d",
+                        "checklistItemRef": "3.4.3a",
                         "order": 22
                     },
                     {
-                        "checklistItemRef": "3.4.3e",
+                        "checklistItemRef": "3.4.3b",
                         "order": 23
                     },
                     {
-                        "checklistItemRef": "3.4.3e",
-                        "order": 24
-                    },
-                    {
-                        "checklistItemRef": "3.4.1",
+                        "checklistItemRef": "3.4.3d",
                         "order": 25
                     },
                     {
-                        "checklistItemRef": "3.4.1",
+                        "checklistItemRef": "3.4.3e",
                         "order": 26
                     },
                     {
-                        "checklistItemRef": "3.4.2",
+                        "checklistItemRef": "3.4.3e",
                         "order": 27
+                    },
+                    {
+                        "checklistItemRef": "3.4.1",
+                        "order": 28
+                    },
+                    {
+                        "checklistItemRef": "3.4.1",
+                        "order": 29
+                    },
+                    {
+                        "checklistItemRef": "3.4.2",
+                        "order": 30
                     }
                 ]
             },
             "CeilingsRoofs": {
                 "Final": [
                     {
-                        "checklistItemRef": "BE 4",
+                        "checklistItemRef": "BE 4a",
                         "order": 1
                     },
                     {
-                        "checklistItemRef": "4.5",
+                        "checklistItemRef": "BE 4b",
                         "order": 2
                     },
                     {
-                        "checklistItemRef": "1.2",
+                        "checklistItemRef": "4.5",
                         "order": 3
                     },
                     {
-                        "checklistItemRef": "1.3",
+                        "checklistItemRef": "1.2",
                         "order": 4
                     },
                     {
-                        "checklistItemRef": "4.1",
+                        "checklistItemRef": "1.3",
                         "order": 5
                     },
                     {
-                        "checklistItemRef": "T7.3",
+                        "checklistItemRef": "4.1",
                         "order": 6
+                    },
+                    {
+                        "checklistItemRef": "T7.3",
+                        "order": 7
                     }
                 ],
                 "PreDrywall": [
                     {
-                        "checklistItemRef": "BE 4",
+                        "checklistItemRef": "BE 4a",
                         "order": 1
                     },
                     {
-                        "checklistItemRef": "1.2",
+                        "checklistItemRef": "BE 4b",
                         "order": 2
                     },
                     {
-                        "checklistItemRef": "1.3",
+                        "checklistItemRef": "1.2",
                         "order": 3
                     },
                     {
-                        "checklistItemRef": "3.1",
+                        "checklistItemRef": "1.3",
                         "order": 4
                     },
                     {
@@ -4215,7 +4829,7 @@
                         "order": 5
                     },
                     {
-                        "checklistItemRef": "3.3",
+                        "checklistItemRef": "3.1",
                         "order": 6
                     },
                     {
@@ -4223,15 +4837,15 @@
                         "order": 7
                     },
                     {
-                        "checklistItemRef": "4.1",
+                        "checklistItemRef": "3.3",
                         "order": 8
                     },
                     {
-                        "checklistItemRef": "4.4",
+                        "checklistItemRef": "4.1",
                         "order": 9
                     },
                     {
-                        "checklistItemRef": "4.2",
+                        "checklistItemRef": "4.4",
                         "order": 10
                     },
                     {
@@ -4239,16 +4853,20 @@
                         "order": 11
                     },
                     {
-                        "checklistItemRef": "2.3",
+                        "checklistItemRef": "4.2",
                         "order": 12
                     },
                     {
-                        "checklistItemRef": "4.5",
+                        "checklistItemRef": "2.3",
                         "order": 13
                     },
                     {
-                        "checklistItemRef": "2.1",
+                        "checklistItemRef": "4.5",
                         "order": 14
+                    },
+                    {
+                        "checklistItemRef": "2.1",
+                        "order": 15
                     }
                 ]
             },
@@ -4345,40 +4963,44 @@
                         "order": 8
                     },
                     {
-                        "checklistItemRef": "BE 24",
+                        "checklistItemRef": "BE 24a",
                         "order": 9
                     },
                     {
-                        "checklistItemRef": "7.1",
+                        "checklistItemRef": "BE 24b",
                         "order": 10
                     },
                     {
-                        "checklistItemRef": "7.4",
+                        "checklistItemRef": "7.1",
                         "order": 11
                     },
                     {
-                        "checklistItemRef": "8.1a",
+                        "checklistItemRef": "7.4",
                         "order": 12
                     },
                     {
-                        "checklistItemRef": "8.1b",
+                        "checklistItemRef": "8.1a",
                         "order": 13
                     },
                     {
-                        "checklistItemRef": "8.2a",
+                        "checklistItemRef": "8.1b",
                         "order": 14
                     },
                     {
-                        "checklistItemRef": "8.2b",
+                        "checklistItemRef": "8.2a",
                         "order": 15
                     },
                     {
-                        "checklistItemRef": "7.6",
+                        "checklistItemRef": "8.2b",
                         "order": 16
                     },
                     {
-                        "checklistItemRef": "6.2",
+                        "checklistItemRef": "7.6",
                         "order": 17
+                    },
+                    {
+                        "checklistItemRef": "6.2",
+                        "order": 18
                     }
                 ],
                 "PreDrywall": [
@@ -4447,48 +5069,52 @@
                         "order": 11
                     },
                     {
-                        "checklistItemRef": "BE 13",
+                        "checklistItemRef": "BE 13a",
                         "order": 12
                     },
                     {
-                        "checklistItemRef": "5.1",
+                        "checklistItemRef": "BE 13b",
                         "order": 13
                     },
                     {
-                        "checklistItemRef": "5.3",
-                        "order": 17
+                        "checklistItemRef": "5.1",
+                        "order": 14
                     },
                     {
-                        "checklistItemRef": "10.1",
+                        "checklistItemRef": "5.3",
                         "order": 18
                     },
                     {
-                        "checklistItemRef": "9.1",
+                        "checklistItemRef": "10.1",
                         "order": 19
                     },
                     {
-                        "checklistItemRef": "9.2",
+                        "checklistItemRef": "9.1",
                         "order": 20
                     },
                     {
-                        "checklistItemRef": "9.3",
+                        "checklistItemRef": "9.2",
                         "order": 21
                     },
                     {
-                        "checklistItemRef": "BE 12",
+                        "checklistItemRef": "9.3",
                         "order": 22
                     },
                     {
-                        "checklistItemRef": "6.1",
+                        "checklistItemRef": "BE 12",
                         "order": 23
                     },
                     {
-                        "checklistItemRef": "6.3",
+                        "checklistItemRef": "6.1",
                         "order": 24
                     },
                     {
-                        "checklistItemRef": "10.3",
+                        "checklistItemRef": "6.3",
                         "order": 25
+                    },
+                    {
+                        "checklistItemRef": "10.3",
+                        "order": 26
                     }
                 ],
                 "PreDrywall": [

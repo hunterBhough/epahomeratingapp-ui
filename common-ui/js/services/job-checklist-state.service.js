@@ -180,6 +180,11 @@ class JobChecklistState {
         return setJobHouseStatePromise;
     }
 
+    /**
+     * Get relevant info needed for builder/archival report.
+     * @return {object} 
+     */
+
     async getPdfInfo () {
       const data = {
         home: {
@@ -203,86 +208,155 @@ class JobChecklistState {
         checklist: [],
         history: [],
       };
-      let jobType = this.job.HousePlanVendor.Vendor == 'REMRATE' ? 'rem' : 'energy-gauge';
 
-      //TODO: get the right checklist items
-      console.warn('this shit', this.jobDataHomePerformance);
+      const PERFORMANCE = this.jobDataHomePerformance[this.currentHouse.HouseId],
+            RESPONSE = this.jobDataResponse,
+            HOUSE = this.currentHouse;
+    
+      const applyUtilityRem = (utility) => {
+        let be27 = PERFORMANCE.ChecklistItems['BE 27'];
+        let be14 = RESPONSE.ChecklistItems.HvacWater.Final['BE 14'];
+        let a51 = RESPONSE.ChecklistItems.HvacWater.Final['5.1-A'];
+        let a52 = RESPONSE.ChecklistItems.Tests.Final['5.2-A'];
+        let a53 = RESPONSE.ChecklistItems.HvacWater.Final['5.3-A'];
 
-      if(jobType == 'rem') {
-        data.home.type = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType;
-        data.home.sqfoot = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ConditionedFloorArea;
-        data.home.model = this.currentHouse.HousePlan[0].Name;
-        data.home.export = this.currentHouse.ExportFilename;
-        data.home.foundation = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 2'].Foundation[0].FoundationType;
-        data.home.export = this.currentHouse.ExportFilename;
-        data.utility.fuel = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 27'].UtilityInformation.map((utility) => {
-          return {
-            meterNumber: utility.MeterNumber,
-            fuelType: utility.UtilityServiceTypeProvided,
-            meterId: utility.UtilityName
-          }
+        utility.fuel = be27.UtilityInformation.map((util) => {
+            return {
+                meterNumber: util.MeterNumber,
+                fuelType: util.UtilityServiceTypeProvided,
+                meterId: util.UtilityName
+            }
         })
-        data.utility.waterHeater = (() => {
-          let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['BE 14'];
-          if ('ItemData' in item) {
-            if ('Equipment' in item.ItemData) {
-              return item.ItemData.Equipment;
-            }
-          }
-          return '';
-        })();
-        data.utility.hvac = (() => {
-          let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.1-A'];
-          if ('ItemData' in item) {
-            if ('Equipment' in item.ItemData) {
-              return item.ItemData.Equipment;
-            }
-          }
-          return '';
-        })();
+        utility.waterHeater = 'ItemData' in be14 && 'Equipment' in be14.ItemData ? RESPONSE.ChecklistItems.HvacWater.Final['BE 14'].ItemData.Equipment : '';
+        utility.hvac = 'ItemData' in a51 && 'Equipment' in a51.ItemData ? a51.ItemData.Equipment : '';
+        utility.externalStatic.return = 'ItemData' in a52 && 'ReturnSideExternalStaticPressure' in a52.ItemData ? a52.ItemData.ReturnSideExternalStaticPressure : '';
+        utility.externalStatic.supply = 'ItemData' in a52 && 'SupplySideExternalStaticPressure' in a52.ItemData ? a52.ItemData.SupplySideExternalStaticPressure : '';
+        utility.commissionPhoto = 'ItemData' in a53 && 'Photo' in a53.ItemData ? a53.ItemData.Photo : '';
 
-        data.history = this.JobHistoryService.parseHistory(this.job.History);
-        data.utility.externalStatic.return = (() => {
-          let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
-          if('ItemData' in item) {
-            if('ReturnSideExternalStaticPressure' in item.ItemData) {
-              return item.ItemData.ReturnSideExternalStaticPressure;
-            }
-          }
-        })();
-        data.utility.externalStatic.supply = (() => {
-          let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
-          if('ItemData' in item) {
-            if('SupplySideExternalStaticPressure' in item.ItemData) {
-              return item.ItemData.SupplySideExternalStaticPressure;
-            }
-          }
-        })();
-        data.utility.commissionPhoto = (() => {
-          let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.3-A'];
-          if('ItemData' in item) {
-            if('Photo' in item.ItemData) {
-              return item.ItemData.Photo;
-            }
-          }
-        })();
-      } else {
-        data.home.type = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['occupancy'];
-        data.home.sqfoot = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['floorArea'];
-        data.home.model = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['estarOccupancy'];
-        data.home.export = this.currentHouse.ExportFilename;
-        data.home.foundation = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 2'].ChecklistItems['FloorType'];
-
-        //TODO: response the same?
-        // data.utility.fuel =
-        // data.utility.waterHeater =
-        // data.utility.hvac =
-        // data.history =
-        // data.utility.externalStatic.return =
-        // data.utility.externalStatic.supply =
-        // data.utility.commissionPhoto =
+        return utility;
       }
 
+      //TODO: merge with rem
+      const applyUtilityEnergy = (utility) => {
+        // let be27 = PERFORMANCE.ChecklistItems['BE 27'];
+        let be14 = RESPONSE.ChecklistItems.HvacWater.Final['BE 14'];
+        let a51 = RESPONSE.ChecklistItems.HvacWater.Final['5.1'];
+        let a52 = RESPONSE.ChecklistItems.Tests.Final['5.2'];
+        let a53 = RESPONSE.ChecklistItems.HvacWater.Final['5.3'];
+
+        // utility.fuel = be27.UtilityInformation.map((util) => {
+        //     return {
+        //         meterNumber: util.MeterNumber,
+        //         fuelType: util.UtilityServiceTypeProvided,
+        //         meterId: util.UtilityName
+        //     }
+        // })
+        utility.waterHeater = 'ItemData' in be14 && 'Equipment' in be14.ItemData ? RESPONSE.ChecklistItems.HvacWater.Final['BE 14'].ItemData.Equipment : '';
+        utility.hvac = 'ItemData' in a51 && 'Equipment' in a51.ItemData ? a51.ItemData.Equipment : '';
+        utility.externalStatic.return = 'ItemData' in a52 && 'ReturnSideExternalStaticPressure' in a52.ItemData ? a52.ItemData.ReturnSideExternalStaticPressure : '';
+        utility.externalStatic.supply = 'ItemData' in a52 && 'SupplySideExternalStaticPressure' in a52.ItemData ? a52.ItemData.SupplySideExternalStaticPressure : '';
+        utility.commissionPhoto = 'ItemData' in a53 && 'Photo' in a53.ItemData ? a53.ItemData.Photo : '';
+        
+        return utility;
+      }
+
+      switch(this.job.HousePlanVendor.Vendor) {
+          case 'REMRATE':
+            data.home.type = PERFORMANCE.ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType;
+            data.home.sqfoot = PERFORMANCE.ChecklistItems['BE 1'].BuildingSummary[0].ConditionedFloorArea;
+            data.home.model = HOUSE.HousePlan[0].Name;
+            data.home.export = HOUSE.ExportFilename;
+            data.home.foundation = PERFORMANCE.ChecklistItems['BE 2'].Foundation[0].FoundationType;
+            data.history = this.JobHistoryService.parseHistory(this.job.History);
+            data.utility = applyUtilityRem(data.utility);
+            break;
+          case 'ENERGYGAUGE':
+            data.home.type = PERFORMANCE.ChecklistItems['BE 1a'].projectRecord[0]['occupancy'];
+            data.home.sqfoot = PERFORMANCE.ChecklistItems['BE 1a'].projectRecord[0]['floorArea'];
+            data.home.model = PERFORMANCE.ChecklistItems['BE 1a'].projectRecord[0]['estarOccupancy'];
+            data.home.export = HOUSE.ExportFilename;
+            data.home.foundation = PERFORMANCE.ChecklistItems['BE 2'].Floors[0]['FloorType'];
+            data.history = this.JobHistoryService.parseHistory(this.job.History);
+            data.utility = applyUtilityEnergy(data.utility);
+            break;
+          default:
+            console.error('[JobChecklistStateService] unrecognized house plan vendor');
+      }
+
+    //   if(jobType == 'rem') {
+    //     data.home.type = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ResidentialFacilityType;
+    //     data.home.sqfoot = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1'].BuildingSummary[0].ConditionedFloorArea;
+    //     data.home.model = this.currentHouse.HousePlan[0].Name;
+    //     data.home.export = this.currentHouse.ExportFilename;
+    //     data.home.foundation = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 2'].Foundation[0].FoundationType;
+    //     data.home.export = this.currentHouse.ExportFilename;
+    //     data.utility.fuel = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 27'].UtilityInformation.map((utility) => {
+    //       return {
+    //         meterNumber: utility.MeterNumber,
+    //         fuelType: utility.UtilityServiceTypeProvided,
+    //         meterId: utility.UtilityName
+    //       }
+    //     })
+    //     data.utility.waterHeater = (() => {
+    //       let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['BE 14'];
+    //       if ('ItemData' in item) {
+    //         if ('Equipment' in item.ItemData) {
+    //           return item.ItemData.Equipment;
+    //         }
+    //       }
+    //       return '';
+    //     })();
+    //     data.utility.hvac = (() => {
+    //       let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.1-A'];
+    //       if ('ItemData' in item) {
+    //         if ('Equipment' in item.ItemData) {
+    //           return item.ItemData.Equipment;
+    //         }
+    //       }
+    //       return '';
+    //     })();
+
+    //     data.history = this.JobHistoryService.parseHistory(this.job.History);
+    //     data.utility.externalStatic.return = (() => {
+    //       let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
+    //       if('ItemData' in item) {
+    //         if('ReturnSideExternalStaticPressure' in item.ItemData) {
+    //           return item.ItemData.ReturnSideExternalStaticPressure;
+    //         }
+    //       }
+    //     })();
+    //     data.utility.externalStatic.supply = (() => {
+    //       let item = this.jobDataResponse.ChecklistItems.Tests.Final['5.2-A'];
+    //       if('ItemData' in item) {
+    //         if('SupplySideExternalStaticPressure' in item.ItemData) {
+    //           return item.ItemData.SupplySideExternalStaticPressure;
+    //         }
+    //       }
+    //     })();
+    //     data.utility.commissionPhoto = (() => {
+    //       let item = this.jobDataResponse.ChecklistItems.HvacWater.Final['5.3-A'];
+    //       if('ItemData' in item) {
+    //         if('Photo' in item.ItemData) {
+    //           return item.ItemData.Photo;
+    //         }
+    //       }
+    //     })();
+    //   } else {
+    //     data.home.type = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['occupancy'];
+    //     data.home.sqfoot = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['floorArea'];
+    //     data.home.model = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 1a'].ChecklistItems['estarOccupancy'];
+    //     data.home.export = this.currentHouse.ExportFilename;
+    //     data.home.foundation = this.jobDataHomePerformance[this.currentHouse.HouseId].ChecklistItems['BE 2'].ChecklistItems['FloorType'];
+
+    //     //TODO: response the same?
+    //     // data.utility.fuel =
+    //     // data.utility.waterHeater =
+    //     // data.utility.hvac =
+    //     // data.history =
+    //     // data.utility.externalStatic.return =
+    //     // data.utility.externalStatic.supply =
+    //     // data.utility.commissionPhoto =
+    //   }
 
 
       const checklistPrePromise = [];
@@ -361,7 +435,7 @@ class JobChecklistState {
         });
         return mutated;
       })();
-      console.warn('[getPdfInfo]', data);
+      console.log('[getPdfInfo]', data);
       return data;
     }
 
