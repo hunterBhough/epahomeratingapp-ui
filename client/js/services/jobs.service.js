@@ -446,8 +446,8 @@ class JobsService {
     getNewJob () {
         let jobTemplate = {
             'HousePlanVendor'      : {
-              Vendor: 'REMRATE',
-              Version: '15.7'
+                Vendor  : 'REMRATE',
+                Version : '15.7'
             },
             'ProgressLevel'        : 'PreDrywall',
             'RatingType'           : 'energy-star',
@@ -499,20 +499,22 @@ class JobsService {
 
             let options = {
                 method  : 'GET',
-                url     : `${this.API_URL.JOB}/rem_xml/${downloadTask.jobID}`
+                url     : `${this.API_URL.HOUSE_PLAN}/update_xml/${downloadTask.jobID}`
+                // url     : `${this.API_URL.JOB}/rem_xml/${downloadTask.jobID}`
             };
-
             // provider job download from original company
             if (downloadTask.ratingCompanyID) {
+                // options.jobID = downloadTask.jobID;
                 options.ratingCompanyID = downloadTask.ratingCompanyID;
             }
 
             this
                 .$http(options)
                 .then((response) => {
-                    if (response.status === 200) {
-                        if (response.data.data) {
-                            resolve(response.data.data.url);
+                    this.$log.log('response', JSON.stringify(response));
+                    if (response.data.data.code === 200) {
+                        if (response.data.data.data) {
+                            resolve(response.data.data.data.url);
                         } else {
                             reject();
                         }

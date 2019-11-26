@@ -14,10 +14,11 @@ class HousePlansService {
      * @param  {function} $http     angular.$http ajax requests
      * @param  {object} DB          epahomeratingapp constants - contains paths to databases
      */
-    constructor ($http, $stateParams, $q, API_URL, UI_ENUMS) {
+    constructor ($http, $stateParams, $q, $log, API_URL, UI_ENUMS) {
         'ngInject';
 
         this.$q           = $q;
+        this.$log         = $log;
         this.$http        = $http;
         this.$stateParams = $stateParams;
 
@@ -40,7 +41,6 @@ class HousePlansService {
                 })
                 .then((response) => {
                     if (response.status === 200) {
-                        console.warn('HOUSE PLAN', response.data);
                         resolve(response.data);
                     } else {
                         //TODO: make this less bad
@@ -211,15 +211,6 @@ class HousePlansService {
     }
 
     post (formData, tmpHousePlan) {
-        console.warn('formData', formData);
-        console.warn('tmpHousePlan', tmpHousePlan);
-
-        let shit = formData.entries();
-
-        for(let fuck of shit) {
-          console.warn('fuck', fuck);
-        }
-
         let promise = this.$q((resolve, reject) => {
             this
                 .$http({

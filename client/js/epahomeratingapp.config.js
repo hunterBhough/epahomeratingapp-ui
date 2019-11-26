@@ -10,7 +10,8 @@ export const API_URL = {
     HOUSE_PLAN                : `${APIGATEWAY_URI}/house_plan`,
     COMPANY                   : `${APIGATEWAY_URI}/company`,
     USER                      : `${APIGATEWAY_URI}/user`,
-    LOGIN                     : `${APIGATEWAY_URI}/login`
+    LOGIN                     : `${APIGATEWAY_URI}/login`,
+    SUPPORT_DOCS              : `${APIGATEWAY_URI}/house_plan/support_documents`
 };
 
 export const NODE_ENV = process.env.NODE_ENV ? process.env.NODE_ENV : 'development';
