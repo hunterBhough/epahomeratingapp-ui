@@ -8,38 +8,25 @@ const DIGEST_TYPE = {
 };
 
 class DisplayLogicDigestService {
-    constructor ($http, $q, API_URL, FootNotesService) {
+    constructor ($http, $q, API_URL, FootNotesService, S3Service) {
         'ngInject';
 
         this.$http = $http;
         this.$q = $q;
+        this.S3Service = S3Service;
 
         this.FootNotesService = FootNotesService;
 
         this.API_URL = API_URL;
-
-        // this.digest = this.$http({
-        //     method  : 'GET',
-        //     url     : this.API_URL.DISPLAY_LOGIC_DIGEST
-        // });
-
-        // this.digest.then(digest => {
-        //     this.syncDigest = digest;
-        // });
-
     }
 
     setDigest (type) {
         switch (type) {
         case DIGEST_TYPE.ENERGY:
-            this.digest = this.$q((resolve, reject) => {
-                resolve(digestEnergy);
-            });
+            this.digest = this.getDigest('energy');
             break;
         case DIGEST_TYPE.REM:
-            this.digest = this.$q((resolve, reject) => {
-                resolve(digestRem);
-            });
+            this.digest = this.getDigest('rem');
             break;
         default:
             this.digest = this.$q();
@@ -48,6 +35,12 @@ class DisplayLogicDigestService {
         this.digest.then(digest => {
             this.syncDigest = digest;
         });
+    }
+
+    getDigest(type) {
+        return this.S3Service.get(`display-logc-digest-${type}.json`, 'display-logic-digest').then(digest => {
+            return JSON.parse(digest.Body);
+        })
     }
 
     getPromise () {
