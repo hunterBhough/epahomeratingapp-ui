@@ -1,6 +1,4 @@
 import _cloneDeep from 'lodash/cloneDeep';
-import digestRem from 'epahomeratingapp-ui/common-ui/js/digest/rem.json';
-import digestEnergy from 'epahomeratingapp-ui/common-ui/js/digest/energy.json';
 
 const DIGEST_TYPE = {
     ENERGY : 'ENERGYGAUGE',
