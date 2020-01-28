@@ -36,7 +36,7 @@ class DisplayLogicDigestService {
     }
 
     getDigest(type) {
-        return this.S3Service.get(`display-logic-digest-${type}.json`, 'display-logic-digest').then(digest => {
+        return this.S3Service.get(`display-logic-digest.${type}.json`, 'display-logic').then(digest => {
             return JSON.parse(digest.Body);
         })
     }
