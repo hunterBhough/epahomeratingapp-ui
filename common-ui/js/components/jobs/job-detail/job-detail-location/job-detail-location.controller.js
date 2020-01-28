@@ -91,38 +91,38 @@ class JobDetailLocationController {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
 
                     let parseRem = () => {
-                      self.location.Builder                             = _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text;
-                      self.location.AddressInformation.CommunityName    = _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text;
-                      self.location.AddressInformation.Address1         = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyaddress._text) ? '' : remJSON.buildingfile.building.projectinfo.propertyaddress._text;
-                      self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.buildingfile.building.projectinfo.propertycity._text) ? '' : remJSON.buildingfile.building.projectinfo.propertycity._text;
-                      self.location.AddressInformation.StateCode        = _isEmpty(remJSON.buildingfile.building.projectinfo.propertystate._text) ? '' : remJSON.buildingfile.building.projectinfo.propertystate._text;
-                      self.location.AddressInformation.ZipCode          = remJSON.buildingfile.building.projectinfo.propertyzip._text === null ? '' : remJSON.buildingfile.building.projectinfo.propertyzip._text;
-                    }
+                        self.location.Builder                             = _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text.toString();
+                        self.location.AddressInformation.CommunityName    = _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text.toString();
+                        self.location.AddressInformation.Address1         = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyaddress._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertyaddress._text.toString();
+                        self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.buildingfile.building.projectinfo.propertycity._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertycity._text.toString();
+                        self.location.AddressInformation.StateCode        = _isEmpty(remJSON.buildingfile.building.projectinfo.propertystate._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertystate._text.toString();
+                        self.location.AddressInformation.ZipCode          = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyzip._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertyzip._text.toString();
+                    };
 
                     let parseEnergy = () => {
-                      self.location.Builder = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text;
-                      self.location.AddressInformation.CommunityName = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text;
-                      self.location.AddressInformation.Address1 =  _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text;
-                      self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text;
-                      self.location.AddressInformation.StateCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text;
-                      self.location.AddressInformation.ZipCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text;
-                    }
+                        self.location.Builder = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text.toString();
+                        self.location.AddressInformation.CommunityName = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text.toString();
+                        self.location.AddressInformation.Address1 =  _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text.toString();
+                        self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text.toString();
+                        self.location.AddressInformation.StateCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text.toString();
+                        self.location.AddressInformation.ZipCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString();
+                    };
 
-                    switch(self.job.HousePlanVendor.Vendor) {
-                      case 'ENERGYGAUGE':
+                    switch (self.job.HousePlanVendor.Vendor) {
+                    case 'ENERGYGAUGE':
                         try {
-                          parseEnergy();
+                            parseEnergy();
                         } catch (error) {
-                          self.DialogService
-                            .openDialog('dialog-parse-error');
+                            self.DialogService
+                                .openDialog('dialog-parse-error');
                         }
                         break;
-                      case 'REMRATE':
+                    case 'REMRATE':
                         try {
-                          parseRem();
+                            parseRem();
                         } catch (error) {
-                          self.DialogService
-                            .openDialog('dialog-parse-error');
+                            self.DialogService
+                                .openDialog('dialog-parse-error');
                         }
                         break;
                     }
