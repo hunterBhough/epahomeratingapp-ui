@@ -22,11 +22,11 @@ class S3Service {
         this.S3_CONFIG             = S3_CONFIG;
     }
 
-    get (path) {
+    get (path, bucket = "") {
       const company  = this.AuthorizationService.getCurrentOrganizationId();
 
       const id_token   = this.AuthenticationService.getUser().id_token;
-      const bucketName = `${this.S3_CONFIG.S3_BUCKET_NAME_PREFIX}-rating-company`;
+      const bucketName = bucket ? `${this.S3_CONFIG.S3_BUCKET_NAME_PREFIX}-${bucket}` : `${this.S3_CONFIG.S3_BUCKET_NAME_PREFIX}-rating-company`;
 
       let cognitoCredentials = new AWS.CognitoIdentityCredentials({
           IdentityPoolId : this.S3_CONFIG.IDENTITY_POOL_ID,
