@@ -26,7 +26,7 @@ class ChecklistItemController {
             .DisplayLogicDigestService
             .get(this.itemId)
             .then(checklistItem => {
-                console.warn('DIGEST ITEM', checklistItem);
+                // this.$log.log('DIGEST ITEM', checklistItem);
                 this.checklistItem = checklistItem;
 
                 return this.JobChecklistStateService.getChecklistItemResponse(this.itemId, this.itemCategory, this.itemCategoryProgress);
