@@ -246,7 +246,7 @@ class PDFService {
               company : this.UserCompanyService.getCompany(
                   this.AuthorizationService.getCurrentOrganizationId()
               ),
-              digest  : this.DisplayLogicDigestService.getPromise(job.HousePlanVendor.Vendor)
+              digest  : this.DisplayLogicDigestService.getDigest(job.HousePlanVendor.Vendor)
           });
         })
         .then((response) => {
