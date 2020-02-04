@@ -166,7 +166,6 @@ class JobChecklistState {
                 this.JobDataHomePerformanceService
                     .getById(jobId, HouseId, ratingCompanyID)
                     .then((jobDataHomePerformance) => {
-                        console.warn('PERFORMANCE', jobDataHomePerformance);
                         this.itemStatusQuery = {};
                         this.jobDataHomePerformance[HouseId] = jobDataHomePerformance;
                         resolve(this.jobDataHomePerformance[HouseId]);
