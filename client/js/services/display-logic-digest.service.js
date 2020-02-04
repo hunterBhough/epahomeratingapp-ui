@@ -50,8 +50,15 @@ class DisplayLogicDigestService {
         return digestPromise;
     }
 
-    getPromise () {
-        return this.digest;
+    getPromise (xmlType) {
+        switch (xmlType) {
+        case DIGEST_TYPE.ENERGY:
+            return this.digestEnergy;
+        case DIGEST_TYPE.REM:
+            return this.digestRem;
+        default:
+            return this.digestRem;
+        }
     }
 
     get (id) {
