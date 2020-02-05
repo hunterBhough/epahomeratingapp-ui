@@ -64,7 +64,7 @@ class DisplayLogicDigestService {
     get (id) {
         let checklistItemDisplay = this.digest.then(digest => {
             let checklistItem = _cloneDeep(digest.data.ChecklistItems[id]);
-            if (this.FootNotesService.fetchData(id)) { // TODO? find a better solution than ignoring undefined checklistItems
+            if (checklistItem) { // TODO? find a better solution than ignoring undefined checklistItems
                 checklistItem.Footnotes = this.FootNotesService.fetchData(id).Footnotes;
             }
             return checklistItem;
