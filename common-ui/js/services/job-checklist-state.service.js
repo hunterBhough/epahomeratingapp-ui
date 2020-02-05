@@ -131,7 +131,7 @@ class JobChecklistState {
                     this.jobDataResponse = jobDataResponse;
 
                     //TODO: get the right logic digest
-                    return this.DisplayLogicDigestService.getPromise();
+                    return this.DisplayLogicDigestService.getDigest(job.HousePlanVendor.Vendor);
                 })
                 .then((digest) => {
                     if (this.job.RatingType === this.RATING_TYPES.HERS.Key && this.JobChecklistProgressService.jobHasNoProgress(this.job.Progress)) {
@@ -166,7 +166,6 @@ class JobChecklistState {
                 this.JobDataHomePerformanceService
                     .getById(jobId, HouseId, ratingCompanyID)
                     .then((jobDataHomePerformance) => {
-                        console.warn('PERFORMANCE', jobDataHomePerformance);
                         this.itemStatusQuery = {};
                         this.jobDataHomePerformance[HouseId] = jobDataHomePerformance;
                         resolve(this.jobDataHomePerformance[HouseId]);

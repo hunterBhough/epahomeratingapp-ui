@@ -18,28 +18,28 @@ class MrfEditFieldStringController extends MrfEditField {
                 this.stringFound = false;
             });
 
-          this.date = this.date === undefined ? false : this.date;
+        this.date = this.date === undefined ? false : this.date;
 
-          this.dateTime = this.date ? this.formatDate(this.value, 'YYYY-MM-DD') : null;
+        this.dateTime = this.date ? this.formatDate(this.value, 'YYYY-MM-DD') : null;
     }
 
     onDateChange (newDate) {
-      this.value = this.formatDate(newDate, 'MM-DD-YYYY');
+        this.value = this.formatDate(newDate, 'MM-DD-YYYY');
 
-      this.onChange(this.value);
+        this.onChange(this.value);
     }
 
     formatDate (date, format) {
-      if(moment(date).isValid()) {
-        switch(format) {
-          case 'YYYY-MM-DD':
-            return moment(date).format('YYYY-MM-DD');
-          case 'MM-DD-YYYY':
-            return moment(date).format('l');
-        }
-      } else {
+        if (moment(date).isValid()) {
+            switch (format) {
+            case 'YYYY-MM-DD':
+                return moment(date).format('YYYY-MM-DD');
+            case 'MM-DD-YYYY':
+                return moment(date).format('l');
+            }
+        } else {
         //TODO: error?
-      }
+        }
     }
 }
 

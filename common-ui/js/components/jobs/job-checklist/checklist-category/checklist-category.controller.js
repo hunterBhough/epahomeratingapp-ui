@@ -34,7 +34,6 @@ class jobChecklistChecklistController {
             .JobChecklistStateService
             .getJobDisplayList()
             .then(jobDisplayList => {
-                console.warn('DISPLAY LIST', jobDisplayList);
                 this.jobDisplayList           = jobDisplayList;
 
                 this.preDrywallChecklistItems = this.jobDisplayList[this.categoryKey][this.CATEGORY_PROGRESS['pre-drywall'].Key];

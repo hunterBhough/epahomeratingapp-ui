@@ -1,6 +1,4 @@
 import _cloneDeep from 'lodash/cloneDeep';
-import digestRem from 'epahomeratingapp-ui/common-ui/js/digest/rem.json';
-import digestEnergy from 'epahomeratingapp-ui/common-ui/js/digest/energy.json';
 
 const DIGEST_TYPE = {
     ENERGY : 'ENERGYGAUGE',
@@ -18,40 +16,49 @@ class DisplayLogicDigestService {
 
         this.API_URL = API_URL;
 
-        // this.digest = this.$http({
-        //     method  : 'GET',
-        //     url     : this.API_URL.DISPLAY_LOGIC_DIGEST
-        // });
+        this.digestEnergy = this.$http({
+            method  : 'GET',
+            url     : `${this.API_URL.DISPLAY_LOGIC_DIGEST}/energy`
+        });
+        this.digestRem = this.$http({
+            method  : 'GET',
+            url     : `${this.API_URL.DISPLAY_LOGIC_DIGEST}/rem`
+        });
 
-        // this.digest.then(digest => {
-        //     this.syncDigest = digest;
-        // });
+        this.digestRem.then(digest => {
+            this.syncDigest = digest;
+        });
 
     }
 
     setDigest (type) {
-        switch (type) {
-        case DIGEST_TYPE.ENERGY:
-            this.digest = this.$q((resolve, reject) => {
-                resolve(digestEnergy);
-            });
-            break;
-        case DIGEST_TYPE.REM:
-            this.digest = this.$q((resolve, reject) => {
-                resolve(digestRem);
-            });
-            break;
-        default:
-            this.digest = this.$q();
-        }
-
-        this.digest.then(digest => {
-            this.syncDigest = digest;
-        });
+        this.digest = this.getDigest(type);
     }
 
-    getPromise () {
-        return this.digest;
+    getDigest (xmlType) {
+        let digestPromise;
+        switch (xmlType) {
+        case DIGEST_TYPE.ENERGY:
+            digestPromise = this.digestEnergy;
+            break;
+        case DIGEST_TYPE.REM:
+            digestPromise = this.digestRem;
+            break;
+        default:
+            digestPromise = this.$q();
+        }
+        return digestPromise;
+    }
+
+    getPromise (xmlType) {
+        switch (xmlType) {
+        case DIGEST_TYPE.ENERGY:
+            return this.digestEnergy;
+        case DIGEST_TYPE.REM:
+            return this.digestRem;
+        default:
+            return this.digestRem;
+        }
     }
 
     get (id) {
