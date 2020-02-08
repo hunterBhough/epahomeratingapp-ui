@@ -239,9 +239,9 @@ class JobChecklistState {
       const applyUtilityEnergy = (utility) => {
         // let be27 = PERFORMANCE.ChecklistItems['BE 27'];
         let be14 = RESPONSE.ChecklistItems.HvacWater.Final['BE 14'];
-        let a51 = RESPONSE.ChecklistItems.HvacWater.Final['5.1'];
-        let a52 = RESPONSE.ChecklistItems.Tests.Final['5.2'];
-        let a53 = RESPONSE.ChecklistItems.HvacWater.Final['5.3'];
+        let a51 = RESPONSE.ChecklistItems.HvacWater.Final['5.1-A'];
+        let a52 = RESPONSE.ChecklistItems.Tests.Final['5.2-A'];
+        let a53 = RESPONSE.ChecklistItems.HvacWater.Final['5.3-A'];
 
         // utility.fuel = be27.UtilityInformation.map((util) => {
         //     return {
