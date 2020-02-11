@@ -34,48 +34,21 @@ class MrfEditController {
     }
 
     $onInit () {
-      const ACHITECTURAL_CHARACTERISTICS_ID = 'BE 1';
-
       this.editMrfData       = _assign({}, this.mrfData);
+      console.warn('BE 11', this.editMrfData);
 
       this.showMrfEditModal  = false;
 
-      // this.mrfDigest = [
-      //   { Name: 'Single Point Flow (CFM)' },
-      //   { Name: 'Shelter Class' },
-      //   { Name: 'Test Date'},
-      //   { Name: 'Single Point Pressure (pa)'},
-      //   { Name: 'Site Ambient Temp (F)'},
-      //   { Name: 'Indoor Temp (F)'},
-      //   { Name: 'Site Elevation (ft)'},
-      //   { Name: 'Base Pressure (pa)'},
-      //   { Name: 'Pressure/Depressure'},
-      //   { Name: 'Building Pressure'},
-      //   { Name: 'Altitude and Temp adjustment made by:'},
-      //   { Name: '10% single-point penalty was added by:'},
-      // ]
+      this
+        .JobChecklistStateService
+        .getChecklistItemHomePerformance('BE 1a')
+        .then((mrfData) => {
+            this.BuildingVolume = mrfData.projectRecord[0].condVolume;
+            this.infiltrationValue = parseInt(this.editMrfData['SinglePointFlow']);
+            this.ACH50 = this.calculateAch50();
 
-      // this.editMrfData = {
-      //   "TestDate": "1/3/2018",
-			// 	"SinglePointFlow": "774",
-			// 	"SinglePointPressure": "50",
-			// 	"SiteAmbientTemp": "null",
-			// 	"IndoorTemp": "null",
-			// 	"SiteElevation": "null",
-			// 	"BasePressure": "null",
-			// 	"PressureDepressure": "null",
-			// 	"BuildingPressure": "774",
-			// 	"AltitudeTempAdjustment": "null",
-			// 	"TenPercentSinglePointPenalty": "null"
-      // }
+        })
 
-      //TODO: get this from JobChecklistStateService
-      this.BuildingVolume = "33206";
-
-      let heatingSeasonValue = this.editMrfData['SinglePointFlow'];
-
-      this.infiltrationValue = heatingSeasonValue;
-      this.ACH50  = this.calculateAch50();
     }
 
     calculateAch50 () {
@@ -86,13 +59,9 @@ class MrfEditController {
 
     calculateInfiltrationValue () {
         this.ACH50 = this.calculateAch50();
-
-        this.editMrfData.HeatingSeasonValue = this.infiltrationValue;
-        this.editMrfData.CoolingSeasonValue = this.infiltrationValue;
-        this.editMrfData.AnnualValue        = this.infiltrationValue;
+        this.editMrfData.SinglePointFlow = this.infiltrationValue;
     }
 
-    //????
     $postLink () {
       this.showMrfEditModal = true;
 
@@ -115,6 +84,7 @@ class MrfEditController {
     }
 
     save () {
+        console.warn('mrfEditForm', this.mrfEditForm, this.mrfEditForm.$invalid);
       if (!this.mrfEditForm.$invalid) {
           this.showMrfEditModal = false;
 
