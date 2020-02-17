@@ -7,10 +7,10 @@ class MrfEditController {
         this.JobChecklistStateService = JobChecklistStateService;
         this.isReview      = JobChecklistStateService.isReview;
         this.PLACEHOLDER   = {
-          STRING : 'PLACEHOLDER',
-          BOOLEAN : true,
-          DECIMAL : 1.2,
-        }
+            STRING  : 'PLACEHOLDER',
+            BOOLEAN : true,
+            DECIMAL : 1.2,
+        };
 
         this.infiltrationDisplayData = {
             'Name'               : 'Infiltration Value',
@@ -34,48 +34,21 @@ class MrfEditController {
     }
 
     $onInit () {
-      const ACHITECTURAL_CHARACTERISTICS_ID = 'BE 1';
+        this.editMrfData       = _assign({}, this.mrfData);
 
-      this.editMrfData       = _assign({}, this.mrfData);
+        this.showMrfEditModal  = false;
 
-      this.showMrfEditModal  = false;
+        this
+            .JobChecklistStateService
+            .getChecklistItemHomePerformance('BE 1a')
+            .then((mrfData) => {
+                this.BuildingVolume = mrfData.projectRecord[0].condVolume;
+                // eslint-disable-next-line radix
+                this.infiltrationValue = parseInt(this.editMrfData['SinglePointFlow']);
+                this.ACH50 = this.calculateAch50();
 
-      // this.mrfDigest = [
-      //   { Name: 'Single Point Flow (CFM)' },
-      //   { Name: 'Shelter Class' },
-      //   { Name: 'Test Date'},
-      //   { Name: 'Single Point Pressure (pa)'},
-      //   { Name: 'Site Ambient Temp (F)'},
-      //   { Name: 'Indoor Temp (F)'},
-      //   { Name: 'Site Elevation (ft)'},
-      //   { Name: 'Base Pressure (pa)'},
-      //   { Name: 'Pressure/Depressure'},
-      //   { Name: 'Building Pressure'},
-      //   { Name: 'Altitude and Temp adjustment made by:'},
-      //   { Name: '10% single-point penalty was added by:'},
-      // ]
+            });
 
-      // this.editMrfData = {
-      //   "TestDate": "1/3/2018",
-			// 	"SinglePointFlow": "774",
-			// 	"SinglePointPressure": "50",
-			// 	"SiteAmbientTemp": "null",
-			// 	"IndoorTemp": "null",
-			// 	"SiteElevation": "null",
-			// 	"BasePressure": "null",
-			// 	"PressureDepressure": "null",
-			// 	"BuildingPressure": "774",
-			// 	"AltitudeTempAdjustment": "null",
-			// 	"TenPercentSinglePointPenalty": "null"
-      // }
-
-      //TODO: get this from JobChecklistStateService
-      this.BuildingVolume = "33206";
-
-      let heatingSeasonValue = this.editMrfData['SinglePointFlow'];
-
-      this.infiltrationValue = heatingSeasonValue;
-      this.ACH50  = this.calculateAch50();
     }
 
     calculateAch50 () {
@@ -86,48 +59,44 @@ class MrfEditController {
 
     calculateInfiltrationValue () {
         this.ACH50 = this.calculateAch50();
-
-        this.editMrfData.HeatingSeasonValue = this.infiltrationValue;
-        this.editMrfData.CoolingSeasonValue = this.infiltrationValue;
-        this.editMrfData.AnnualValue        = this.infiltrationValue;
+        this.editMrfData.SinglePointFlow = this.infiltrationValue;
     }
 
-    //????
     $postLink () {
-      this.showMrfEditModal = true;
+        this.showMrfEditModal = true;
 
-      //TODO: put this somewhere better;
-      angular
-          .element(document)
-          .find('body')
-          .addClass('overlay-open');
+        //TODO: put this somewhere better;
+        angular
+            .element(document)
+            .find('body')
+            .addClass('overlay-open');
     }
 
     cancel () {
-      this.showMrfEditModal = false;
-      this.onCancelMrfRow();
+        this.showMrfEditModal = false;
+        this.onCancelMrfRow();
 
-      //TODO: put this somewhere better;
-      angular
-          .element(document)
-          .find('body')
-          .removeClass('overlay-open');
+        //TODO: put this somewhere better;
+        angular
+            .element(document)
+            .find('body')
+            .removeClass('overlay-open');
     }
 
     save () {
-      if (!this.mrfEditForm.$invalid) {
-          this.showMrfEditModal = false;
+        if (!this.mrfEditForm.$invalid) {
+            this.showMrfEditModal = false;
 
-          this.onSaveMrfRow({
-              mrfRowEditData : this.editMrfData
-          });
+            this.onSaveMrfRow({
+                mrfRowEditData : this.editMrfData
+            });
 
-          //TODO: put this somewhere better;
-          angular
-              .element(document)
-              .find('body')
-              .removeClass('overlay-open');
-      }
+            //TODO: put this somewhere better;
+            angular
+                .element(document)
+                .find('body')
+                .removeClass('overlay-open');
+        }
     }
 }
 
