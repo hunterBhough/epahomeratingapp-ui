@@ -1,3 +1,4 @@
+/* eslint-disable no-nested-ternary */
 /* global File, FileReader */
 
 import _find from 'lodash/find';
@@ -91,21 +92,21 @@ class JobDetailLocationController {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
 
                     let parseRem = () => {
-                        self.location.Builder                             = _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text.toString();
-                        self.location.AddressInformation.CommunityName    = _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text.toString();
-                        self.location.AddressInformation.Address1         = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyaddress._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertyaddress._text.toString();
-                        self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.buildingfile.building.projectinfo.propertycity._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertycity._text.toString();
-                        self.location.AddressInformation.StateCode        = _isEmpty(remJSON.buildingfile.building.projectinfo.propertystate._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertystate._text.toString();
-                        self.location.AddressInformation.ZipCode          = _isEmpty(remJSON.buildingfile.building.projectinfo.propertyzip._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertyzip._text.toString();
+                        self.location.Builder                             = remJSON.buildingfile.building.projectinfo.buildername && remJSON.buildingfile.building.projectinfo.buildername._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text.toString() : '';
+                        self.location.AddressInformation.CommunityName    = remJSON.buildingfile.building.projectinfo.developmentname && remJSON.buildingfile.building.projectinfo.developmentname._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text.toString() : '';
+                        self.location.AddressInformation.Address1         = remJSON.buildingfile.building.projectinfo.propertyaddress && remJSON.buildingfile.building.projectinfo.propertyaddress._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.propertyaddress._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertyaddress._text.toString() : '';
+                        self.location.AddressInformation.CityMunicipality = remJSON.buildingfile.building.projectinfo.propertycity && remJSON.buildingfile.building.projectinfo.propertycity._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.propertycity._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertycity._text.toString() : '';
+                        self.location.AddressInformation.StateCode        = remJSON.buildingfile.building.projectinfo.propertystate && remJSON.buildingfile.building.projectinfo.propertystate._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.propertystate._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertystate._text.toString() : '';
+                        self.location.AddressInformation.ZipCode          = remJSON.buildingfile.building.projectinfo.propertyzip && remJSON.buildingfile.building.projectinfo.propertyzip._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.propertyzip._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.propertyzip._text.toString() : '';
                     };
 
                     let parseEnergy = () => {
-                        self.location.Builder = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text.toString();
-                        self.location.AddressInformation.CommunityName = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text.toString();
-                        self.location.AddressInformation.Address1 =  _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text.toString();
-                        self.location.AddressInformation.CityMunicipality = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text.toString();
-                        self.location.AddressInformation.StateCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text.toString();
-                        self.location.AddressInformation.ZipCode = _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString();
+                        self.location.Builder = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.BUILDER._text.toString() : '';
+                        self.location.AddressInformation.CommunityName = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.DEVELOPMENT._text.toString() : '';
+                        self.location.AddressInformation.Address1 = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ADDRESS._text.toString() : '';
+                        self.location.AddressInformation.CityMunicipality = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.CITY._text.toString() : '';
+                        self.location.AddressInformation.StateCode = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.STATE._text.toString() : '';
+                        self.location.AddressInformation.ZipCode = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString() : '';
                     };
 
                     switch (self.job.HousePlanVendor.Vendor) {
