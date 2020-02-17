@@ -6,11 +6,12 @@ const DIGEST_TYPE = {
 };
 
 class DisplayLogicDigestService {
-    constructor ($http, $q, API_URL, FootNotesService) {
+    constructor ($http, $q, API_URL, FootNotesService, S3Service) {
         'ngInject';
 
         this.$http = $http;
         this.$q = $q;
+        this.S3Service = S3Service;
 
         this.FootNotesService = FootNotesService;
 
