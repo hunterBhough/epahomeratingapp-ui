@@ -7,10 +7,10 @@ class MrfEditController {
         this.JobChecklistStateService = JobChecklistStateService;
         this.isReview      = JobChecklistStateService.isReview;
         this.PLACEHOLDER   = {
-          STRING : 'PLACEHOLDER',
-          BOOLEAN : true,
-          DECIMAL : 1.2,
-        }
+            STRING  : 'PLACEHOLDER',
+            BOOLEAN : true,
+            DECIMAL : 1.2,
+        };
 
         this.infiltrationDisplayData = {
             'Name'               : 'Infiltration Value',
@@ -34,20 +34,20 @@ class MrfEditController {
     }
 
     $onInit () {
-      this.editMrfData       = _assign({}, this.mrfData);
-      console.warn('BE 11', this.editMrfData);
+        this.editMrfData       = _assign({}, this.mrfData);
 
-      this.showMrfEditModal  = false;
+        this.showMrfEditModal  = false;
 
-      this
-        .JobChecklistStateService
-        .getChecklistItemHomePerformance('BE 1a')
-        .then((mrfData) => {
-            this.BuildingVolume = mrfData.projectRecord[0].condVolume;
-            this.infiltrationValue = parseInt(this.editMrfData['SinglePointFlow']);
-            this.ACH50 = this.calculateAch50();
+        this
+            .JobChecklistStateService
+            .getChecklistItemHomePerformance('BE 1a')
+            .then((mrfData) => {
+                this.BuildingVolume = mrfData.projectRecord[0].condVolume;
+                // eslint-disable-next-line radix
+                this.infiltrationValue = parseInt(this.editMrfData['SinglePointFlow']);
+                this.ACH50 = this.calculateAch50();
 
-        })
+            });
 
     }
 
@@ -63,41 +63,40 @@ class MrfEditController {
     }
 
     $postLink () {
-      this.showMrfEditModal = true;
+        this.showMrfEditModal = true;
 
-      //TODO: put this somewhere better;
-      angular
-          .element(document)
-          .find('body')
-          .addClass('overlay-open');
+        //TODO: put this somewhere better;
+        angular
+            .element(document)
+            .find('body')
+            .addClass('overlay-open');
     }
 
     cancel () {
-      this.showMrfEditModal = false;
-      this.onCancelMrfRow();
+        this.showMrfEditModal = false;
+        this.onCancelMrfRow();
 
-      //TODO: put this somewhere better;
-      angular
-          .element(document)
-          .find('body')
-          .removeClass('overlay-open');
+        //TODO: put this somewhere better;
+        angular
+            .element(document)
+            .find('body')
+            .removeClass('overlay-open');
     }
 
     save () {
-        console.warn('mrfEditForm', this.mrfEditForm, this.mrfEditForm.$invalid);
-      if (!this.mrfEditForm.$invalid) {
-          this.showMrfEditModal = false;
+        if (!this.mrfEditForm.$invalid) {
+            this.showMrfEditModal = false;
 
-          this.onSaveMrfRow({
-              mrfRowEditData : this.editMrfData
-          });
+            this.onSaveMrfRow({
+                mrfRowEditData : this.editMrfData
+            });
 
-          //TODO: put this somewhere better;
-          angular
-              .element(document)
-              .find('body')
-              .removeClass('overlay-open');
-      }
+            //TODO: put this somewhere better;
+            angular
+                .element(document)
+                .find('body')
+                .removeClass('overlay-open');
+        }
     }
 }
 
