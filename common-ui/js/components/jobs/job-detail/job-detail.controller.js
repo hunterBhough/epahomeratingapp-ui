@@ -29,7 +29,7 @@ class JobDetailController {
         this.testingBtnGroup = {
           EnergyGauge: {
             Key: 'energy-gauge',
-            Name: 'Energy Gauge'
+            Name: 'EnergyGauge'
           },
           RemRate: {
             Key: 'rem-rate',

@@ -100,11 +100,11 @@
                 </photo-capture>
 
                 <div class="form-group">
-                    <label for="commentText" class="sr-only">Enter Your Comment</label>
+                    <label for="commentText-{{checklistItemCommentsCtrl.id}}" class="sr-only">Enter Your Comment</label>
 
                     <textarea
                         class="form-control comment-input"
-                        id="commentText"
+                        id="commentText-{{checklistItemCommentsCtrl.id}}"
                         data-ng-model="checklistItemCommentsCtrl.newCommentText">
                     </textarea>
                 </div>
