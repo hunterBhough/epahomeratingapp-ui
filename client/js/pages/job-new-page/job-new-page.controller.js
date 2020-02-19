@@ -60,7 +60,12 @@ class JobsNewPageController {
 
         const checkHousePlanIsValid = (housePlan) => {
           if('xmlType' in housePlan) {
-            return jobVendor == 'ENERGYGAUGE';
+            switch(housePlan.xmlType) {
+              case "rem":
+                return jobVendor == 'REMRATE';
+              case "energy":
+                return jobVendor == 'ENERGYGAUGE';
+            }
           } else {
             return jobVendor == 'REMRATE';
           }
