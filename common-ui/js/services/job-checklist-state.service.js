@@ -270,9 +270,9 @@ class JobChecklistState {
             data.utility = applyUtilityRem(data.utility);
             break;
           case 'ENERGYGAUGE':
-            data.home.type = PERFORMANCE.ChecklistItems['BE 1a'].projectRecord[0]['occupancy'];
+            data.home.type = PERFORMANCE.ChecklistItems['BE 1a'].projectRecord[0]['estarOccupancy'];
             data.home.sqfoot = PERFORMANCE.ChecklistItems['BE 1a'].projectRecord[0]['floorArea'];
-            data.home.model = PERFORMANCE.ChecklistItems['BE 1a'].projectRecord[0]['estarOccupancy'];
+            data.home.model = HOUSE.HousePlan[0].Name;
             data.home.export = HOUSE.ExportFilename;
             data.home.foundation = PERFORMANCE.ChecklistItems['BE 2'].Floors[0]['FloorType'];
             data.history = this.JobHistoryService.parseHistory(this.job.History);
