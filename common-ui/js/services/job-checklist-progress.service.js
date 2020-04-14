@@ -43,7 +43,7 @@ class JobChecklistProgressService {
                             .DisplayLogicDigestService
                             .getSync(checklistItem.checklistItemRef);
 
-                    if (item.RatingType === this.RATING_TYPES.HERS.Key) {
+                    if (item && item.RatingType === this.RATING_TYPES.HERS.Key) {
                         hersProgress[categoryKey][progressKey].Total += 1;
                     }
                 });
