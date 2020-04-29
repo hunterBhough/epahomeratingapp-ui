@@ -384,8 +384,12 @@ class JobChecklistState {
       ids.map((obj) => {
         checklistPrePromise.push(this.DisplayLogicDigestService.get(obj.id)
           .then((checklistItem) => {
+            if (checklistItem === undefined) {
+                return {}
+            }
+            
             if('Options' in checklistItem) {
-              return {}
+                return {}
             }
 
             return {

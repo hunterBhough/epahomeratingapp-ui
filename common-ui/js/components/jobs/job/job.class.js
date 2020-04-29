@@ -83,6 +83,12 @@ class Job {
     }
 
     get JobHousePlanType () {
+        let vendor;
+        if (!this.job || !this.job.HousePlanVendor || !this.job.HousePlanVendor.Vendor) {
+            vendor = 'REMRATE';
+        } else {
+            vendor = this.job.HousePlanVendor.Vendor;
+        }
         return (
           function(housePlanType) {
             switch(housePlanType) {
@@ -91,10 +97,10 @@ class Job {
               case 'ENERGYGAUGE':
                 return 'Energy Gauge';
               default:
-                //TODO: handle unsupported
+                return 'Rem Rate';
             }
           }
-        )(this.job.HousePlanVendor.Vendor)
+        )(vendor)
     }
 
     get JobTitle () {
