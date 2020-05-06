@@ -44,10 +44,6 @@ class UserMenuController {
             .logout()
             .then(() => {
                 this
-                    .DropdownService
-                    .closeDropdown(this.DROPDOWN_USER_MENU);
-
-                this
                     .$state
                     .go('login');
             });
