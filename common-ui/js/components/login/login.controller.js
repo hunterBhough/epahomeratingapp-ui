@@ -1,13 +1,13 @@
-import moment from 'moment';
+// import moment from 'moment';
 
 const downForMaintenance = true; //set to false to turn off
-const TIMESTAMP = moment(new Date()).format('MMM Do YYYY h:mm a');
+// const TIMESTAMP = moment(new Date()).format('MMM Do YYYY h:mm a');
 
 const STATUS_MESSAGE = {
-  SYSTEM_ERROR: 'There was a system error. Please contact RaterPRO support.',
-  AUTHORIZATION_ERROR: 'You are not authorized to use this system.',
-  MAINTENANCE_ERROR: `Service is down for maintenance; please check back at ${TIMESTAMP}.`
-}
+    SYSTEM_ERROR        : 'There was a system error. Please contact RaterPRO support.',
+    AUTHORIZATION_ERROR : 'You are not authorized to use this system.',
+    MAINTENANCE_ERROR   : 'Service is down for maintenance; please check back Friday, May 20 at 9:00am.'
+};
 
 class LoginController {
     constructor (
@@ -73,7 +73,7 @@ class LoginController {
                 this.statusMessage = transition._error.detail.message || STATUS_MESSAGE.SYSTEM_ERROR;
 
             } catch (error) {
-                if(downForMaintenance) {
+                if (downForMaintenance) {
                     this.statusMessage = STATUS_MESSAGE.MAINTENANCE_ERROR;
                     return;
                 }
@@ -149,7 +149,7 @@ class LoginController {
             this
                 .loginMethod(user)
                 .then((user) => {
-                    if(downForMaintenance) {
+                    if (downForMaintenance) {
                         this.statusMessage = STATUS_MESSAGE.MAINTENANCE_ERROR;
                         this.AuthenticationService.logout();
                         reject();
