@@ -1,6 +1,6 @@
 // import moment from 'moment';
 
-const downForMaintenance = true; //set to false to turn off
+const downForMaintenance = false; //set to false to turn off
 // const TIMESTAMP = moment(new Date()).format('MMM Do YYYY h:mm a');
 
 const STATUS_MESSAGE = {
