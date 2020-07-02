@@ -5,7 +5,8 @@ let mrfEditFieldEnumComponent = {
     bindings : {
         field        : '<',
         value        : '=',
-        handleChange : '&'
+        handleChange : '&',
+        type         : '@'
     },
     template,
     controller,

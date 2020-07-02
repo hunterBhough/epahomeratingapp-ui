@@ -33,7 +33,7 @@ class MrfEditFieldEnumController extends MrfEditField {
         const enumLength  = (_size(ENUM) < MAX_SIZE) ? this.calculateEnumLength(ENUM) : MAX_LENGTH + 1;
         this.enumNotFound = false;
 
-        if (enumSize < MAX_SIZE && enumLength <= MAX_LENGTH) {
+        if (this.type !== 'select' && enumSize < MAX_SIZE && enumLength <= MAX_LENGTH) {
             this.displayType = 'toggle';
             this.selected    = [this.value];
             this.buttons     = [];
