@@ -214,6 +214,7 @@ class JobsNewPageController {
             })
             .finally(() => {
                 this.isBusy = false;
+                window.scrollTo(0, 0);
             });
     }
 
@@ -291,6 +292,7 @@ class JobsNewPageController {
             })
             .finally(() => {
                 this.isBusy = false;
+                window.scrollTo(0, 0);
             });
     }
 
