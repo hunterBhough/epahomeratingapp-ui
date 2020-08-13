@@ -235,9 +235,6 @@ class JobsNewPageController {
             .$q
             .all(fileUploads)
             .then((results) => {
-                if (results.length === 0) {
-                    throw 'error uploading house-plan';
-                }
                 this.updateJobFileData(results, job);
 
                 return this.$q.all([

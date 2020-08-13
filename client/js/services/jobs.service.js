@@ -446,8 +446,8 @@ class JobsService {
     getNewJob () {
         let jobTemplate = {
             'HousePlanVendor'      : {
-                Vendor  : '',
-                Version : ''
+                Vendor  : 'REMRATE',
+                Version : '15.7'
             },
             'ProgressLevel'        : 'PreDrywall',
             'RatingType'           : 'energy-star',

@@ -83,10 +83,10 @@ class JobDetailLocationController {
         let self = this;
 
         this.$timeout(function waitFormRender () {
-            if (self.location.HousePlan[self.location.HousePlan.length - 1] instanceof File) {
+            if (self.location.HousePlan[0] instanceof File) {
 
                 let reader = new FileReader();
-                reader.readAsText(self.location.HousePlan[self.location.HousePlan.length - 1]);
+                reader.readAsText(self.location.HousePlan[0]);
 
                 reader.onloadend = function readXMLSuccess () {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
@@ -124,47 +124,47 @@ class JobDetailLocationController {
                         self.location.AddressInformation.ZipCode = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString() : '';
                     };
 
-                    if (remJSON.buildingfile && self.job.HousePlanVendor.Vendor !== 'ENERGYGAUGE') {
-                        try {
-                            self.job.HousePlanVendor = setHousePlanType('rem-rate');
-                            parseRem();
-                        } catch (error) {
-                            self.location.HousePlan.pop();
-                            self.DialogService
-                                .openDialog('dialog-parse-error');
-                        }
-                    } else if (remJSON.ENERGYGAUGE && self.job.HousePlanVendor.Vendor !== 'REMRATE') {
-                        try {
-                            self.job.HousePlanVendor = setHousePlanType('energy-gauge');
-                            parseEnergy();
-                        } catch (error) {
-                            self.location.HousePlan.pop();
-                            self.DialogService
-                                .openDialog('dialog-parse-error');
-                        }
-                    } else {
-                        self.location.HousePlan.pop();
-                        self.DialogService
-                            .openDialog('dialog-parse-error');
-                    }
-                    // switch (self.job.HousePlanVendor.Vendor) {
-                    // case 'ENERGYGAUGE':
+                    // if (remJSON.buildingfile && self.job.HousePlanVendor.Vendor !== 'ENERGYGAUGE') {
                     //     try {
-                    //         parseEnergy();
-                    //     } catch (error) {
-                    //         self.DialogService
-                    //             .openDialog('dialog-parse-error');
-                    //     }
-                    //     break;
-                    // case 'REMRATE':
-                    //     try {
+                    //         self.job.HousePlanVendor = setHousePlanType('rem-rate');
                     //         parseRem();
                     //     } catch (error) {
+                    //         self.location.HousePlan.pop();
                     //         self.DialogService
                     //             .openDialog('dialog-parse-error');
                     //     }
-                    //     break;
+                    // } else if (remJSON.ENERGYGAUGE && self.job.HousePlanVendor.Vendor !== 'REMRATE') {
+                    //     try {
+                    //         self.job.HousePlanVendor = setHousePlanType('energy-gauge');
+                    //         parseEnergy();
+                    //     } catch (error) {
+                    //         self.location.HousePlan.pop();
+                    //         self.DialogService
+                    //             .openDialog('dialog-parse-error');
+                    //     }
+                    // } else {
+                    //     self.location.HousePlan.pop();
+                    //     self.DialogService
+                    //         .openDialog('dialog-parse-error');
                     // }
+                    switch (self.job.HousePlanVendor.Vendor) {
+                    case 'ENERGYGAUGE':
+                        try {
+                            parseEnergy();
+                        } catch (error) {
+                            self.DialogService
+                                .openDialog('dialog-parse-error');
+                        }
+                        break;
+                    case 'REMRATE':
+                        try {
+                            parseRem();
+                        } catch (error) {
+                            self.DialogService
+                                .openDialog('dialog-parse-error');
+                        }
+                        break;
+                    }
 
                     self.location.HvacDesignReport                    = [];
                     self.location.RaterDesignReviewChecklist          = [];
