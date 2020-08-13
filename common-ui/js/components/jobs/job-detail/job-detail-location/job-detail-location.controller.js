@@ -91,20 +91,20 @@ class JobDetailLocationController {
                 reader.onloadend = function readXMLSuccess () {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
 
-                    const setHousePlanType = (housePlanType) => {
-                        switch (housePlanType) {
-                        case 'rem-rate':
-                            return {
-                                Vendor  : 'REMRATE',
-                                Version : '15.7',
-                            };
-                        case 'energy-gauge':
-                            return {
-                                Vendor  : 'ENERGYGAUGE',
-                                Version : '15.7',
-                            };
-                        }
-                    };
+                    // const setHousePlanType = (housePlanType) => {
+                    //     switch (housePlanType) {
+                    //     case 'rem-rate':
+                    //         return {
+                    //             Vendor  : 'REMRATE',
+                    //             Version : '15.7',
+                    //         };
+                    //     case 'energy-gauge':
+                    //         return {
+                    //             Vendor  : 'ENERGYGAUGE',
+                    //             Version : '15.7',
+                    //         };
+                    //     }
+                    // };
 
                     let parseRem = () => {
                         self.location.Builder                             = remJSON.buildingfile.building.projectinfo.buildername && remJSON.buildingfile.building.projectinfo.buildername._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text.toString() : '';

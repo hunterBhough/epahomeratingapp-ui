@@ -259,7 +259,7 @@ class JobsNewPageController {
                 });
 
                 for (let index in JobPlans) {
-                    if (index === 0) {
+                    if (index == 0) {
                         job.Primary.HousePlan = JobPlans[index];
                     } else {
                         job.Secondary[index - 1].HousePlan = JobPlans[index];
