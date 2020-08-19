@@ -95,3 +95,17 @@
         transform: scale(1);
     }
 }
+
+@media (max-width: $screen-mobile) {
+    .item-list-head-jobs {
+        padding-right: 0px;
+
+        .item-list-head-jobs-offline {
+            padding: 0 10px 0 5px;
+        }
+        .item-list-head-jobs-inspection {
+            margin-right: 15px;
+        }
+    }
+
+}
