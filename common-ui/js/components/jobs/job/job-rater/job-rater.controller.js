@@ -5,8 +5,6 @@ class JobRaterController extends Job {
     $onInit () {
         super.$onInit();
 
-        console.warn('monkey', this.$window.innerWidth);
-
         if (this.$window.innerWidth <= 480) {
             this.isMobile = true;
         } else {

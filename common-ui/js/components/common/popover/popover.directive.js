@@ -5,7 +5,6 @@ function popover () {
         controller,
         restrict : 'A',
         link     : (scope, element, attrs, popoverCtrl) => {
-            console.warn('okokok', attrs.id);
             if (attrs.id && attrs.id.length > 0) {
                 popoverCtrl.register(attrs.id);
 
