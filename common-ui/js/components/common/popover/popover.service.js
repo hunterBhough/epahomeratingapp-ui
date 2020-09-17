@@ -33,7 +33,7 @@ class PopoverService {
     closePopover (popoverId) {
         return this.$q((resolve, reject) => {
             if (this.popovers[popoverId]) {
-                this.popovers[popoverId].open({
+                this.popovers[popoverId].close({
                     resolve,
                     reject
                 });

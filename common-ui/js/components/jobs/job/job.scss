@@ -203,3 +203,38 @@ $job-photo-height-small:  85px;
     text-transform: uppercase;
   }
 }
+
+@media (max-width: $screen-mobile) {
+    .job-title {
+        font-size: 14px;
+    }
+    .job-house-plan-type {
+        display: none;
+    }
+    .job-toggle {
+        padding: 0 10px 0 15px;
+    }
+    .job-meta {
+        .last-update {
+            display: none;
+        }
+    }
+    .job-info {
+        width: calc(100vw - 168px);
+    }
+    .list-item-activate {
+        display: none;
+    }
+    .job-status {
+        display: none;
+    }
+    .job {
+        padding: 10px 15px 10px 10px;
+    }
+    .job-meta {
+        .label-rating-type {
+            width: auto;
+            margin-right: 5px;
+        }
+    }
+}

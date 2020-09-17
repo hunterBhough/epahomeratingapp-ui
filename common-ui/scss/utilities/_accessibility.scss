@@ -38,3 +38,15 @@
 .sr-only-focusable {
     @extend %sr-only-focusable;
 }
+
+@media(max-width: $screen-mobile) {
+    .only-desktop {
+        display: none !important;
+    }
+}
+
+@media (min-width: 481px) {
+    .only-mobile {
+        display: none !important;
+    }
+}

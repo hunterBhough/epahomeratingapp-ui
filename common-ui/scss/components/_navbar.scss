@@ -36,6 +36,7 @@
     .title-partial-pro {
         font-weight: 300;
     }
+
 }
 
 .site-logo {
@@ -64,4 +65,13 @@
 // variants
 #site-head {
     @include gradient-vertical($brand-secondary, darken($brand-secondary, 5%));
+}
+
+@media (max-width: $screen-mobile) {
+    site-logo .logo {
+        width: 120px;
+    }
+    .navbar {
+        padding: ($gutter-half/2)
+    }
 }

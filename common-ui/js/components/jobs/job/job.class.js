@@ -9,6 +9,7 @@ class Job {
         $scope,
         $stateParams,
         $timeout,
+        $window,
         JobHistoryService,
         jobTitleFilter,
         SyncService,
@@ -24,6 +25,7 @@ class Job {
         this.$scope       = $scope;
         this.$stateParams = $stateParams;
         this.$timeout     = $timeout;
+        this.$window      = $window;
 
         this.JobHistoryService = JobHistoryService;
         this.jobTitleFilter    = jobTitleFilter;
