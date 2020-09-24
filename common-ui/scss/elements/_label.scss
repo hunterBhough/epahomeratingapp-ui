@@ -62,3 +62,12 @@
     background-color: $label-error;
     color: $text-color-inverse;
 }
+
+@media (max-width: $screen-mobile) {
+    .label-filter {
+        border: 1px solid #60BFDD;
+        background-color: #fff;
+        border-radius: 50px;
+        margin: 0 5px 5px 0;
+    }
+}

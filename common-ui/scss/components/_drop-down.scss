@@ -38,3 +38,12 @@
         cursor: not-allowed;
     }
 }
+
+@media (max-width: $screen-mobile) {
+    .drop-down-item {
+        &.active {
+            background: #60bfdd;
+            color: #fff;
+        }
+    }
+}

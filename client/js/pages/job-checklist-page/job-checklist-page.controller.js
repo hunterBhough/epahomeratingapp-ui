@@ -94,7 +94,7 @@ class JobsChecklistPageController {
               case 'ENERGYGAUGE':
                 return 'Energy Gauge';
               case 'REMRATE':
-                return 'Rem Rate';
+                return 'REM / Ekotrope';
               default:
                 //TODO: handle unsupported types
             }

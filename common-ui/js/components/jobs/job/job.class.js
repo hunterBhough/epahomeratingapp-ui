@@ -9,6 +9,7 @@ class Job {
         $scope,
         $stateParams,
         $timeout,
+        $window,
         JobHistoryService,
         jobTitleFilter,
         SyncService,
@@ -24,6 +25,7 @@ class Job {
         this.$scope       = $scope;
         this.$stateParams = $stateParams;
         this.$timeout     = $timeout;
+        this.$window      = $window;
 
         this.JobHistoryService = JobHistoryService;
         this.jobTitleFilter    = jobTitleFilter;
@@ -93,11 +95,11 @@ class Job {
           function(housePlanType) {
             switch(housePlanType) {
               case 'REMRATE':
-                return 'Rem Rate';
+                return 'REM / Ekotrope';
               case 'ENERGYGAUGE':
                 return 'Energy Gauge';
               default:
-                return 'Rem Rate';
+                return 'REM / Ekotrope';
             }
           }
         )(vendor)

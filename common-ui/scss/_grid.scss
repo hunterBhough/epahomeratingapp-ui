@@ -21,6 +21,10 @@
     }
 }
 
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
 .flex-justify-end {
     justify-content: flex-end;
 }
@@ -98,6 +102,12 @@
     .page-container {
         padding-left: $gutter-half;
         padding-right: $gutter-half;
+    }
+}
+
+@media (max-width: $screen-mobile) {
+    .page-container {
+        padding: 0;
     }
 }
 
