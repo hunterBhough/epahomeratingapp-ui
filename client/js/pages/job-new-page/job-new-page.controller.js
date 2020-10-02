@@ -214,6 +214,7 @@ class JobsNewPageController {
             })
             .finally(() => {
                 this.isBusy = false;
+                window.scrollTo(0, 0);
             });
     }
 
@@ -237,32 +238,32 @@ class JobsNewPageController {
                 this.updateJobFileData(results, job);
 
                 return this.$q.all([
-                  this.uploadLocalHousePlans(job.Primary.HousePlan),
-                  ...job.Secondary.map(job => {
-                    return this.uploadLocalHousePlans(job.HousePlan)
-                  })
-                ])
+                    this.uploadLocalHousePlans(job.Primary.HousePlan),
+                    ...job.Secondary.map(job => {
+                        return this.uploadLocalHousePlans(job.HousePlan);
+                    })
+                ]);
             })
             .then(response => {
                 let JobPlans = [];
 
                 response.map((house) => {
-                  let HousePlan = [];
-                  for (let index in house) {
-                    HousePlan.push({
-                      _id : house[index].data.docID,
-                      Name: house[index].data.buildingName
-                    })
-                  }
-                  JobPlans.push(HousePlan);
-                })
+                    let HousePlan = [];
+                    for (let index in house) {
+                        HousePlan.push({
+                            _id  : house[index].data.docID,
+                            Name : house[index].data.buildingName
+                        });
+                    }
+                    JobPlans.push(HousePlan);
+                });
 
                 for (let index in JobPlans) {
-                  if(index == 0) {
-                    job.Primary.HousePlan = JobPlans[index];
-                  } else {
-                    job.Secondary[index - 1].HousePlan = JobPlans[index];
-                  }
+                    if (index == 0) {
+                        job.Primary.HousePlan = JobPlans[index];
+                    } else {
+                        job.Secondary[index - 1].HousePlan = JobPlans[index];
+                    }
                 }
 
                 this.$log.log('Posting Job');
@@ -288,6 +289,7 @@ class JobsNewPageController {
             })
             .finally(() => {
                 this.isBusy = false;
+                window.scrollTo(0, 0);
             });
     }
 

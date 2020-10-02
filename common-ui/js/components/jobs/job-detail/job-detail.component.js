@@ -7,7 +7,8 @@ let jobDetailComponent = {
         submitLabel : '@',
         submitJob   : '&',
         job         : '<',
-        housePlans  : '<'
+        housePlans  : '<',
+        isBusy      : '<'
     },
     template,
     controller,

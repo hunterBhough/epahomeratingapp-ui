@@ -33,7 +33,7 @@ class JobDetailController {
           },
           RemRate: {
             Key: 'rem-rate',
-            Name: 'REM Rate'
+            Name: 'REM / Ekotrope'
           }
         }
     }

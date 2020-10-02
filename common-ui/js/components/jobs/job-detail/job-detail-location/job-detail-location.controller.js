@@ -91,6 +91,21 @@ class JobDetailLocationController {
                 reader.onloadend = function readXMLSuccess () {
                     let remJSON = xmlToJSON.parseString(reader.result, {childrenAsArray : false});
 
+                    // const setHousePlanType = (housePlanType) => {
+                    //     switch (housePlanType) {
+                    //     case 'rem-rate':
+                    //         return {
+                    //             Vendor  : 'REMRATE',
+                    //             Version : '15.7',
+                    //         };
+                    //     case 'energy-gauge':
+                    //         return {
+                    //             Vendor  : 'ENERGYGAUGE',
+                    //             Version : '15.7',
+                    //         };
+                    //     }
+                    // };
+
                     let parseRem = () => {
                         self.location.Builder                             = remJSON.buildingfile.building.projectinfo.buildername && remJSON.buildingfile.building.projectinfo.buildername._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.buildername._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.buildername._text.toString() : '';
                         self.location.AddressInformation.CommunityName    = remJSON.buildingfile.building.projectinfo.developmentname && remJSON.buildingfile.building.projectinfo.developmentname._text ? _isEmpty(remJSON.buildingfile.building.projectinfo.developmentname._text.toString()) ? '' : remJSON.buildingfile.building.projectinfo.developmentname._text.toString() : '';
@@ -109,6 +124,29 @@ class JobDetailLocationController {
                         self.location.AddressInformation.ZipCode = remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP && remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text ? _isEmpty(remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString()) ? '' : remJSON.ENERGYGAUGE.TEMPPROJ.TEMPPROJRecord.ZIP._text.toString() : '';
                     };
 
+                    // if (remJSON.buildingfile && self.job.HousePlanVendor.Vendor !== 'ENERGYGAUGE') {
+                    //     try {
+                    //         self.job.HousePlanVendor = setHousePlanType('rem-rate');
+                    //         parseRem();
+                    //     } catch (error) {
+                    //         self.location.HousePlan.pop();
+                    //         self.DialogService
+                    //             .openDialog('dialog-parse-error');
+                    //     }
+                    // } else if (remJSON.ENERGYGAUGE && self.job.HousePlanVendor.Vendor !== 'REMRATE') {
+                    //     try {
+                    //         self.job.HousePlanVendor = setHousePlanType('energy-gauge');
+                    //         parseEnergy();
+                    //     } catch (error) {
+                    //         self.location.HousePlan.pop();
+                    //         self.DialogService
+                    //             .openDialog('dialog-parse-error');
+                    //     }
+                    // } else {
+                    //     self.location.HousePlan.pop();
+                    //     self.DialogService
+                    //         .openDialog('dialog-parse-error');
+                    // }
                     switch (self.job.HousePlanVendor.Vendor) {
                     case 'ENERGYGAUGE':
                         try {

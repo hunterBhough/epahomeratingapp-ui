@@ -95,11 +95,11 @@ class Job {
           function(housePlanType) {
             switch(housePlanType) {
               case 'REMRATE':
-                return 'Rem Rate';
+                return 'REM / Ekotrope';
               case 'ENERGYGAUGE':
                 return 'Energy Gauge';
               default:
-                return 'Rem Rate';
+                return 'REM / Ekotrope';
             }
           }
         )(vendor)
