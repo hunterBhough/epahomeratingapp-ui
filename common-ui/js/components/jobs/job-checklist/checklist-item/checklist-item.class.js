@@ -17,7 +17,8 @@ class ChecklistItemClass {
         S3_CONFIG,
         $http,
         $injector,
-        DialogService
+        DialogService,
+        $window
     ) {
         'ngInject';
 
@@ -34,6 +35,8 @@ class ChecklistItemClass {
         this.$timeout     = $timeout;
         this.$stateParams = $stateParams;
         this.$http        = $http;
+        this.$window      = $window;
+
 
         this.RESPONSES    = UI_ENUMS.RESPONSES;
         this.MESSAGING    = UI_ENUMS.MESSAGING;
@@ -54,6 +57,12 @@ class ChecklistItemClass {
     }
 
     $onInit () {
+        if (this.$window.innerWidth <= 480) {
+            this.isMobile = true;
+        } else {
+            this.isMobile = false;
+        }
+
         return this.$q((resolve, reject) => {
             this
                 .JobChecklistStateService

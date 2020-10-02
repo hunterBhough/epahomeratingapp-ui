@@ -1,9 +1,11 @@
 <div class="checklist-item">
-    <div class="flex-row flex-justify-between checklist-item-header-wrapper">
-        <header class="checklist-item-header form-group-horizontal">
+    <div class="flex-justify-between checklist-item-header-wrapper"
+         data-ng-class="{'flex-column' : checklistItemAirInletLocationsCtrl.isMobile, 'flex-row' : !checklistItemAirInletLocationsCtrl.isMobile}">
+        <header class="checklist-item-header form-group-horizontal"
+                ng-class="{'flex-row' : checklistItemAirInletLocationsCtrl.isMobile}">
             <button
                 aria-label="More Information"
-                class="checklist-item-info-toggle btn btn-link btn-no-label"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-desktop"
                 ng-class="{'has-footnote' : checklistItemAirInletLocationsCtrl.hasFootnote}"
                 ng-click="checklistItemAirInletLocationsCtrl.showFootnote()"
                 type="button">
@@ -11,7 +13,18 @@
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
             </button>
 
-            <h4 class="checklist-item-title pull-left">{{::checklistItemAirInletLocationsCtrl.display.Shorthand}}</h4>
+            <h4 class="checklist-item-title pull-left">
+                {{::checklistItemAirInletLocationsCtrl.display.Shorthand}}
+                <button
+                aria-label="More Information"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-mobile"
+                ng-class="{'has-footnote' : checklistItemAirInletLocationsCtrl.hasFootnote}"
+                ng-click="checklistItemAirInletLocationsCtrl.showFootnote()"
+                type="button">
+
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </button>
+            </h4>
             <select
                 data-ng-disabled="checklistItemAirInletLocationsCtrl.isReview"
                 class="form-control specified-in-hvac-report"

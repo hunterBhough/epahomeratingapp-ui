@@ -1,8 +1,10 @@
+
 <section>
+    <h3 class="only-mobile checklist-category-title">{{jobChecklistCategoryCtrl.categoryName}}</h3>
     <h2 class="sr-only">{{jobChecklistCategoryCtrl.categoryName}}</h2>
 
     <section data-ng-if="::jobChecklistCategoryCtrl.showPredrywallItems" class="checklist-section">
-        <h3 class="checklist-section-title">Pre-Drywall</h3>
+        <h3 class="checklist-section-title checklist-section-title-predrywall">Pre-Drywall</h3>
 
         <checklist-item
             data-ng-repeat="checklistItem in ::jobChecklistCategoryCtrl.preDrywallChecklistItems track by $index"

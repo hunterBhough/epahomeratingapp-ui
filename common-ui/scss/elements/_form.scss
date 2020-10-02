@@ -47,7 +47,7 @@ fieldset {
 .form-control {
     background-color: $body-bg;
     border: $border-default;
-    font-size: $font-size-large;
+    font-size: $font-size-large; //Has to be 16px to avoid iOS zooming
     height: $font-size-large * 2;
     max-width: 100%;
     padding: $padding-default;
@@ -207,5 +207,11 @@ fieldset {
     .form-control + .input-add-on,
     .input-add-on + .form-control {
         margin-left: -1px;
+    }
+}
+
+@media (max-width: $screen-mobile) {
+    .form-control-static {
+        font-size: $font-size-base;
     }
 }

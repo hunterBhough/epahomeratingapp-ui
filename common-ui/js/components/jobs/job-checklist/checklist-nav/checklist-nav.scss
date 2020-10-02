@@ -130,11 +130,11 @@ $affixed-shadow-color: rgba(0, 0, 0, 0.5);
     }
 
     .affix .nav-checklist-sections, .nav-checklist-sections {
-        margin: 0 ($gutter-half / 2);
+        margin: 0 1vw;
     }
 
     .affix .nav-checklist-item ,.nav-checklist-item {
-        // border-bottom: 5px solid $body-bg;
+        border-bottom: 0;
         padding: 0;
         transition: border-color $transition-default;
         margin: 0 5px;
@@ -152,18 +152,19 @@ $affixed-shadow-color: rgba(0, 0, 0, 0.5);
 
             &.not-applicable {
                 background-color: $brand-auxillary;
+                background-image: repeating-linear-gradient(45deg, transparent, transparent ($linear-progress-thickness / 2), $body-bg ($linear-progress-thickness / 2), $body-bg $linear-progress-thickness);
             }
         }
 
         img {
             opacity: 1;
-            width: 28px;
+            width: 8vw;
         }
 
         .nav-checklist-item-description {
             background-color: $body-bg;
             border-color: $body-bg;
-            padding-bottom: 0;
+            padding: 1vw 1vw 0 1vw;
         }
 
         &:hover,
