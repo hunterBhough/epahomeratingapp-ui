@@ -161,3 +161,10 @@ $btn-no-label-size: $icon-font-size + ($padding-default * 2);
         color: $link-color-hover;
     }
 }
+
+@media(max-width: $screen-mobile) {
+    .btn-comments {
+        height: 25px;
+        padding: 0 8px;
+    }
+}

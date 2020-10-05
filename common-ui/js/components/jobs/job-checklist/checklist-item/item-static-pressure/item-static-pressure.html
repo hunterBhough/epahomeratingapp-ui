@@ -1,9 +1,10 @@
 <div class="checklist-item">
-    <section class="flex-row flex-justify-between flex-align-center checklist-item-header-wrapper">
+    <section class="flex-justify-between flex-align-center checklist-item-header-wrapper"
+             data-ng-class="{'flex-column' : checklistItemCtrl.isMobile, 'flex-row' : !checklistItemCtrl.isMobile}">
         <header class="checklist-item-header">
             <button
                 aria-label="More Information"
-                class="checklist-item-info-toggle btn btn-link btn-no-label"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-desktop"
                 ng-class="::{'has-footnote' : checklistItemCtrl.hasFootnote}"
                 ng-click="checklistItemCtrl.showFootnote()"
                 type="button">
@@ -11,10 +12,22 @@
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
             </button>
 
-            <h4 class="checklist-item-title">{{::checklistItemCtrl.display.Shorthand}}</h4>
+            <h4 class="checklist-item-title">
+                {{::checklistItemCtrl.display.Shorthand}}
+                <button
+                aria-label="More Information"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-mobile"
+                ng-class="::{'has-footnote' : checklistItemCtrl.hasFootnote}"
+                ng-click="checklistItemCtrl.showFootnote()"
+                type="button">
+
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </button>
+            </h4>
         </header>
 
-        <div class="flex-row flex-align-center flex-justify-end flex-item-fixed-width">
+        <div class="flex-row flex-align-center flex-justify-end flex-item-fixed-width"
+             data-ng-class="{ 'flex-justify-between width-100 offset-small-bottom' : checklistItemCtrl.isMobile }">
             <checklist-item-comments
                 data-ng-if="::!checklistItemCtrl.isReview"
                 comments="checklistItemCtrl.comments"
@@ -41,7 +54,7 @@
         </div>
     </section>
 
-    <section class="container">
+    <section data-ng-class="{ 'container': !checklistItemCtrl.isMobile }">
         <div class="form-group form-group-horizontal"
              data-ng-repeat="staticPressure in checklistItemCtrl.mrfTable.Columns track by $index">
             <label for="{{::staticPressure.Key}}" class="control-label">

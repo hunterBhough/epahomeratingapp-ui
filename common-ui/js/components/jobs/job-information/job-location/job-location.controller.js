@@ -2,6 +2,7 @@ class jobLocationController {
     constructor (
         $state,
         $stateParams,
+        $window,
         jobTitleFilter
     ) {
         'ngInject';
@@ -9,11 +10,18 @@ class jobLocationController {
         this.$state           = $state;
         this.$stateParams     = $stateParams;
         this.jobTitleFilter   = jobTitleFilter;
+        this.$window          = $window;
     }
 
     $onInit () {
       this.elevationPhotos = this.house.Photo;
       this.elevationPhotosVisible = true;
+
+      if (this.$window.innerWidth <= 480) {
+        this.isMobile = true;
+    } else {
+        this.isMobile = false;
+    }
     }
 
     get JobTitle() {

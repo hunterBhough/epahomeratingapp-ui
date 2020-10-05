@@ -82,3 +82,12 @@ tbody {
 .empty-table-text {
     margin-bottom: $gutter-full;
 }
+
+@media (max-width: $screen-mobile) {
+    .table-caption {
+        display: none;
+    }
+    .table-responsive {
+        margin-bottom: 15px;
+    }
+}

@@ -78,3 +78,38 @@ $checklist-item-padding: 25px;
     margin-left: $gutter-half;
     padding: $offset-default 0 $offset-default $gutter-half;
 }
+
+@media (max-width: $screen-mobile) {
+    .checklist-item {
+        padding: 20px 10px;
+    }
+    .checklist-item-header {
+        padding: 0;
+        width: 100%;
+
+        .form-control {
+            margin-left: 0;
+        }
+    }
+    .checklist-item-title {
+        font-size: 14px;
+        margin-bottom: 15px;
+    }
+    .checklist-item-info-toggle {
+        height: 15px;
+        position: relative;
+        left: 0;
+        font-size: 15px;
+        padding: 0;
+
+        &.has-footnote {
+            display: inline-block;
+        }
+    }
+    .checklist-sub-item {
+        margin-left: 10px;
+    }
+    .checklist-item-header-wrapper {
+        margin-bottom: 0;
+    }
+}

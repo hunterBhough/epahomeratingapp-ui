@@ -1,9 +1,10 @@
 <div class="checklist-item">
-    <div class="flex-row flex-justify-between flex-align-center checklist-item-header-wrapper">
+    <div class="flex-justify-between flex-align-center checklist-item-header-wrapper"
+         data-ng-class="{'flex-column' : checklistItemHVACCommissioningCtrl.isMobile, 'flex-row' : !checklistItemHVACCommissioningCtrl.isMobile}">
         <header class="checklist-item-header">
             <button
                 aria-label="More Information"
-                class="checklist-item-info-toggle btn btn-link btn-no-label"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-desktop"
                 ng-class="{'has-footnote' : checklistItemHVACCommissioningCtrl.hasFootnote}"
                 ng-click="checklistItemHVACCommissioningCtrl.showFootnote()"
                 type="button">
@@ -11,10 +12,22 @@
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
             </button>
 
-            <h4 class="checklist-item-title">{{::checklistItemHVACCommissioningCtrl.display.Shorthand}}</h4>
+            <h4 class="checklist-item-title">
+                {{::checklistItemHVACCommissioningCtrl.display.Shorthand}}
+                <button
+                aria-label="More Information"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-mobile"
+                ng-class="{'has-footnote' : checklistItemHVACCommissioningCtrl.hasFootnote}"
+                ng-click="checklistItemHVACCommissioningCtrl.showFootnote()"
+                type="button">
+
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+            </button>
+            </h4>
         </header>
 
-        <div class="flex-row flex-align-center flex-item-fixed-width">
+        <div class="flex-row flex-align-center flex-item-fixed-width"
+             data-ng-class="{ 'flex-justify-between width-100 offset-bottom-small' : checklistItemHVACCommissioningCtrl.isMobile }">
             <checklist-item-comments
                 data-ng-if="::!checklistItemHVACCommissioningCtrl.isReview"
                 comments="checklistItemHVACCommissioningCtrl.comments"
@@ -50,7 +63,7 @@
             on-photo-capture="checklistItemHVACCommissioningCtrl.handlePhotoCapture(photo)">
         </photo-capture>
 
-        <p>Photograph HVAC Commissioning Checklist for records</p>
+        <p class="offset-left-small">Photograph HVAC Commissioning Checklist for records</p>
     </div>
 
     <div>

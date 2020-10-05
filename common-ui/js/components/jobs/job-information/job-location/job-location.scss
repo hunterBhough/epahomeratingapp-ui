@@ -34,3 +34,13 @@
 .job-location-elevation-photos-title {
   font-weight: bold;
 }
+
+@media (max-width: $screen-mobile) {
+    .job-location-info {
+        width: 80%;
+    }
+
+    .job-location-info-wrapper {
+        padding: $gutter-quarter;
+    }
+}

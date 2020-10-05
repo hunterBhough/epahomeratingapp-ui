@@ -1,0 +1,11 @@
+@import '../../../../scss/variables';
+
+@media (max-width: $screen-mobile) {
+    .job-location-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+    }
+}
+

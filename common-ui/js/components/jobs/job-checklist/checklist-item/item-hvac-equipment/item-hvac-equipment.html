@@ -1,9 +1,10 @@
 <div class="checklist-item">
-    <div class="flex-row flex-justify-between flex-align-center checklist-item-header-wrapper">
+    <div class="flex-justify-between flex-align-center checklist-item-header-wrapper"
+         data-ng-class="{'flex-column' : checklistItemHVACEquipmentCtrl.isMobile, 'flex-row' : !checklistItemHVACEquipmentCtrl.isMobile}">
         <header class="checklist-item-header form-group-horizontal">
             <button
                 aria-label="More Information"
-                class="checklist-item-info-toggle btn btn-link btn-no-label"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-desktop"
                 ng-class="{'has-footnote' : checklistItemHVACEquipmentCtrl.hasFootnote}"
                 ng-click="checklistItemHVACEquipmentCtrl.showFootnote()"
                 type="button">
@@ -11,18 +12,30 @@
                 <i class="fa fa-info-circle" aria-hidden="true"></i>
             </button>
 
-            <h4 class="checklist-item-title pull-left">Mfr. &amp; model of HVAC equipment matches</h4>
+            <h4 class="checklist-item-title pull-left">
+                Mfr. &amp; model of HVAC equipment matches
+                <button
+                aria-label="More Information"
+                class="checklist-item-info-toggle btn btn-link btn-no-label only-mobile"
+                ng-class="{'has-footnote' : checklistItemHVACEquipmentCtrl.hasFootnote}"
+                ng-click="checklistItemHVACEquipmentCtrl.showFootnote()"
+                type="button">
+                    <i class="fa fa-info-circle" aria-hidden="true"></i>
+                </button>
+            </h4>
 
             <select
                 class="form-control hvac-equipment-matches"
                 ng-disabled="::checklistItemHVACEquipmentCtrl.isReview"
                 data-ng-options="document.name for document in checklistItemHVACEquipmentCtrl.EQUIPMENT_MATCHES_DOCUMENT track by document.key"
                 data-ng-model="checklistItemHVACEquipmentCtrl.selectedEquipmentMatches"
-                data-ng-change="checklistItemHVACEquipmentCtrl.onEquipmentMatchesChange()">
+                data-ng-change="checklistItemHVACEquipmentCtrl.onEquipmentMatchesChange()"
+                data-ng-class="{'offset-bottom-small' : checklistItemHVACEquipmentCtrl.isMobile }">
             </select>
         </header>
 
-        <div class="flex-row flex-align-center flex-item-fixed-width">
+        <div class="flex-row flex-align-center flex-item-fixed-width"
+             data-ng-class="{ 'flex-justify-between width-100 offset-bottom-small' : checklistItemHVACEquipmentCtrl.isMobile }">
             <checklist-item-comments
                 data-ng-if="::!checklistItemHVACEquipmentCtrl.isReview"
                 comments="checklistItemHVACEquipmentCtrl.comments"
@@ -49,7 +62,7 @@
         </div>
     </div>
 
-    <div>
+    <div data-ng-class="{'offset-top': checklistItemHVACEquipmentCtrl.isMobile }">
         <div data-ng-if="::checklistItemHVACEquipmentCtrl.hasHVACDesignReport" dropdown="dropdown">
             <button
                 type="button"
