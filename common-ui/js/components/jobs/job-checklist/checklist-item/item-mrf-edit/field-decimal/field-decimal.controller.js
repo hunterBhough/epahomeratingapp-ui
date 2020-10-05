@@ -93,7 +93,7 @@ class MrfEditFieldDecimalController extends MrfEditField {
     }
 
     setPrecision () {
-        if (this.value === null) {
+        if (this.value === null || this.value === 'null') {
             return this.value;
         }
 
