@@ -12,6 +12,12 @@
     // transition: transform $transition-fast ease-in-out;
     // z-index: 5;
 
+    .house-elevation-photos-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 $gutter-half;
+    }
+
     &.active {
         transform: translateY(0%);
     }
@@ -22,13 +28,26 @@
         top: 0;
     }
 
-    .flex-row {
-        justify-content: space-between;
-        padding: 0 $gutter-half;
-    }
-
     .photo-capture {
         height: $photo-capture-large;
         width: $photo-capture-large;
+    }
+}
+
+@media (max-width: $screen-mobile) {
+    .house-elevation-photos {
+        .house-elevation-photos-wrapper {
+            flex-wrap: wrap;
+            padding: 0;
+        }
+
+        .house-elevation-photos-section {
+            margin-bottom: $gutter-half;
+        }
+
+        .photo-capture {
+            width: calc(50vw - 30px);
+            height: calc(50vw - 30px);
+        }
     }
 }

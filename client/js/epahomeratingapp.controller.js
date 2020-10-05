@@ -16,8 +16,8 @@ class epahomeratingappController {
         this.STATE_NAME                = UI_ENUMS.STATE_NAME;
         this.JOB_STATUS                = UI_ENUMS.JOB_STATUS;
 
-        // this.paddingTop    = `${45}px`;
-        // this.paddingBottom = '45px';
+        this.paddingTop    = `${45}px`;
+        this.paddingBottom = '45px';
     }
 
     stateIsJobChecklist (route) {
