@@ -22,3 +22,52 @@
 .tabs-sample-set {
     padding: $padding-default $gutter-half 0 ($gutter-half - $tab-padding);
 }
+
+@media (max-width: $screen-mobile) {
+    .address-information-separator {
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    .address-information-separator-title {
+        font-size: 14px;
+        background: white;
+        padding: 0 10px;
+        margin-top: -2px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .tabs-sample-set-mobile {
+        display: flex;
+        border-bottom: 1px solid #60bfdd;
+        margin-top: 20px;
+        margin-bottom: 5px;
+        justify-content: space-between;
+
+        .dropdown {
+            .btn {
+                border-bottom: 1px solid white;
+                border-radius: 2px 2px 0 0;
+                transform: translateY(1px);
+            }
+        }
+
+        .sample-drop-down {
+            left: 15px;
+            width: 125px;
+        }
+    }
+
+    .form-actions.row {
+        display: flex;
+        justify-content: space-between;;
+
+        .col-xs-9 {
+            display: flex;
+            flex-direction: row-reverse;
+            position: absolute;
+            right: 0;
+        }
+    }
+}
