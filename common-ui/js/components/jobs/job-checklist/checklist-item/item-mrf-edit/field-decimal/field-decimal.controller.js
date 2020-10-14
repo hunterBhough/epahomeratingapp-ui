@@ -94,7 +94,7 @@ class MrfEditFieldDecimalController extends MrfEditField {
 
     setPrecision () {
         if (this.value === null || this.value === 'null') {
-            return this.value;
+            return '0.0';
         }
 
         let decimal   = this.value.toString().split('.')[1];
