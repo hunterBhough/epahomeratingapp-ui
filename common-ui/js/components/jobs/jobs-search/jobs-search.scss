@@ -38,3 +38,11 @@
         height: auto;
     }
 }
+
+@media (max-width: $screen-mobile) {
+    .popover-jobs-search {
+        .popover-panel-body {
+            padding: 10px;
+        }
+    }
+}
