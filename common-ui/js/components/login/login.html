@@ -1,5 +1,6 @@
-<div class="login-container flip-container page-container">
-    <div class="flipper" data-ng-class="{'flipped' : (loginCtrl.action !== 'login')}">
+<div class="login-container flip-container page-container"
+     data-ng-class="{'flip-container-app': loginCtrl.CONTEXT_IS_APP}">
+    <div class="flipper" data-ng-class="{'flipped' : (loginCtrl.action !== 'login'), 'flipper-app' : loginCtrl.CONTEXT_IS_APP}">
         <login-form
             class="login-panel flip-front flip-panel"
             user="loginCtrl.user"
@@ -30,7 +31,8 @@
         </div>
     </div>
 </div>
-<div class="login-splash">
+<div class="login-splash"
+     data-ng-class="{'hidden' : loginCtrl.CONTEXT_IS_APP}">
     <div class="login-splash-hero">
         <img class="login-splash-hero-bg" src="img/login/bg-hero.jpg" />
         <div class="page-container">

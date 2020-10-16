@@ -74,4 +74,10 @@
     .navbar {
         padding: ($gutter-half/2)
     }
+
+    .login-page {
+        #site-head {
+            display: none;
+        }
+    }
 }
