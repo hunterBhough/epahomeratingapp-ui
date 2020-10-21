@@ -6,7 +6,7 @@ import _isEmpty from 'lodash/isEmpty';
 import xmlToJSON from 'xmltojson';
 
 class JobDetailLocationController {
-    constructor (UI_ENUMS, $scope, $timeout, S3_CONFIG, DialogService, $q) {
+    constructor (UI_ENUMS, $scope, $timeout, S3_CONFIG, DialogService, $q, $window) {
         'ngInject';
 
         this.ratingTypeOptions      = UI_ENUMS.RATING_TYPES;
@@ -18,10 +18,17 @@ class JobDetailLocationController {
         this.s3Bucket               = `${S3_CONFIG.S3_BUCKET_NAME_PREFIX}-rating-company`;
         this.DialogService          = DialogService;
         this.$q                     = $q;
+        this.$window                = $window;
     }
 
     $onInit () {
         this.gatherReports();
+
+        if (this.$window.innerWidth <= 480) {
+            this.isMobile = true;
+        } else {
+            this.isMobile = false;
+        }
     }
 
     //might not need

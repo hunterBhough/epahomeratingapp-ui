@@ -1,7 +1,7 @@
 import moment from 'moment';
 
 class ChecklistCommentsController {
-    constructor ($log, SanitizeService, AssetPathService, UI_ENUMS, CONTEXT, AuthenticationService, BASE_IMAGE_URL) {
+    constructor ($log, SanitizeService, AssetPathService, UI_ENUMS, CONTEXT, AuthenticationService, BASE_IMAGE_URL, $window) {
         'ngInject';
         this.$log              = $log;
         this.AssetPathService  = AssetPathService;
@@ -9,9 +9,16 @@ class ChecklistCommentsController {
         this.user              = AuthenticationService.getUserInfo();
         this.CONTEXT_IS_APP    = CONTEXT === UI_ENUMS.CONTEXT.APP;
         this.SanitizeService   = SanitizeService;
+        this.$window           = $window;
     }
 
     $onInit () {
+        if (this.$window.innerWidth <= 480) {
+            this.isMobile = true;
+        } else {
+            this.isMobile = false;
+        }
+
         this.$log.log('[ChecklistCommentsController] initialized');
         this.imageUrl = this.AssetPathService.getBaseURL('IMAGE');
         this.state             = 'list';

@@ -131,7 +131,7 @@ class JobChecklistState {
                     this.jobDataResponse = jobDataResponse;
 
                     //TODO: get the right logic digest
-                    return this.DisplayLogicDigestService.getDigest(job.HousePlanVendor.Vendor);
+                    return this.DisplayLogicDigestService.getPromise(job.HousePlanVendor.Vendor);
                 })
                 .then((digest) => {
                     if (this.job.RatingType === this.RATING_TYPES.HERS.Key && this.JobChecklistProgressService.jobHasNoProgress(this.job.Progress)) {

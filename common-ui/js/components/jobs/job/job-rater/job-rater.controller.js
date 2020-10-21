@@ -5,6 +5,12 @@ class JobRaterController extends Job {
     $onInit () {
         super.$onInit();
 
+        if (this.$window.innerWidth <= 480) {
+            this.isMobile = true;
+        } else {
+            this.isMobile = false;
+        }
+
         this.OFFLINE_CONFIRMATION_DIALOG = this.UI_ENUMS.DIALOG.MAKE_JOB_OFFLINE;
         if (!this.syncService.online) {
             this.OFFLINE_DISABLED_DIALOG = this.UI_ENUMS.DIALOG.UNDO_JOB_OFFLINE;

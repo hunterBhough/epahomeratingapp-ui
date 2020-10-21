@@ -20,7 +20,8 @@
     <div class="job-info flex-item-grow">
         <div class="job-meta flex-row">
             <span class="label-rating-type" data-ng-class="jobRaterCtrl.RatingTypeClass">{{::jobRaterCtrl.RatingType}}</span>
-            <span class="label label-sample-set" data-ng-if="::jobRaterCtrl.isSample">Sample Set: {{::jobRaterCtrl.job.SampleSize}} <i class="fa fa-map-marker" aria-hidden="true"></i></span>
+            <span class="label label-sample-set only-desktop" data-ng-if="::jobRaterCtrl.isSample">Sample Set: {{::jobRaterCtrl.job.SampleSize}} <i class="fa fa-map-marker" aria-hidden="true"></i></span>
+            <span class="label label-sample-set only-mobile" data-ng-if="::jobRaterCtrl.isSample">{{::jobRaterCtrl.job.SampleSize}} <i class="fa fa-map-marker" aria-hidden="true"></i></span>
             <span class="last-update small"><strong>{{::jobRaterCtrl.lastUpdateType}}:</strong> {{::jobRaterCtrl.lastUpdateTime}}</span>
         </div>
 
@@ -39,9 +40,18 @@
 
     </div>
 
-    <div class="job-progress">
+    <div data-ng-if="::!jobRaterCtrl.isMobile" class="job-progress">
         <div class="radial-progress"><radial-progress title="Pre-drywall" progress="jobRaterCtrl.job.Progress.PreDrywall" /></radial-progress></div>
         <div class="radial-progress"><radial-progress title="Final" progress="jobRaterCtrl.job.Progress.Final" /></radial-progress></div>
+    </div>
+
+    <!-- <div class="job-progress">
+        <div class="radial-progress"><radial-progress-mobile title="Pre-drywall" progress="jobRaterCtrl.job.Progress.PreDrywall" /></radial-progress-mobile></div>
+        <div class="radial-progress"><radial-progress-mobile title="Final" progress="jobRaterCtrl.job.Progress.Final" /></radial-progress-mobile></div>
+    </div> -->
+
+    <div data-ng-if="::jobRaterCtrl.isMobile" class="job-progress-mobile">
+        <div class="radial-progress"><radial-progress-mobile title="Progress" predrywall="jobRaterCtrl.job.Progress.PreDrywall" final="jobRaterCtrl.job.Progress.Final" /></radial-progress-mobile></div>
     </div>
 
     <i class="list-item-activate fa fa-chevron-right fa-lg" aria-hidden="true"></i>

@@ -2,7 +2,6 @@ import MrfEditField from '../field.class.js';
 
 class MrfEditFieldDecimalController extends MrfEditField {
     $onInit () {
-        this.value   = parseFloat(this.value);
         this.invalid = false;
 
         this.DisplayLogicDigestService
@@ -10,9 +9,11 @@ class MrfEditFieldDecimalController extends MrfEditField {
             .then((decimal) => {
                 this.configureValidation(decimal);
                 this.decimalFound = true;
+                this.value = this.setPrecision();
             })
             .catch((error) => {
                 this.decimalFound = false;
+                this.value = parseFloat(this.value);
             });
 
         this.disabled = this.disabled || false;
@@ -92,8 +93,8 @@ class MrfEditFieldDecimalController extends MrfEditField {
     }
 
     setPrecision () {
-        if (this.value === null) {
-            return this.value;
+        if (this.value === null || this.value === 'null') {
+            return '0.0';
         }
 
         let decimal   = this.value.toString().split('.')[1];
@@ -104,7 +105,7 @@ class MrfEditFieldDecimalController extends MrfEditField {
             value = Math.round(value * this.decimalType.roundMultiplier) / this.decimalType.roundMultiplier;
         }
 
-        return value;
+        return this.decimalType.fractionDigits ? parseFloat(value).toFixed(this.decimalType.fractionDigits) : parseFloat(value);
     }
 }
 

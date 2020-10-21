@@ -1,5 +1,6 @@
 <div class="checklist-item">
-    <div class="flex-row flex-justify-between flex-align-center checklist-item-header-wrapper">
+    <div class="flex-justify-between flex-align-center checklist-item-header-wrapper"
+         data-ng-class="{'flex-column' : checklistItemWaterHeaterEquipmentCtrl.isMobile, 'flex-row' : !checklistItemWaterHeaterEquipmentCtrl.isMobile}">
         <header class="checklist-item-header form-group-horizontal">
             <button
                 aria-label="More Information"
@@ -14,7 +15,8 @@
             <h4 class="checklist-item-title pull-left">{{::checklistItemWaterHeaterEquipmentCtrl.display.Shorthand}}</h4>
         </header>
 
-        <div class="flex-row flex-align-center flex-item-fixed-width">
+        <div class="flex-row flex-align-center flex-item-fixed-width"
+            data-ng-class="{ 'flex-justify-between width-100 offset-bottom-small' : checklistItemWaterHeaterEquipmentCtrl.isMobile }">
             <checklist-item-comments
                 data-ng-if="::!checklistItemWaterHeaterEquipmentCtrl.isReview"
                 comments="checklistItemWaterHeaterEquipmentCtrl.comments"

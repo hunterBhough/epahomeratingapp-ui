@@ -28,3 +28,9 @@
         padding: $padding-large;
     }
 }
+
+@media (max-width: $screen-mobile) {
+    .item-list-item {
+        padding: 5px;
+    }
+}

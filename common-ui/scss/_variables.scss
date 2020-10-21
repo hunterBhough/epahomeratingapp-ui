@@ -310,6 +310,8 @@ $screen-md-min:     ($screen-sm + 1);
 $screen-md-max:     ($screen-lg - 1);
 $screen-lg-min:     ($screen-md + 1);
 
+$screen-mobile:     480px;
+
 $grid-breakpoints: (
     xs: 0,
     sm: ($screen-sm + 80px),

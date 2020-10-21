@@ -1,9 +1,13 @@
-<div class="checklist-item checklist-sub-item flex-row flex-justify-between flex-align-center" ng-show="!subItemDefaultController.isOmitted">
+<div class="checklist-item checklist-sub-item flex-row flex-justify-between flex-align-center"
+ng-show="!subItemDefaultController.isOmitted"
+data-ng-class="{'flex-column': subItemDefaultController.isMobile, 'flex-row' : !subItemDefaultController.isMobile}"
+>
     <header class="checklist-item-header">
         <h4 class="checklist-item-title pull-left">{{::subItemDefaultController.display.Shorthand}}</h4>
     </header>
 
-    <div class="flex-row flex-align-center flex-item-fixed-width">
+    <div class="flex-row flex-align-center flex-item-fixed-width"
+        data-ng-class="{ 'flex-justify-between width-100' : subItemDefaultController.isMobile }">
         <checklist-item-comments
             data-ng-if="!subItemDefaultController.isReview"
             comments="subItemDefaultController.comments"

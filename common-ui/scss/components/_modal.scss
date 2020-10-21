@@ -72,3 +72,18 @@
         margin-left: $offset-default;
     }
 }
+
+@media (max-width: $screen-mobile) {
+    .modal {
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        position: fixed;
+        margin: 0;
+    }
+
+    .modal-scroll-body .modal-body {
+        height: calc(100vh - 50px);
+    }
+}

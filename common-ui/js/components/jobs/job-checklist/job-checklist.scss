@@ -396,3 +396,95 @@
         }
     }
 }
+
+
+@media (max-width: $screen-mobile) {
+    .job-actions {
+        display: none;
+    }
+    .job-extended-menu {
+        border-left: none;
+
+        .job-extended-menu-toggle {
+            transform: translateY(11px);
+            height: 100%;
+            padding: 0 15px;
+        }
+        .job-extended-menu-icon {
+            width: 25px;
+        }
+        .job-extended-menu-label {
+            display: none;
+        }
+        .job-extended-menu-dropdown {
+            margin: 0;
+            // transform: translateY(20px);
+        }
+    }
+    .job-checklist-sampleset {
+        transform: translateY(8px);
+        margin-right: 15px;
+
+        .job-checklist-sampleset-label {
+            display: none;
+        }
+    }
+    .job-checklist-meta .btn-job-dropdown-toggle {
+        // margin-left: 0;
+        // padding: 15px 10px;
+    }
+    .job-checklist-header {
+        // height: auto;
+
+        .btn-back {
+            margin-left: 0;
+            width: auto;
+            height: auto;
+            padding: 0 15px;
+        }
+    }
+    .job-checklist-meta {
+        .btn-job-dropdown-toggle {
+            // padding: 0 15px;
+
+            &.active {
+              .job-checklist-sampleset {
+                transform: translateY(-17px);
+              }
+            }
+        }
+    }
+    .job-checklist-title {
+        font-size: 16px;
+    }
+
+    .job-location-wrapper-primary .job-location .checklist-section-title {
+        margin: 0;
+    }
+
+    .job-location .checklist-section-title {
+        margin: $gutter-half 0 0;
+    }
+
+    .checklist-section-title {
+        font-size: 14px;
+        padding: 15px 30px;
+    }
+
+    .checklist-category-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 20px;
+    }
+    .checklist-section-title-predrywall {
+        margin: 0;
+    }
+    .checklist-item .button-group .btn {
+        width: 60px;
+    }
+    .form-group-horizontal .form-control.hvac-equipment-matches {
+        margin-left: 0;
+        margin-bottom: 15px;
+    }
+}

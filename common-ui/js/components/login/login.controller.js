@@ -1,7 +1,13 @@
+// import moment from 'moment';
+
+const downForMaintenance = false; //set to false to turn off
+// const TIMESTAMP = moment(new Date()).format('MMM Do YYYY h:mm a');
+
 const STATUS_MESSAGE = {
-  SYSTEM_ERROR: 'There was a system error. Please contact RaterPRO support.',
-  AUTHORIZATION_ERROR: 'You are not authorized to use this system.'
-}
+    SYSTEM_ERROR        : 'There was a system error. Please contact RaterPRO support.',
+    AUTHORIZATION_ERROR : 'You are not authorized to use this system.',
+    MAINTENANCE_ERROR   : 'Service is down for maintenance; please check back Friday, May 20 at 9:00am.'
+};
 
 class LoginController {
     constructor (
@@ -14,7 +20,8 @@ class LoginController {
         AuthenticationService,
         AuthorizationService,
         UI_ENUMS,
-        VALIDATION_PATTERN
+        VALIDATION_PATTERN,
+        CONTEXT
     ) {
         'ngInject';
 
@@ -31,6 +38,8 @@ class LoginController {
         this.userIdPattern = VALIDATION_PATTERN.USER_NAME;
         this.STATE_NAME    = UI_ENUMS.STATE_NAME;
         this.JOB_PAGE_TAB  = UI_ENUMS.JOB_PAGE_TAB;
+        this.CONTEXT_IS_APP    = CONTEXT === UI_ENUMS.CONTEXT.APP;
+
     }
 
     $onInit () {
@@ -65,7 +74,12 @@ class LoginController {
             try {
                 this.$log.error(`[login.controller.js $onInit $transition onError try] ${JSON.stringify(transition._error.detail)}`);
                 this.statusMessage = transition._error.detail.message || STATUS_MESSAGE.SYSTEM_ERROR;
+
             } catch (error) {
+                if (downForMaintenance) {
+                    this.statusMessage = STATUS_MESSAGE.MAINTENANCE_ERROR;
+                    return;
+                }
                 this.$log.error(`[login.controller.js $onInit $transition onError catch] ${JSON.stringify(error)}`);
                 this.statusMessage = STATUS_MESSAGE.SYSTEM_ERROR;
             }
@@ -138,6 +152,11 @@ class LoginController {
             this
                 .loginMethod(user)
                 .then((user) => {
+                    if (downForMaintenance) {
+                        this.statusMessage = STATUS_MESSAGE.MAINTENANCE_ERROR;
+                        this.AuthenticationService.logout();
+                        reject();
+                    }
                     this.notAuthorized = false;
                     this.setAction('authorization');
                     return this.AuthorizationService.setUserAuthorization(user.userId);

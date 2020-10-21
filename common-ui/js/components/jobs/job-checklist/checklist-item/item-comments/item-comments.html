@@ -6,7 +6,10 @@
         data-ng-class="{'has-comments' : checklistItemCommentsCtrl.comments.length > 0}"
         popover-toggle="popover-toggle">
 
-        <span data-ng-if="checklistItemCommentsCtrl.comments.length > 0">{{checklistItemCommentsCtrl.comments.length}}</span> <i class="fa fa-commenting-o fa-lg" aria-hidden="true"></i>
+        <span data-ng-if="checklistItemCommentsCtrl.comments.length > 0">{{checklistItemCommentsCtrl.comments.length}}</span>
+        <i class="fa fa-commenting-o fa-lg"
+           aria-hidden="true"
+           data-ng-class="{'fa-sm': checklistItemCommentsCtrl.comments.length > 0 && checklistItemCommentsCtrl.isMobile }"></i>
     </button>
 
     <div class="popover hidden" popover-body="popover-body">

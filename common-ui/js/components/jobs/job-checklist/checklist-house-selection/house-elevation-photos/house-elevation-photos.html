@@ -6,8 +6,8 @@
         <i class="fa fa-close" aria-hidden="true"></i> Close
     </button> -->
 
-    <div class="flex-row">
-        <section ng-repeat="elevationPhoto in houseElevationPhotosCtrl.ELEVATION_PHOTOS track by $index" class="flex-justify-center flex-align-center flex-column">
+    <div class="house-elevation-photos-wrapper">
+        <section ng-repeat="elevationPhoto in houseElevationPhotosCtrl.ELEVATION_PHOTOS track by $index" class="flex-justify-center flex-align-center flex-column house-elevation-photos-section">
             <photo-capture
                 class="flex-item-static"
                 photo="houseElevationPhotosCtrl.photos[elevationPhoto.Key]"

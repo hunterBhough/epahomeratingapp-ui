@@ -123,3 +123,72 @@ $affixed-shadow-color: rgba(0, 0, 0, 0.5);
         border-bottom-color: $status-active;
     }
 }
+
+@media (max-width: $screen-mobile) {
+    .affix .checklist-nav-wrapper, .checklist-nav-wrapper {
+        box-shadow: 0 0 10px $affixed-shadow-color;
+    }
+
+    .affix .nav-checklist-sections, .nav-checklist-sections {
+        margin: 0 1vw;
+    }
+
+    .affix .nav-checklist-item ,.nav-checklist-item {
+        border-bottom: 0;
+        padding: 0;
+        transition: border-color $transition-default;
+        margin: 0 5px;
+
+        .nav-checklist-item-description span {
+            position: absolute;
+            transform: scaleY(0);
+        }
+
+        .linear-progress {
+            position: absolute;
+            transform: scaleY(1);
+            height: 5px;
+            background: none;
+
+            &.not-applicable {
+                background-color: $brand-auxillary;
+                background-image: repeating-linear-gradient(45deg, transparent, transparent ($linear-progress-thickness / 2), $body-bg ($linear-progress-thickness / 2), $body-bg $linear-progress-thickness);
+            }
+        }
+
+        img {
+            opacity: 1;
+            width: 8vw;
+        }
+
+        .nav-checklist-item-description {
+            background-color: $body-bg;
+            border-color: $body-bg;
+            padding: 1vw 1vw 0 1vw;
+        }
+
+        &:hover,
+        &:focus {
+            border-bottom-color: $border-color-default;
+        }
+
+        &.active,
+        &:active {
+            border: none;
+
+            .nav-checklist-item-description {
+                background-color: $border-color-default;
+                border: none;
+            }
+
+            img {
+                opacity: 1;
+            }
+        }
+
+        // &.active {
+        //     border-bottom-color: $status-active;
+        // }
+    }
+
+}

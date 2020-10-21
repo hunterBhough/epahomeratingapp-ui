@@ -1,6 +1,8 @@
 import template from './item-static-pressure.html';
 import controller from './item-static-pressure.controller';
 
+import './item-static-pressure.scss';
+
 let checklistItemMrfStaticPressureComponent = {
     bindings : {
         itemId               : '@',

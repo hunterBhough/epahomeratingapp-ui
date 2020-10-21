@@ -89,3 +89,22 @@
     padding-right: 0;
     width: 100%;
 }
+
+@media (max-width: $screen-mobile) {
+    .job-search-popover {
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        top: 0;
+        border-radius: 0;
+    }
+    .popover {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        border: 0;
+    }
+}

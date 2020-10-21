@@ -29,3 +29,12 @@ html,
 body {
     -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes, no-misspelled-properties
 }
+
+@media (max-width: $screen-mobile) {
+    body {
+        font-size: $font-size-small;
+    }
+    input, select {
+        font-size: 100%;
+    }
+}
