@@ -74,3 +74,13 @@ a {
 .small {
     font-size: $font-size-small;
 }
+
+
+@media (max-width: $screen-mobile) {
+    h2 {
+        font-size: 24px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+}

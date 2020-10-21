@@ -4,7 +4,8 @@ class jobHistoryController {
         $stateParams,
         JobHistoryService,
         JobChecklistStateService,
-        jobTitleFilter
+        jobTitleFilter,
+        $window
     ) {
         'ngInject';
 
@@ -14,6 +15,7 @@ class jobHistoryController {
         this.JobHistoryService        = JobHistoryService;
         this.JobChecklistStateService = JobChecklistStateService;
         this.jobTitleFilter           = jobTitleFilter;
+        this.$window = $window;
 
         this.HISTORY_TYPES = {
             'NEW' : 'new',
@@ -25,6 +27,12 @@ class jobHistoryController {
     }
 
     $onInit () {
+        if (this.$window.innerWidth <= 480) {
+            this.isMobile = true;
+        } else {
+            this.isMobile = false;
+        }
+
         if (this.jobHistory[0].Description !== undefined) {
             this.historyType = this.HISTORY_TYPES.OLD;
         } else {

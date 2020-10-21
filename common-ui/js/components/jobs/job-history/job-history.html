@@ -10,7 +10,8 @@
 
     <div ng-if="jobHistoryCtrl.historyType === jobHistoryCtrl.HISTORY_TYPES.NEW">
         <div
-            class="history-group flex-row"
+            class="history-group"
+            data-ng-class="{'flex-row': !jobHistoryCtrl.isMobile, 'flex-column': jobHistoryCtrl.isMobile}"
             data-ng-repeat="historyGroup in ::jobHistoryCtrl.history track by $index">
 
             <div class="history-group-details">
