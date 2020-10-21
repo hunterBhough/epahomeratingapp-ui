@@ -39,7 +39,7 @@
         </div>
     </fieldset>
 
-    <nav class="tabs tabs-sample-set row flex-row" role="tablist" data-ng-class="{'hidden' : !jobDetailCtrl.isSampleSet}">
+    <nav class="tabs tabs-sample-set row flex-row only-desktop" role="tablist" data-ng-class="{'hidden' : !jobDetailCtrl.isSampleSet}">
         <button
             data-ng-click="jobDetailCtrl.setTab(jobDetailCtrl.job.Primary.HouseId)"
             type="button"
@@ -77,6 +77,59 @@
         </button>
     </nav>
 
+    <div class="tabs-sample-set-mobile"
+         data-ng-class="{'hidden' : !jobDetailCtrl.isSampleSet}">
+        <div dropdown="dropdown" class="dropdown">
+            <button
+                class="btn"
+                dropdown-toggle="dropdown-toggle">
+                {{jobDetailCtrl.dropdownText}} <i class="fa fa-chevron-down" aria-hidden="true"
+                ></i>
+            </button>
+
+            <nav
+                    class="list-unstyled drop-down hidden sample-drop-down"
+                    dropdown-menu="dropdown-menu"
+                    role="menu">
+
+                    <a
+                        data-ng-click="jobDetailCtrl.setTab(jobDetailCtrl.job.Primary.HouseId)"
+                        class="drop-down-item"
+                        role="tab"
+                        aria-controls="tabpanel-location-{{::jobDetailCtrl.job.Primary.HouseId}}"
+                        aria-selected="{{jobDetailCtrl.ariaCurrent(jobDetailCtrl.job.Primary.HouseId)}}"
+                        data-ng-class="{'active' : (jobDetailCtrl.job.Primary.HouseId === jobDetailCtrl.currentLocation)}"
+                        id="tab-location-{{::jobDetailCtrl.job.Primary.HouseId}}">
+
+                        Sample 1 (Primary)
+                    </a>
+
+                    <a
+                        data-ng-repeat="secondary in jobDetailCtrl.job.Secondary track by secondary.HouseId"
+                        data-ng-click="jobDetailCtrl.setTab(secondary.HouseId)"
+                        class="drop-down-item"
+                        role="tab"
+                        aria-controls="tabpanel-location-{{location.HouseId}}"
+                        aria-selected="{{jobDetailCtrl.ariaCurrent(location.HouseId)}}"
+                        data-ng-class="{'active' : (secondary.HouseId === jobDetailCtrl.currentLocation)}"
+                        id="tab-location-{{::secondary.HouseId}}">
+
+                        Sample {{$index + 2}}
+                    </a>
+            </nav>
+        </div>
+
+        <button
+            data-ng-disabled="!jobDetailCtrl.canEditSampleSet || !jobDetailCtrl.canAddSample"
+            data-ng-click="jobDetailCtrl.addSample()"
+            type="button"
+            class="btn btn-link">
+
+            <i class="fa fa-plus-circle" aria-hidden="true"></i> Add Sample
+        </button>
+    </div>
+
+
     <div class="tab-content">
         <job-detail-location
             class="tabpanel"
@@ -107,11 +160,19 @@
     </div>
 
     <div class="form-actions row">
+        <button class="btn btn-error pull-right only-mobile" type="button"
+                data-ng-click="jobDetailCtrl.deleteSample()"
+                data-ng-disabled="!jobDetailCtrl.canEditSampleSet"
+                data-ng-hide="!jobDetailCtrl.canDeleteLocation">
+                <i class="fa fa-remove" aria-hidden="true"></i>
+                Remove Sample
+        </button>
+
         <div class="offset-xs-3 col-xs-9">
-            <button class="btn" type="submit" data-ng-disabled="jobDetailCtrl.isBusy"><i data-ng-class="{'hidden' : !jobDetailCtrl.isBusy}" class="fa fa-circle-o-notch fa-spin fa-fw"></i>{{::jobDetailCtrl.submitLabel}}</button>
+            <button class="btn" type="submit">{{::jobDetailCtrl.submitLabel}}</button>
             <button class="btn btn-link" type="button" data-ng-click="jobDetailCtrl.onCancel()">Cancel</button>
 
-            <button class="btn btn-error pull-right" type="button"
+            <button class="btn btn-error pull-right only-desktop" type="button"
                 data-ng-click="jobDetailCtrl.deleteSample()"
                 data-ng-disabled="!jobDetailCtrl.canEditSampleSet"
                 data-ng-hide="!jobDetailCtrl.canDeleteLocation">

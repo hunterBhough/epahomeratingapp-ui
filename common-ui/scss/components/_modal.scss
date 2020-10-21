@@ -82,4 +82,8 @@
         position: fixed;
         margin: 0;
     }
+
+    .modal-scroll-body .modal-body {
+        height: calc(100vh - 50px);
+    }
 }
