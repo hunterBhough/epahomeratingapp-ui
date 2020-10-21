@@ -83,7 +83,16 @@
         margin: 0;
     }
 
+    .modal.modal-scroll-body {
+        height: 100vh;
+    }
+
     .modal-scroll-body .modal-body {
         height: calc(100vh - 50px);
+    }
+
+    .modal-header {
+        display: grid;
+        grid-template-columns: 50px auto 50px;
     }
 }
