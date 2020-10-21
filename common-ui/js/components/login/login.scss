@@ -20,17 +20,7 @@ $navbar-height: 75px;
     &.flip-container {
         perspective: none;
 
-        // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-        //     width: 320px;
-        //     padding-top: 80px;
-
-        //     &.page-container {
-        //         padding-left: 0;
-        //         padding-right: 0;
-        //     }
-        // }
-
-        &.flip-container-app {
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
             width: 320px;
             padding-top: 80px;
 
@@ -46,6 +36,8 @@ $navbar-height: 75px;
                 align-items: center;
                 justify-content: center;
                 padding-top: 0;
+                width: 100vw;
+                height: 100vh;
             }
         }
 
@@ -86,7 +78,7 @@ $navbar-height: 75px;
             width: 100%;
         }
 
-        &.flipper-app {
+        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
             position: static;
             border: none;
 
@@ -202,21 +194,7 @@ $navbar-height: 75px;
         }
     }
 
-    // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-    //     display: none;
-    // }
-}
-
-
-@media (max-width: $screen-mobile) {
-    .login-page {
-        @include gradient-vertical($brand-secondary, darken($brand-secondary, 5%));
-
-        width: 100vw;
-        height: 100vh;
-
-        .view-epahomeratingapp {
-            margin-bottom: 0;
-        }
+    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        display: none;
     }
 }
