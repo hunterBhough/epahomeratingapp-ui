@@ -20,7 +20,8 @@ class LoginController {
         AuthenticationService,
         AuthorizationService,
         UI_ENUMS,
-        VALIDATION_PATTERN
+        VALIDATION_PATTERN,
+        CONTEXT
     ) {
         'ngInject';
 
@@ -37,6 +38,8 @@ class LoginController {
         this.userIdPattern = VALIDATION_PATTERN.USER_NAME;
         this.STATE_NAME    = UI_ENUMS.STATE_NAME;
         this.JOB_PAGE_TAB  = UI_ENUMS.JOB_PAGE_TAB;
+        this.CONTEXT_IS_APP    = CONTEXT === UI_ENUMS.CONTEXT.APP;
+
     }
 
     $onInit () {

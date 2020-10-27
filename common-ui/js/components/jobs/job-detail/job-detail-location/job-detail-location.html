@@ -28,28 +28,32 @@
     </div>
 </fieldset>
 
-<fieldset class="row">
+<fieldset class="row job-detail-location-address-wrapper">
     <legend class="col-xs-3">Location</legend>
-    <div class="offset-xs-3 col-xs-9">
+    <div data-ng-class="{'offset-xs-3 col-xs-9': !jobDetailLocationCtrl.isMobile, 'col-xs-12': jobDetailLocationCtrl.isMobile}">
         <p class="sr-only">Enter address</p>
 
         <div class="row">
-            <div class="form-group col-xs-12">
+            <div class="form-group col-xs-12"
+                 data-ng-class="{'padding-0 margin-0': jobDetailLocationCtrl.isMobile}">
                 <label for="StreetAddress-{{::jobDetailLocationCtrl.location.HouseId}}" class="sr-only">Street Address</label>
                 <input id="StreetAddress-{{::jobDetailLocationCtrl.location.HouseId}}" placeholder="Street Address" class="form-control" type="text" data-ng-model="jobDetailLocationCtrl.location.AddressInformation.Address1" />
             </div>
         </div>
 
         <div class="row row-form-groups">
-            <div class="form-group col-xs-8">
+            <div class="form-group"
+                 data-ng-class="{'col-xs-6 padding-0 padding-right-small' : jobDetailLocationCtrl.isMobile, 'col-xs-8': !jobDetailLocationCtrl.isMobile}">
                 <label for="CityMunicipality-{{::jobDetailLocationCtrl.location.HouseId}}" class="sr-only">City</label>
                 <input id="CityMunicipality-{{::jobDetailLocationCtrl.location.HouseId}}" name="CityMunicipality" placeholder="City" class="form-control" type="text" data-ng-model="jobDetailLocationCtrl.location.AddressInformation.CityMunicipality" />
             </div>
-            <div class="form-group col-xs-2">
+            <div class="form-group"
+                 data-ng-class="{'col-xs-3 padding-0 padding-right-small' : jobDetailLocationCtrl.isMobile, 'col-xs-2': !jobDetailLocationCtrl.isMobile}">
                 <label for="StateCode-{{::jobDetailLocationCtrl.location.HouseId}}" class="sr-only">State</label>
                 <input id="StateCode-{{::jobDetailLocationCtrl.location.HouseId}}" name="StateCode" placeholder="State" class="form-control" type="text" data-ng-model="jobDetailLocationCtrl.location.AddressInformation.StateCode" />
             </div>
-            <div class="form-group col-xs-2">
+            <div class="form-group"
+                 data-ng-class="{'col-xs-3 padding-0' : jobDetailLocationCtrl.isMobile, 'col-xs-2': !jobDetailLocationCtrl.isMobile}">
                 <label for="ZipCode-{{::jobDetailLocationCtrl.location.HouseId}}" class="sr-only">Zip Code</label>
                 <input id="ZipCode-{{::jobDetailLocationCtrl.location.HouseId}}" name="ZipCode" placeholder="Zip Code" class="form-control" type="text" data-ng-model="jobDetailLocationCtrl.location.AddressInformation.ZipCode" />
             </div>
@@ -58,11 +62,13 @@
         <p class="address-information-separator"><span class="address-information-separator-title">Or</span> <span class="sr-only">Enter Community Name and Lot Number</span></p>
 
         <div class="row row-form-groups">
-            <div class="form-group col-xs-10">
+            <div class="form-group col-xs-10"
+                 data-ng-class="{'padding-0 paddin-right-small': jobDetailLocationCtrl.isMobile}">
                 <label for="CommunityName-{{::jobDetailLocationCtrl.location.HouseId}}" class="sr-only">Community Name</label>
                 <input id="CommunityName-{{::jobDetailLocationCtrl.location.HouseId}}" name="CommunityName" placeholder="Community Name" class="form-control" type="text" data-ng-model="jobDetailLocationCtrl.location.AddressInformation.CommunityName" />
             </div>
-            <div class="form-group col-xs-2">
+            <div class="form-group col-xs-2"
+            data-ng-class="{'padding-0': jobDetailLocationCtrl.isMobile}">
                 <label for="LotNo-{{::jobDetailLocationCtrl.location.HouseId}}" class="sr-only">Lot #</label>
                 <input id="LotNo-{{::jobDetailLocationCtrl.location.HouseId}}" id="LotNo" placeholder="Lot #" class="form-control" type="text" data-ng-model="jobDetailLocationCtrl.location.AddressInformation.LotNo" />
             </div>
@@ -71,7 +77,8 @@
         <p class="address-information-separator"><span class="address-information-separator-title">Or</span> <span class="sr-only">Enter Manual Identifier</span></p>
 
         <div class="row">
-            <div class="form-group col-xs-12">
+            <div class="form-group col-xs-12"
+                 data-ng-class="{'padding-0': jobDetailLocationCtrl.isMobile}">
                 <label for="ManualId-{{::jobDetailLocationCtrl.location.HouseId}}" class="sr-only">Manual Identifier</label>
                 <input id="ManualId-{{::jobDetailLocationCtrl.location.HouseId}}" name="ManualId" placeholder="Manual Identifier" class="form-control" type="text" data-ng-model="jobDetailLocationCtrl.location.AddressInformation.ManualId" />
             </div>

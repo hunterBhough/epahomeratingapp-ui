@@ -31,6 +31,11 @@ class ModalController {
 
         this.$element.removeClass(HIDDEN_CLASS);
         this.overlayElement.removeClass(HIDDEN_CLASS);
+
+        angular
+            .element(document)
+            .find('body')
+            .addClass('overlay-open');
     }
 
     close () {
@@ -38,6 +43,11 @@ class ModalController {
 
         this.$element.addClass(HIDDEN_CLASS);
         this.overlayElement.addClass(HIDDEN_CLASS);
+
+        angular
+            .element(document)
+            .find('body')
+            .removeClass('overlay-open');
     }
 
     register (id) {
