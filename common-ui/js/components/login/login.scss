@@ -1,4 +1,5 @@
 @import '../../../scss/variables';
+@import '../../../scss/mixins';
 
 $login-width:       320px;
 $login-height:      350px;
@@ -19,13 +20,34 @@ $navbar-height: 75px;
     &.flip-container {
         perspective: none;
 
-        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        //     width: 320px;
+        //     padding-top: 80px;
+
+        //     &.page-container {
+        //         padding-left: 0;
+        //         padding-right: 0;
+        //     }
+        // }
+
+        &.flip-container-app {
             width: 320px;
             padding-top: 80px;
 
             &.page-container {
                 padding-left: 0;
                 padding-right: 0;
+            }
+        }
+
+        @media (max-width: $screen-mobile) {
+            &.flip-container-app {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding-top: 0;
+                width: 100vw;
+                height: 100vh;
             }
         }
 
@@ -66,10 +88,19 @@ $navbar-height: 75px;
             width: 100%;
         }
 
-        @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        &.flipper-app {
             position: static;
             border: none;
+
+            @media(max-width: $screen-mobile) {
+                width: calc(100vw - 20px);
+            }
         }
+
+        // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+        //     position: static;
+        //     border: none;
+        // }
 
     }
 
@@ -173,7 +204,21 @@ $navbar-height: 75px;
         }
     }
 
-    @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
-        display: none;
+    // @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) {
+    //     display: none;
+    // }
+}
+
+
+@media (max-width: $screen-mobile) {
+    .login-page {
+        @include gradient-vertical($brand-secondary, darken($brand-secondary, 5%));
+
+        width: 100vw;
+        height: 100vh;
+
+        .view-epahomeratingapp {
+            margin-bottom: 0;
+        }
     }
 }
