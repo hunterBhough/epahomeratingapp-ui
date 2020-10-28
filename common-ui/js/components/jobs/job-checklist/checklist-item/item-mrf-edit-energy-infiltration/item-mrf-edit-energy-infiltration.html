@@ -191,12 +191,12 @@
               </mrf-edit-field-locked>
           </div>
           <div class="form-group col-xs-6">
-              <mrf-edit-field-decimal
+              <mrf-edit-field-enum
                   data-ng-if="::!checklistItemMrfEditCtrl.isReview"
                   field="checklistItemMrfEditCtrl.mrfDigest[10]"
                   ng-model="checklistItemMrfEditCtrl.mrfEditForm['AltitudeTempAdjustment']"
                   value="checklistItemMrfEditCtrl.editMrfData['AltitudeTempAdjustment']">
-              </mrf-edit-field-decimal>
+              </mrf-edit-field-enum>
 
               <mrf-edit-field-locked
                   data-ng-if="::checklistItemMrfEditCtrl.isReview"
@@ -205,12 +205,12 @@
               </mrf-edit-field-locked>
           </div>
           <div class="form-group col-xs-6">
-              <mrf-edit-field-string
-                  data-ng-if="::!checklistItemMrfEditCtrl.isReview"
-                  field="checklistItemMrfEditCtrl.mrfDigest[11]"
-                  ng-model="checklistItemMrfEditCtrl.mrfEditForm['TenPercentSinglePointPenalty']"
-                  value="checklistItemMrfEditCtrl.editMrfData['TenPercentSinglePointPenalty']">
-              </mrf-edit-field-string>
+              <mrf-edit-field-enum
+                   data-ng-if="::!checklistItemMrfEditCtrl.isReview"
+                   field="checklistItemMrfEditCtrl.mrfDigest[11]"
+                   ng-model="checklistItemMrfEditCtrl.mrfEditForm['TenPercentSinglePointPenalty']"
+                   value="checklistItemMrfEditCtrl.editMrfData['TenPercentSinglePointPenalty']">
+              </mrf-edit-field-enum>
 
               <mrf-edit-field-locked
                   data-ng-if="::checklistItemMrfEditCtrl.isReview"
