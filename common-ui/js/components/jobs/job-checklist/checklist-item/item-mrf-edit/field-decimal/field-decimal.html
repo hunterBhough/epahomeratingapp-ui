@@ -12,8 +12,7 @@
         class="form-control"
         input-focus
         focus-on-init="{{fieldDecimalCtrl.focus}}"
-        type="tel"
-        pattern="^\d+(\.\d+)*$"
+        type="number"
         data-ng-keypress="fieldDecimalCtrl.handleKeypress($event)"
         data-ng-blur="fieldDecimalCtrl.validate()"
         data-ng-disabled="fieldDecimalCtrl.disabled"
