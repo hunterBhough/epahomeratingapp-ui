@@ -31,6 +31,16 @@ class MrfEditController {
         this.calculateLeakageTotal();
     }
 
+    $postLink () {
+        this.showMrfEditModal = true;
+
+        //TODO: put this somewhere better;
+        angular
+            .element(document)
+            .find('body')
+            .addClass('overlay-open');
+    }
+
     initLeakageToOutside () {
         let total         = parseFloat(this.editMrfData.TestedCFM25Out);
         let cfm25ofCFA    = this.calculateLeakageCfm25ofCFA(total);
@@ -72,7 +82,7 @@ class MrfEditController {
     calculateLeakages () {
         this.calculateLeakageOutside();
         this.calculateLeakageTotal();
-    }                                       
+    }
 
     cancel () {
         this.showMrfEditModal = false;

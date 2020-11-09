@@ -51,6 +51,16 @@ class MrfEditController {
 
     }
 
+    $postLink () {
+        this.showMrfEditModal = true;
+
+        //TODO: put this somewhere better;
+        angular
+            .element(document)
+            .find('body')
+            .addClass('overlay-open');
+    }
+
     calculateAch50 () {
         let ach50 = (this.infiltrationValue / this.BuildingVolume) * 60;
 
