@@ -73,6 +73,17 @@
     }
 }
 
+.modal.modal-img {
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto;
+    margin-left: 0;
+
+    img {
+        max-width: 80vw;
+    }
+}
+
 @media (max-width: $screen-mobile) {
     .modal {
         width: 100vw;

@@ -20,37 +20,37 @@
             <accordion idnum="2" title="Link Providership to a Rating Company">
                 <p>Before Raters can share jobs with a Provider, the Provider has to link the rating company with their Providership. From the ‘Users’ tab, select the ‘Rating Companies’ section. Select the ‘+ Add Rating Company’ icon, select the company from the dropdown, and click ‘Add’. The admin users from the rating company will receive an invitation email and, once they accept the link, will be able to submit jobs to you for review.</p>
 
-                <img src="img/support/image064.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image064.png" />
                 <span class="img_label">Rating Companies Screen</span>
-                
-                <img src="img/support/image065.png" />
+
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image065.png" />
                 <span class="img_label">Link Rating Company</span>
             </accordion>
 
             <accordion idnum="3" title="Review Jobs">
                 <p>Providers will see jobs that have been submitted to them on the ‘Providers Jobs’ tab. If connected to more than one rating company, select a company from the dropdown menu to view the jobs which they’ve submitted to your providership.</p>
 
-                <img src="img/support/image066.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image066.png" />
                 <span class="img_label">Submitted-to-Provider Jobs</span>
 
                 <p>Select a job to view all details, including comments and photos. Items the Rater edited in the field are highlighted in yellow.</p>
 
-                <img src="img/support/image067.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image067.png" />
                 <span class="img_label">Highlighted Edits</span>
 
                 <p>To view Job History, click the arrow dropdown button and then ‘View Job History’.</p>
 
-                <img src="img/support/image032.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image032.png" />
                 <span class="img_label">View Job History</span>
 
-                <img src="img/support/image033.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image033.png" />
                 <span class="img_label">Job History</span>
             </accordion>
 
             <accordion idnum="4" title="Add Job Comments">
                 <p>A Provider can attach general comments, for example comments from the QA review, via the ‘Job Comments’ button on the bottom bar. Add comments and hit ‘Save’.</p>
 
-                <img src="img/support/image068.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image068.png" />
                 <span class="img_label">Job Comments</span>
             </accordion>
 
@@ -64,12 +64,18 @@
 
                 <p><strong>Mark Multiple Jobs:</strong> On the Provider Jobs list, check the job(s) you’d like to share, and click ‘Mark as Registered’. </p>
 
-                <img src="img/support/image070.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image070.png" />
                 <span class="img_label">Mark Multiple Jobs as Registered</span>
 
                 <p>All registered projects in RaterPRO can be found in the ‘Registered’ section on the Providers Job tab.</p>
             </accordion>
-            
+
         </div>
     </div>
 </section>
+
+<div class="modal modal-img hidden" modal="modal" id="modal-show-img">
+    <div class="modal-body">
+        <img class="modal-img-tag" src="" />
+    </div>
+</div>

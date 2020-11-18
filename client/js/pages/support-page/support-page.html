@@ -45,7 +45,7 @@
                     <li>Set the <i>REM/Rate™ XML Export Version</i> to <strong>“<u>15.7 and later</u>”</strong></li>
                     <li><strong><u>Uncheck</u></strong> the box for <i>Add new component types and utility rates of imported project(s) to your organization's library?</i></li>
                 </ol>
-                <img src="img/support/image073.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image073.png" />
             </accordion>
 
             <accordion idnum="2" title="Prepare ‘My ENERGY STAR Account’ and request access to RaterPRO">
@@ -102,28 +102,28 @@
                 <h4>RaterPRO-Invitation</h4>
                 <p>New users will receive an email invitation to create an account. Select registration link to create your account.</p>
 
-                <img src="img/support/image002.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image002.png" />
                 <span class="img_label">Invitation Email</span>
 
-                <img src="img/support/image003.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image003.png" />
                 <span class="img_label">User Account Setup</span>
 
                 <h4>Choose a User ID and Password</h4>
                 <p>Follow on-screen instructions to choose a User ID and Password. We recommend using your email address as your username.</p>
 
-                <img src="img/support/image004.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image004.png" />
                 <span class="img_label">Selecting a User ID and Password</span>
 
                 <h4>Read and Accept the Terms of Use</h4>
                 <p>Read the Terms of Use. After reading, check the box and click ‘Create Account’.</p>
 
-                <img src="img/support/image005.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image005.png" />
                 <span class="img_label">Terms of Use</span>
 
                 <h4>Log In to Admin Website</h4>
                 <p>Access the RaterPRO site at <a href="https://www.raterpro.net" target="_blank">https://www.raterpro.net</a>. Bookmark this page for future use. Login with the your newly created User ID and password.</p>
 
-                <img src="img/support/image006.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image006.png" />
                 <span class="img_label">Login Screen</span>
             </accordion>
 
@@ -134,7 +134,7 @@
 
                 <p>Tap the ‘Get’ icon to download the app. Remember, RaterPRO is free!</p>
 
-                <img src="img/support/image007.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image007.png" />
                 <span class="img_label">RaterPRO on the iPhone App Store</span>
 
                 <h4>Downloading Android App from Google Play store</h4>
@@ -146,12 +146,12 @@
                 <h4>Logging in on a tablet for the first time</h4>
                 <p>Open the RaterPRO app from your tablet's home screen. Log in using your User ID and Password</p>
 
-                <img src="img/support/image008.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image008.png" />
                 <span class="img_label">Tablet Login</span>
 
                 <p>It may take a few minutes for jobs to show up in the app for the first time. Try hitting the ‘Refresh Job List’ button or switching tabs.</p>
 
-                <img src="img/support/image009.png" />
+                <img data-ng-click="supportPageCtrl.showOriginalImg($event)" src="img/support/image009.png" />
                 <span class="img_label">Refresh Job List</span>
 
                 <p>You’re ready to use RaterPRO. Refer to the User Guide below for guidance on features within the app.</p>
@@ -165,3 +165,9 @@
         </div>
     </div>
 </section>
+
+<div class="modal modal-img hidden" modal="modal" id="modal-show-img">
+    <div class="modal-body">
+        <img class="modal-img-tag" src="" />
+    </div>
+</div>

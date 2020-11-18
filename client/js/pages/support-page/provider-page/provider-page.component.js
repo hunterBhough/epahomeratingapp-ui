@@ -1,7 +1,11 @@
 import template from './provider-page.html';
+import controller from './provider-page.controller';
+
 
 let userGuideProviderComponent = {
-    template
+    template,
+    controller,
+    controllerAs : 'supportPageCtrl'
 };
 
 export default userGuideProviderComponent;

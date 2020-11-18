@@ -1,19 +1,18 @@
-import _find from 'lodash/find';
 
-class supportPageController {
-    constructor ($log, $q, ModalService, BASE_IMAGE_URL, $document) {
+class desktopPageController {
+    constructor ($log, $q, ModalService, BASE_IMAGE_URL) {
         'ngInject';
 
         this.$log                 = $log;
         this.$q                   = $q;
-        this.ModalService         = ModalService;
+        this.ModalService        = ModalService;
         this.BASE_IMAGE_URL       = BASE_IMAGE_URL;
-        this.$document            = $document;
 
 
     }
 
     $onInit () {
+
     }
 
     showOriginalImg (e) {
@@ -26,4 +25,4 @@ class supportPageController {
     }
 }
 
-export default supportPageController;
+export default desktopPageController;

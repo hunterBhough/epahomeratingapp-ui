@@ -1,6 +1,6 @@
 import _find from 'lodash/find';
 
-class supportPageController {
+class mobilePageController {
     constructor ($log, $q, ModalService, BASE_IMAGE_URL, $document) {
         'ngInject';
 
@@ -26,4 +26,4 @@ class supportPageController {
     }
 }
 
-export default supportPageController;
+export default mobilePageController;
