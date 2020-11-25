@@ -1,13 +1,9 @@
 // import moment from 'moment';
-
-const downForMaintenance = false; //set to false to turn off
+import {config} from '../../../../config';
+const downForMaintenance = config.maintenance.status; //set to false to turn off
 // const TIMESTAMP = moment(new Date()).format('MMM Do YYYY h:mm a');
 
-const STATUS_MESSAGE = {
-    SYSTEM_ERROR        : 'There was a system error. Please contact RaterPRO support.',
-    AUTHORIZATION_ERROR : 'You are not authorized to use this system.',
-    MAINTENANCE_ERROR   : 'Service is down for maintenance; please check back Friday, May 20 at 9:00am.'
-};
+const STATUS_MESSAGE = config.maintenance.message;
 
 class LoginController {
     constructor (
