@@ -1,5 +1,5 @@
 class PhotoCaptureController {
-    constructor ($log, CameraService, UI_ENUMS, CONTEXT, AssetPathService, AssetLocalService, SyncService, BASE_IMAGE_URL) {
+    constructor ($log, CameraService, UI_ENUMS, CONTEXT, AssetPathService, AssetLocalService, SyncService, BASE_IMAGE_URL, $cordovaFile) {
         'ngInject';
         this.$log = $log;
         this.CameraService = CameraService;
@@ -8,6 +8,7 @@ class PhotoCaptureController {
         this.AssetLocalService = AssetLocalService;
         this.localBaseUrl = BASE_IMAGE_URL;
         this.defaultPhotoUrl = UI_ENUMS.IMAGES.DEFAULT_PHOTO;
+        this.$cordovaFile = $cordovaFile;
 
         this.photoActionLabelEnum = {
             ADD    : 'Add Photo',
@@ -65,7 +66,13 @@ class PhotoCaptureController {
                 this.photo = changes.photo.currentValue;
                 let assetAvailable = this.AssetLocalService.checkIfAssetAvailable(this.photo);
                 if (assetAvailable === true) {
-                    this.photoUrl = `${this.localBaseUrl}${this.photo}`;
+                    let imageData = `file://${this.localBaseUrl}${this.photo}`;
+                    let filename = imageData.substring(imageData.lastIndexOf('/') + 1);
+                    let path =  imageData.substring(0, imageData.lastIndexOf('/') + 1);
+                    this.$cordovaFile.readAsDataURL(path, filename).then(res => {
+                        this.photoUrl = res;
+                    });
+                    // this.photoUrl = `${this.localBaseUrl}${this.photo}`;
                 } else {
                     this.photoUrl = `${this.s3BaseUrl}${this.photo}`;
                 }
