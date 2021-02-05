@@ -57,7 +57,7 @@ class ChecklistItemMrfController extends ChecklistItemClass {
             });
 
             break;
-        case 'TempDuctRecords' : 
+        case 'TempDuctRecords' :
             this.editEnergyDuctSystemRow.push({
                 ItemId             : this.itemId,
                 key                : key,
@@ -68,7 +68,7 @@ class ChecklistItemMrfController extends ChecklistItemClass {
             });
 
             break;
-        case 'TempNaturalINFLRecords' : 
+        case 'TempNaturalINFLRecords' :
             this.editEnergyInfiltrationRow.push({
                 ItemId             : this.itemId,
                 key                : key,
@@ -347,22 +347,27 @@ class ChecklistItemMrfController extends ChecklistItemClass {
                 let column       = section.Columns[columnIndex];
                 let dataType     = column.DataType.Type;
                 let compareValue;
+                let match;
 
                 switch (dataType) {
                 case 'Decimal' :
                     compareValue = parseFloat(value);
+                    match = (isNaN(compareValue) && isNaN(mrfEditRowData.mrfData[key])) || (compareValue === parseFloat(mrfEditRowData.mrfData[key]));
                     break;
                 case 'Integer' :
                     compareValue = parseInt(value, 10);
+                    match = (isNaN(compareValue) && isNaN(mrfEditRowData.mrfData[key])) || (compareValue === parseInt(mrfEditRowData.mrfData[key], 10));
                     break;
                 default :
                     compareValue = value;
+                    match = compareValue === mrfEditRowData.mrfData[key];
                     break;
                 }
 
                 let id = [mrfEditRowData.key, mrfEditRowData.index, key].join(':');
 
-                if (compareValue !== mrfEditRowData.mrfData[key]) {
+
+                if (!match) {
                     editedMetaIds.push(id);
 
                     if (libraryTypeNameKey && column.IsLibraryAttribute) {
