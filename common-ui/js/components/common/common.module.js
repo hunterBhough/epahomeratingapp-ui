@@ -5,7 +5,6 @@ import fileManagerComponent from './file-manager/file-manager.component';
 import linearProgressComponent from './linear-progress/linear-progress.component';
 import listFilterComponent from './list-filter/list-filter.component';
 import paginationComponent from './pagination/pagination.component';
-import photoCaptureComponent from './photo-capture/photo-capture.component';
 import radialProgressComponent from './radial-progress/radial-progress.component';
 import radialProgressMobileComponent from './radial-progress-mobile/radial-progress-mobile.component';
 import statusMessageComponent from './status-message/status-message.component';
@@ -40,7 +39,6 @@ const commonModule
         .component('linearProgress', linearProgressComponent)
         .component('listFilter', listFilterComponent)
         .component('pagination', paginationComponent)
-        .component('photoCapture', photoCaptureComponent)
         .component('radialProgress', radialProgressComponent)
         .component('radialProgressMobile', radialProgressMobileComponent)
         .component('statusMessage', statusMessageComponent)
